@@ -17,3 +17,7 @@ Route::get('/', 'HomeController@index');
 Route::get('teachers','TeacherController@index');
 Route::get('/teachers/create','TeacherController@create');
 Route::get('/import/master','ImportMasterTables@index');
+Route::post('/teachers/store', [
+	'uses' => 'TeacherController@store',
+	'as' => 'storeTeacher'
+	]);

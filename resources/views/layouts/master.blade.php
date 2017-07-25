@@ -10,17 +10,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>TPAS | Teacher Projection System</title>
-
-        <!-- Bootstrap -->
-        <link href="{{ asset("css/bootstrap.min.css") }}" rel="stylesheet">
-        <!-- Font Awesome -->
-        <link href="{{ asset("css/font-awesome.min.css") }}" rel="stylesheet">
-        <!-- Custom Theme Style -->
-        <link href="{{ asset("css/gentelella.min.css") }}" rel="stylesheet">
-        <!-- Custom App Style -->
-        <link href="{{ asset("css/custom-app-style.css") }}" rel="stylesheet">
-
-        @stack('stylesheets')
+@include('includes/css')
 
     </head>
 
@@ -39,14 +29,7 @@
             </div>
         </div>
 
-        <!-- jQuery -->
-        <script src="{{ asset("js/jquery.min.js") }}"></script>
-        <!-- Bootstrap -->
-        <script src="{{ asset("js/bootstrap.min.js") }}"></script>
-        <!-- Custom Theme Scripts -->
-        <script src="{{ asset("js/gentelella.min.js") }}"></script>
-
-        @stack('scripts')
+      @include('includes/scripts')
 
     </body>
 </html>
