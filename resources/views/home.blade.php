@@ -1,4 +1,4 @@
-@extends('layouts.blank')
+@extends('layouts.master')
 
 @push('stylesheets')
     <!-- Example -->
@@ -13,12 +13,5 @@
     </div>
     <!-- /page content -->
 
-    <!-- footer content -->
-    <footer>
-        <div class="pull-right">
-            Developed by:<a href="www.dit.gov.bt"> Department of Information Technology & Telecom (DITT)</a>, MoIC. 2017
-        </div>
-        <div class="clearfix"></div>
-    </footer>
-    <!-- /footer content -->
 @endsection
+
