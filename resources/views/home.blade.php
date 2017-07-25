@@ -16,7 +16,7 @@
     <!-- footer content -->
     <footer>
         <div class="pull-right">
-            Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+            Developed by:<a href="www.dit.gov.bt"> Department of Information Technology & Telecom (DITT)</a>, MoIC. 2017
         </div>
         <div class="clearfix"></div>
     </footer>
