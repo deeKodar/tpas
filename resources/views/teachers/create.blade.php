@@ -141,8 +141,14 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="employment_type_id">Employment Type ID<span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" name="employment_type_id" required="required" class="form-control col-md-7 col-xs-12">
-                        </div>
+                        <select name="employment_type_id" required="required" class="form-control col-md-7 col-xs-12">
+                            <option value="" selected disabled>Please Select</option>
+                          @foreach($employmenttypes as $employmenttype)
+                          <option value="{{ $employmenttype->id }}">{{ $employmenttype->name }}</option>
+                          @endforeach
+                        </select>
+                      </div>
+                      
                       </div>
                      
                       <div class="form-group">
@@ -153,7 +159,7 @@
                           <div class="control-group">
                             <div class="controls">
                               <div class="col-md-6 xdisplay_inputx form-group has-feedback">
-                                <input type="text" class="form-control has-feedback-left" id="single_cal3" placeholder="1988/09/18" name="date_of_birth" aria-describedby="inputSuccess2Status">
+                                <input type="text" class="form-control has-feedback-left" id="single_cal3" placeholder="1988/09/18" name="current_appointment_date" aria-describedby="inputSuccess2Status">
                                 <span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
                                 <span id="inputSuccess2Status" class="sr-only">(success)</span>
                               </div>
@@ -169,7 +175,7 @@
                           <div class="control-group">
                             <div class="controls">
                               <div class="col-md-6 xdisplay_inputx form-group has-feedback">
-                                <input type="text" class="form-control has-feedback-left" id="single_cal1" placeholder="1988/09/18" name="date_of_birth" aria-describedby="inputSuccess2Status">
+                                <input type="text" class="form-control has-feedback-left" id="single_cal1" placeholder="1988/09/18" name="initial_appointment_date" aria-describedby="inputSuccess2Status">
                                 <span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
                                 <span id="inputSuccess2Status" class="sr-only">(success)</span>
                               </div>
@@ -181,14 +187,24 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="qualification_id">Qualification ID<span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" name="qualification_id" required="required" class="form-control col-md-7 col-xs-12">
+                          <select name="qualification_id" required="required" class="form-control col-md-7 col-xs-12">
+                            <option value="" selected disabled>Please Select</option>
+                          @foreach($qualifications as $qualification)
+                          <option value="{{ $qualification->id }}">{{ $qualification->name }}</option>
+                          @endforeach
+                        </select>
                         </div>
                       </div>
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="field_of_study_id">Field of study ID<span class="required">*</span>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="field_of_study_id">Field of study <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" name="field_of_study_id" required="required" class="form-control col-md-7 col-xs-12">
+                          <select name="field_of_study_id" required="required" class="form-control col-md-7 col-xs-12">
+                            <option value="" selected disabled>Please Select</option>
+                          @foreach($fields as $field)
+                          <option value="{{ $field->id }}">{{ $field->name }}</option>
+                          @endforeach
+                        </select>
                         </div>
                       </div>
                       <div class="form-group">
@@ -206,10 +222,16 @@
                         </div>
                       </div>
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="core_subject_id">Core Subject ID<span class="required">*</span>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="core_subject_id">Core Subject Code <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" name="core_subject_id" required="required" class="form-control col-md-7 col-xs-12">
+                          <select name="core_subject_id" required="required" class="form-control col-md-7 col-xs-12">
+                            <option value="" selected disabled>Please Select</option>
+                          @foreach($subjects as $subject)
+                          <option value="{{ $subject->id }}">{{ $subject->name }}</option>
+                          @endforeach
+                        </select>
+                         
                         </div>
                       </div>
                       <div class="form-group">
@@ -247,13 +269,7 @@
                           <input type="text" name="marital_status" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="user_id">User ID<span class="required">*</span>
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" name="user_id" required="required" class="form-control col-md-7 col-xs-12">
-                        </div>
-                      </div>
+                      
                       <div class="ln_solid"></div>
                       <div class="form-group">
                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">

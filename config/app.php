@@ -157,6 +157,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\BroadcastServiceProvider::class,
+        Laravel\Tinker\TinkerServiceProvider::class,
 
 		Thomaswelton\LaravelGravatar\LaravelGravatarServiceProvider::class,
 		Conner\Tagging\Providers\TaggingServiceProvider::class,
