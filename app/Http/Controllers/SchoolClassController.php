@@ -20,12 +20,14 @@ class SchoolClassController extends Controller
 
     //store new created class in storage
     public function store(Request $request) {
-        $school_class = new SchoolClass([
-            'class_name' => $request->get(class_name)
-        ]);
-
+        
+        $school_class = new SchoolClass;
+        
+        $school_class->name = $request['class_name'];
+       
         $school_class->save();
-        return redirect('/school_class');
+
+        return redirect('/school-classes');
     }
 
     //display specific class
