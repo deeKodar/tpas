@@ -28,6 +28,9 @@ class TeacherController extends Controller
 
     	$teacher = new Teacher;
 
+    	//$items = Items::pluck('name', 'id');
+
+
     	$teacher->employee_id = request('employee_id');
     	$teacher->citizenship_id = request('citizenship_id');
     	$teacher->first_name = request('first_name');

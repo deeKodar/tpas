@@ -8,4 +8,5 @@
         <!-- Custom App Style -->
         <link href="{{ asset("css/custom-app-style.css") }}" rel="stylesheet">
 
+      
         @stack('stylesheets')
