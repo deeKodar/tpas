@@ -8,7 +8,7 @@ use App\Models\SchoolClass;
 class SchoolClassController extends Controller
 {
     public function index() {
-        $school_classes = SchoolClass::all()->toArray();
+        $school_classes = SchoolClass::all();
 
         return view('school_class.index', compact('school_classes'));
     }
@@ -37,11 +37,19 @@ class SchoolClassController extends Controller
 
     //show form for editing class
     public function edit($id) {
+        $school_class = SchoolClass::find($id);
+        
+        return view('school_class.edit', compact('school_class','id'));
 
     }
 
     //update the specified class in storage
     public function update(Request $request, $id) {
+
+        $school_class = SchoolClass::find($id);
+        $school_class->name = $request->get('name');
+        $school_class->save();
+        return redirect('index');
 
     }
 

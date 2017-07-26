@@ -25,6 +25,10 @@ Route::post('/school-classes/store', [
 	'uses' => 'SchoolClassController@store',
 	'as' => 'storeSchoolClass'
 	]);
+Route::get('school-classes/{id}', 'SchoolClassController@show');
+Route::get('school-classes/{id}/edit', 'SchoolClassController@edit');
+Route::patch('school-classes/{id}', 'SchoolClassController@update');
+Route::delete('school-classes/{id}', 'SchoolClassController@destroy');
 
 Route::post('/teachers/store', [
 	'uses' => 'TeacherController@store',

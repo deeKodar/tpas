@@ -1,59 +1,26 @@
 @extends('layouts.master')
 
 @push('stylesheets')
-    <!-- Example -->
-    <link href="{{ asset("vendor/iCheck/skins/flat/green.css") }}" rel="stylesheet">" rel="stylesheet">
-@endpush
+  @include('includes/dynamic-table-css')
+@endpush 
+
 
 @section('main_container')
-
- {{--  <div class="right_col" role="main">
- <div class="container">
-    <table class="table table-striped">
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Class Name</th>
-      </tr>
-    </thead>
-    <tbody>
-      @foreach($school_classes as $class)
-      <tr>
-        <td>{{$class['id']}}</td>
-        <td>{{$class['name']}}</td>
-      </tr>
-      @endforeach
-    </tbody>
-  </table>
-  </div>       
- </div>  --}}
   <div class="right_col" role="main">
-          <div class="">
+        <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3>Class <small>Management</small></h3>
+                <h3>Class Management<small></small></h3>
               </div>
-
               <div class="title_right">
-                <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
-                  <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search for...">
-                    <span class="input-group-btn">
-                      <button class="btn btn-default" type="button">Go!</button>
-                    </span>
-                  </div>
-                </div>
               </div>
             </div>
-
-            <div class="clearfix"></div>
 
             <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    {{--  <h2>Table design <small>Custom design</small></h2>  --}}
                     <div class="nav navbar-left add-button">
-                        <a href="school-classes/create" class="btn btn-primary">Add Class</a>
+                        <a href="create" class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i> Add Class</a>
                     </div>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
@@ -72,72 +39,39 @@
                     </ul>
                     <div class="clearfix"></div>
                   </div>
-
                   <div class="x_content">
+                    <table id="datatable-checkbox" class="table table-striped table-bordered bulk_action">
+                      <thead>
+                        <tr> 
+                          <th>Sl.No</th>
+                          <th>Class Name</th>
+                          <th class="column-title no-link last"><span class="nobr">Action</span>
+                          </th>
+                        </tr>
+                      </thead>
 
-                    <p>Add class <code>bulk_action</code> to table for bulk actions options on row select</p>
-
-                    <div class="table-responsive">
-                      <table class="table table-striped jambo_table bulk_action">
-                        <thead>
-                          <tr class="headings">
-                            <th>
-                              <input type="checkbox" id="check-all" class="flat">
-                            </th>
-                            <th class="column-title">Invoice </th>
-                            <th class="column-title">Invoice Date </th>
-                            <th class="column-title">Order </th>
-                            <th class="column-title">Bill to Name </th>
-                            <th class="column-title">Status </th>
-                            <th class="column-title">Amount </th>
-                            <th class="column-title no-link last"><span class="nobr">Action</span>
-                            </th>
-                            <th class="bulk-actions" colspan="7">
-                              <a class="antoo" style="color:#fff; font-weight:500;">Bulk Actions ( <span class="action-cnt"> </span> ) <i class="fa fa-chevron-down"></i></a>
-                            </th>
-                          </tr>
-                        </thead>
-
-                        <tbody>
-                          <tr class="even pointer">
-                            <td class="a-center ">
-                              <input type="checkbox" class="flat" name="table_records">
-                            </td>
-                            <td class=" ">121000040</td>
-                            <td class=" ">May 23, 2014 11:47:56 PM </td>
-                            <td class=" ">121000210 <i class="success fa fa-long-arrow-up"></i></td>
-                            <td class=" ">John Blank L</td>
-                            <td class=" ">Paid</td>
-                            <td class="a-right a-right ">$7.45</td>
-                            <td class=" last"><a href="#">View</a>
-                            </td>
-                          </tr>
-                          <tr class="odd pointer">
-                            <td class="a-center ">
-                              <input type="checkbox" class="flat" name="table_records">
-                            </td>
-                            <td class=" ">121000039</td>
-                            <td class=" ">May 28, 2014 11:30:12 PM</td>
-                            <td class=" ">121000208</td>
-                            <td class=" ">John Blank L</td>
-                            <td class=" ">Paid</td>
-                            <td class="a-right a-right ">$741.20</td>
-                            <td class=" last"><a href="#">View</a>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-							
-						
+                      <tbody>
+                      @foreach($school_classes as $class)
+                        <tr>
+                          <td>{{$class->id}}</td>
+                          <td>{{$class->name}}</td>
+                          <td class=" last">
+                            {{--  <a href="{{ route('school_class.edit', $class->id) }}" class="btn btn-xs btn-warning waves-effect waves-light" data-toggle="tooltip" data-placement="left" title="Edit Class"><i class="fa fa-pencil-square fa-lg" aria-hidden="true"></i> Edit</a>  --}}
+                            <a href="school_classes/{{$class->id}}/edit" class="btn btn-xs btn-warning waves-effect waves-light" data-toggle="tooltip" data-placement="left" title="Edit Class"><i class="fa fa-pencil-square fa-lg" aria-hidden="true"></i> Edit</a>
+                            <a href="{{$class->id}}" class="btn btn-xs btn-danger waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Delete Class"><i class="fa fa-trash fa-lg" aria-hidden="true"></i> Delete</a>
+                            <a href="{{$class->id}}" class="btn btn-xs btn-success waves-effect waves-light" data-toggle="tooltip" data-placement="right" title="View Class Details"><i class="fa fa-eye fa-lg" aria-hidden="true"></i> View Detail</a> 
+                          </td>
+                        </tr>
+                      @endforeach
+                      </tbody>
+                    </table>
                   </div>
                 </div>
-
+              </div>  
         </div>
-        </div>
-    </div>
+  </div>
 @endsection
 @push('scripts')
-<!--iCheck JS-->
-<script src="{{ asset("vendor/iCheck/icheck.min.js") }}"></script>
-@endpush
+  @include('includes/dynamic-table-scripts')
+@endpush 
+
