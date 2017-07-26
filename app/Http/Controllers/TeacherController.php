@@ -7,39 +7,73 @@ use App\Models\Teacher;
 use App\Models\Subject;
 use App\Models\Qualification;
 use App\Models\TeacherEmploymentType;
-use Illuminate\Support\Facades\Auth;
 use App\Models\FieldOfStudy;
+use App\Models\TeacherStatusType;
+use App\Models\School;
+use App\Models\SchoolClass;
+use App\Models\PositionLevel;
+use App\Models\PositionTitle;
+use App\Models\Nationality;
+use Illuminate\Support\Facades\Auth;
 use View;
 
 
 class TeacherController extends Controller
 {
+
+	 public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index() {
 
     	return view('teachers.index');
     }
 
-    public function view() {
+   
 
+    public function edit($id) {
 
-    	
-    	return view('teachers.view');
+		$subjects = Subject::all();
+
+		$qualifications = Qualification::all();
+		$employmenttypes=TeacherEmploymentType::all();
+		$fields=FieldOfStudy::all();
+    	return View::make('teachers.edit')
+    	->with('teacher', Teacher::find($id))
+    	->with(compact('subjects'))
+		->with(compact('fields'))
+		->with(compact('employmenttypes'))
+		->with(compact('qualifications'));
 
     }
 
     public function create() {
 
 		$subjects = Subject::all();
+		$classes=SchoolClass::all();
+		$schools=School::pluck('id','name');
 		$qualifications = Qualification::all();
 		$employmenttypes=TeacherEmploymentType::all();
 		$fields=FieldOfStudy::all();
-		$employmenttype=TeacherEmploymentType::all();
+		$teacherstatus=TeacherStatusType::all();
+		$positionlevels=PositionLevel::all();
+		$positiontitles=PositionTitle::all();
+		$nationalities=Nationality::all();
 
 		return View::make('teachers.create')
 		->with(compact('subjects'))
 		->with(compact('fields'))
+		->with(compact('schools'))
+		->with(compact('classes'))
 		->with(compact('employmenttypes'))
-		->with(compact('qualifications'));
+		->with(compact('qualifications'))
+		->with(compact('teacherstatus'))
+		->with(compact('positionlevels'))
+		->with(compact('positiontitles'))
+		->with(compact('nationalities'))
+		->with(compact('classes'));
     	
     }
     public function store() {
@@ -81,6 +115,12 @@ class TeacherController extends Controller
     	$teacher->save();
 
     	return redirect('/teachers');
+
+    }
+
+    public function update($id) {
+
+
 
     }
 }
