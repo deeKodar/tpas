@@ -18,10 +18,16 @@ Route::get('teachers','TeacherController@index');
 Route::get('/teachers/create','TeacherController@create');
 Route::get('/import/master','ImportMasterTables@index');
 
-Route::get('school_class', 'SchoolClassController@index');
-Route::get('school_class/create', 'SchoolClassController@create');
+//Route entries for School Class CRUD
+Route::get('school-classes', 'SchoolClassController@index');
+Route::get('school-classes/create', 'SchoolClassController@create');
+Route::post('/school-classes/store', [
+	'uses' => 'SchoolClassController@store',
+	'as' => 'storeSchoolClass'
+	]);
 
 Route::post('/teachers/store', [
 	'uses' => 'TeacherController@store',
 	'as' => 'storeTeacher'
 	]);
+
