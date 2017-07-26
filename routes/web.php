@@ -34,4 +34,8 @@ Route::post('/teachers/store', [
 	'uses' => 'TeacherController@store',
 	'as' => 'storeTeacher'
 	]);
+Route::get('/teachers/{id}/edit', [
+	'uses' => 'TeacherController@edit',
+	'as' => 'editTeacher'
+	]);
 

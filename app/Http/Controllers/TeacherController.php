@@ -4,23 +4,77 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Teacher;
+use App\Models\Subject;
+use App\Models\Qualification;
+use App\Models\TeacherEmploymentType;
+use App\Models\FieldOfStudy;
+use App\Models\TeacherStatusType;
+use App\Models\School;
+use App\Models\SchoolClass;
+use App\Models\PositionLevel;
+use App\Models\PositionTitle;
+use App\Models\Nationality;
+use Illuminate\Support\Facades\Auth;
+use View;
+
 
 class TeacherController extends Controller
 {
+
+	 public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index() {
 
     	return view('teachers.index');
     }
 
-    public function view() {
+   
 
-    	return view('teachers.view');
+    public function edit($id) {
+
+		$subjects = Subject::all();
+
+		$qualifications = Qualification::all();
+		$employmenttypes=TeacherEmploymentType::all();
+		$fields=FieldOfStudy::all();
+    	return View::make('teachers.edit')
+    	->with('teacher', Teacher::find($id))
+    	->with(compact('subjects'))
+		->with(compact('fields'))
+		->with(compact('employmenttypes'))
+		->with(compact('qualifications'));
 
     }
 
     public function create() {
 
-    	return view('teachers.create');
+		$subjects = Subject::all();
+		$classes=SchoolClass::all();
+		$schools=School::pluck('id','name');
+		$qualifications = Qualification::all();
+		$employmenttypes=TeacherEmploymentType::all();
+		$fields=FieldOfStudy::all();
+		$teacherstatus=TeacherStatusType::all();
+		$positionlevels=PositionLevel::all();
+		$positiontitles=PositionTitle::all();
+		$nationalities=Nationality::all();
+
+		return View::make('teachers.create')
+		->with(compact('subjects'))
+		->with(compact('fields'))
+		->with(compact('schools'))
+		->with(compact('classes'))
+		->with(compact('employmenttypes'))
+		->with(compact('qualifications'))
+		->with(compact('teacherstatus'))
+		->with(compact('positionlevels'))
+		->with(compact('positiontitles'))
+		->with(compact('nationalities'))
+		->with(compact('classes'));
+    	
     }
     public function store() {
 
@@ -28,8 +82,8 @@ class TeacherController extends Controller
 
     	$teacher = new Teacher;
 
-    	//$items = Items::pluck('name', 'id');
-
+    	
+    	$userid = Auth::id();
 
     	$teacher->employee_id = request('employee_id');
     	$teacher->citizenship_id = request('citizenship_id');
@@ -38,12 +92,12 @@ class TeacherController extends Controller
     	$teacher->last_name = request('last_name');
     	$teacher->citizenship = request('citizenship');
     	$teacher->gender = request('gender');
-    	$teacher->date_of_birth = request('date_of_birth');
+    	$teacher->date_of_birth = date('Y-m-d',strtotime(request('date_of_birth')));
     	$teacher->position_level = request('position_level');
     	$teacher->position_title = request('position_title');
     	$teacher->employment_type_id = request('employment_type_id');
-    	$teacher->initial_appointment_date = request('initial_appointment_date');
-    	$teacher->current_appointment_date = request('current_appointment_date');
+    	$teacher->initial_appointment_date = date('Y-m-d',strtotime(request('initial_appointment_date')));
+    	$teacher->current_appointment_date = date('Y-m-d',strtotime(request('current_appointment_date')));
     	$teacher->qualification_id = request('qualification_id');
     	$teacher->field_of_study_id = request('field_of_study_id');
     	$teacher->school_id = request('school_id');
@@ -54,12 +108,19 @@ class TeacherController extends Controller
     	$teacher->elective_subject_three_id = request('elective_subject_three_id');
     	$teacher->employee_status_type_id = request('employee_status_type_id');
     	$teacher->marital_status = request('marital_status');
-    	$teacher->user_id = request('user_id');
+    	$teacher->user_id = $userid;
     	$teacher->version = 1;
+
 
     	$teacher->save();
 
     	return redirect('/teachers');
+
+    }
+
+    public function update($id) {
+
+
 
     }
 }

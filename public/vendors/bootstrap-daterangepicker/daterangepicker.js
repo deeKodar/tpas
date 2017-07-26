@@ -31,9 +31,9 @@
         //default settings for options
         this.parentEl = 'body';
         this.element = $(element);
-        this.startDate = moment().startOf('day');
-        this.endDate = moment().endOf('day');
-        this.minDate = false;
+         this.startDate = moment().startOf('day');
+         this.endDate = moment().endOf('day');
+        
         this.maxDate = false;
         this.dateLimit = false;
         this.autoApply = false;
@@ -297,8 +297,10 @@
                     start = moment(split[0], this.locale.format);
                     end = moment(split[1], this.locale.format);
                 } else if (this.singleDatePicker && val !== "") {
-                    start = moment(val, this.locale.format);
-                    end = moment(val, this.locale.format);
+
+                     start = moment(val, this.locale.format);
+                     end = moment(val, this.locale.format);
+                  
                 }
                 if (start !== null && end !== null) {
                     this.setStartDate(start);
@@ -1581,7 +1583,9 @@
             }
 
             if (this.singleDatePicker || start === null || end === null) {
-                start = moment(this.element.val(), this.locale.format);
+                 start = moment(this.element.val(), this.locale.format);
+               
+               
                 end = start;
             }
 
