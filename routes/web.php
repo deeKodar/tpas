@@ -38,4 +38,8 @@ Route::get('/teachers/{id}/edit', [
 	'uses' => 'TeacherController@edit',
 	'as' => 'editTeacher'
 	]);
+Route::get('/teachers', 'TeacherController@index');
+
+
+
 

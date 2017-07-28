@@ -3,7 +3,7 @@
 @push('stylesheets')
     <!-- Example -->
     <!--<link href=" <link href="{{ asset("css/myFile.min.css") }}" rel="stylesheet">" rel="stylesheet">-->
-      <link href="{{ asset('vendor/bootstrap-daterangepicker/daterangepicker.css') }}" rel="stylesheet">
+      <link href="{{ asset('vendors/bootstrap-daterangepicker/daterangepicker.css') }}" rel="stylesheet">
 @endpush
 
 @section('main_container')
@@ -346,8 +346,8 @@
 
   @push('scripts')
 
-   <script src="{{ asset("vendor/moment/min/moment.min.js") }}"></script>
+   <script src="{{ asset("vendors/moment/min/moment.min.js") }}"></script>
 
-    <script src="{{ asset("vendor/bootstrap-daterangepicker/daterangepicker.js") }}"></script>
+    <script src="{{ asset("vendors/bootstrap-daterangepicker/daterangepicker.js") }}"></script>
 
   @endpush

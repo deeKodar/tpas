@@ -34,7 +34,7 @@
                     </li>
                     <li><a><i class="fa fa-sitemap" aria-hidden="true"></i> Teacher Management <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
-                            <li><a href="#">Manage Teachers</a></li>
+                            <li><a href=" {{ url('/teachers/') }}">Manage Teachers</a></li>
                             <li><a href="#">Manage Transfers</a></li>
                         </ul>
                     </li>

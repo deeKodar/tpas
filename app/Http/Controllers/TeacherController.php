@@ -28,24 +28,38 @@ class TeacherController extends Controller
 
     public function index() {
 
-    	return view('teachers.index');
+	     $teachers = Teacher::with('school')->get();
+
+    	return view('teachers.index', compact('teachers'));
     }
 
    
 
     public function edit($id) {
 
-		$subjects = Subject::all();
-
-		$qualifications = Qualification::all();
-		$employmenttypes=TeacherEmploymentType::all();
-		$fields=FieldOfStudy::all();
+        $subjects = Subject::all();
+        $classes=SchoolClass::all();
+        $schools=School::pluck('id','name');
+        $qualifications = Qualification::all();
+        $employmenttypes=TeacherEmploymentType::all();
+        $fields=FieldOfStudy::all();
+        $teacherstatus=TeacherStatusType::all();
+        $positionlevels=PositionLevel::all();
+        $positiontitles=PositionTitle::all();
+        $nationalities=Nationality::all();
     	return View::make('teachers.edit')
     	->with('teacher', Teacher::find($id))
-    	->with(compact('subjects'))
-		->with(compact('fields'))
-		->with(compact('employmenttypes'))
-		->with(compact('qualifications'));
+            ->with(compact('subjects'))
+            ->with(compact('fields'))
+            ->with(compact('schools'))
+            ->with(compact('classes'))
+            ->with(compact('employmenttypes'))
+            ->with(compact('qualifications'))
+            ->with(compact('teacherstatus'))
+            ->with(compact('positionlevels'))
+            ->with(compact('positiontitles'))
+            ->with(compact('nationalities'))
+            ->with(compact('classes'));
 
     }
 

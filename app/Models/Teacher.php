@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\School;
 
 class Teacher extends Model
 {
@@ -27,32 +28,44 @@ class Teacher extends Model
     | FUNCTIONS
     |--------------------------------------------------------------------------
     */
+    public function getSchool($teacherid){
+
+        $schools = DB::table('teachers')
+            ->leftJoin('schools', 'schools.id', '=', 'teachers.school_id')
+            ->select('schools.name')
+            ->where('teachers.id', '=', $teacherid)
+            ->get();
+    }
 
     /*
     |--------------------------------------------------------------------------
     | RELATIONS
     |--------------------------------------------------------------------------
     */
+
     public function school() {
 
-        return $this->hasOne('App\School','id');
+        return $this->belongsTo(School::class);
+        //return $this->belongsTo('App\Models\School','id');
     }
     public function classType() {
-        return $this->hasOne('App\ClassType','id');
+        return $this->hasOne('App\Models\ClassType','id');
     }
     public function teacherEmploymentType() {
 
-        return $this->hasOne('App\TeacherEmploymentType','id');
+        return $this->hasOne('App\Models\TeacherEmploymentType','id');
     }
     public function qualification() {
-        return $this->hasOne('App\Qualification','id');
+        return $this->hasOne('App\Models\Qualification','id');
     }
     public function fieldOfStudy() {
 
-        return $this->hasOne('App\FieldOfStudy','id');
+        return $this->hasOne('App\Models\FieldOfStudy','id');
     }
     public function teacherStatusType() {
 
-        return $this->hasOne('App\TeacherStatusType','id');
+        return $this->hasOne('App\Models\TeacherStatusType','id');
     }
+
+
 }
