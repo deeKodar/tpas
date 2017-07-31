@@ -9,7 +9,7 @@ class School extends Model
 
 
 
-    protected $fillable = ['id','name','school_level_id','dzongkhag_id','school_status_type_id','user_id','version'];
+    protected $fillable = ['name','school_level_id','dzongkhag_id','school_status_type_id','user_id','version'];
 
 
 

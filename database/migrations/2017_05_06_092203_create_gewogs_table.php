@@ -15,8 +15,8 @@ class CreateGewogsTable extends Migration
     {
         //create column for gewogs table
         Schema::create('gewogs', function (Blueprint $table) {
-            $table->char('code', 3);
-            $table->primary('code');
+           
+           $table->increments('code');
             $table->string('name');
             $table->char('dzongkhag_id', 2);
         });

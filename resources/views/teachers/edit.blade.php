@@ -213,8 +213,8 @@
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <select name="class_id" required="required" class="form-control col-md-7 col-xs-12">
                             <option value="" selected disabled>Please Select</option>
-                          @foreach($classes as $class)
-                          <option value="{{ $class->id }}">{{ $class->name }}</option>
+                          @foreach($classes as $c)
+                          <option value="{{ $c->id }}">{{ $c->name }}</option>
                           @endforeach
                         </select>
                         </div>
@@ -225,8 +225,8 @@
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <select name="school_id" required="required" class="form-control col-md-7 col-xs-12">
                             <option value="" selected disabled>Please Select</option>
-                          @foreach($schools as $school)
-                          <option value="{{ $school->id }}">{{ $school->name }}</option>
+                          @foreach($schools as $s)
+                          <option value="{{ $s->id }}">{{ $s->name }}</option>
                           @endforeach
                         </select>
                         </div>

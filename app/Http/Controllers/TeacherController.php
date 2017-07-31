@@ -39,7 +39,7 @@ class TeacherController extends Controller
 
         $subjects = Subject::all();
         $classes=SchoolClass::all();
-        $schools=School::pluck('id','name');
+        $schools=School::all();
         $qualifications = Qualification::all();
         $employmenttypes=TeacherEmploymentType::all();
         $fields=FieldOfStudy::all();
@@ -67,7 +67,7 @@ class TeacherController extends Controller
 
 		$subjects = Subject::all();
 		$classes=SchoolClass::all();
-		$schools=School::pluck('id','name');
+		$schools=School::all();
 		$qualifications = Qualification::all();
 		$employmenttypes=TeacherEmploymentType::all();
 		$fields=FieldOfStudy::all();

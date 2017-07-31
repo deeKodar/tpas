@@ -1,0 +1,1599 @@
+1,Unknown
+2,Specialist III
+3,Chief Agriculture Officer
+4,Principal Production Officer 
+5,Dy. Chief Agriculture Officer
+6,Sr. Agriculture Officer
+7,Agriculture Officer
+8,Sr. Agriculture Supervisor 
+9,Agriculture Supervisor I
+10,Agriculture Supervisor II
+11,Agriculture Supervisor III
+12,Agriculture Supervisor IV
+13,Specialist III
+14,Chief Horticulture Officer
+15,Principal Horticulture Officer 
+16,Dy. Chief Horticulture Officer 
+17,Sr. Horticulture Officer 
+18,Horticulture Officer 
+19,Sr. Horticulture Supervisor
+20,Horticulture Supervisor I 
+21,Horticulture Supervisor II 
+22,Horticulture Supervisor III 
+23,Horticulture Supervisor IV
+24,Specialist III
+25,Principal Postproduction Technologist 
+26,Chief Post Production Officer
+27,Dy. Chief Post Production Officer
+28,Sr. Post Production Officer
+29,Post Production Officer
+30,Sr. Post Production Supervisor
+31,Post Production Supervisor I
+32,Post Production Supervisor II
+33,Post Production Supervisor III
+34,Post Production Supervisor IV
+35,Post Production Supervisor V
+36,Specialist III
+37,Chief Taxonomist
+38,Dy. Chief Taxonomist
+39,Sr. Taxonomist
+40,Taxonomist
+41,Chief Bio Diversity Curator
+42,Principal Bio Diversity Curator
+43,Dy. Chief Bio Diversity Curator
+44,Sr. Bio Diversity Conservation Officer 
+45,Bio Diversity Conservation Officer 
+46,Sr. Bio Diversity Conservation Supervisor 
+47,Bio Diversity Conservation Supervisor I
+48,Bio Diversity Conservation Supervisor II
+49,Sr. Bio Diversity Technician 
+50,Bio Diversity Technician I
+51,Bio Diversity Technician II
+52,Bio Diversity Technician III
+53,Bio Diversity Technician IV
+54,Bio Diversity Technician V
+55,Specialist III
+56,Chief Extension Officer
+57,Principal Extension Officer
+58,Dy. Chief Extension Officer
+59,Sr. Extension Officer
+60,Extension Officer
+61,Sr. Extension Supervisor 
+62,Extension Supervisor I
+63,Extension Supervisor II
+64,Extension Supervisor III
+65,Extension Supervisor IV
+66,Extension Supervisor V
+67,Dzongkhag Agriculture Officer I
+68,Dzongkhag Agriculture Officer II
+69,Dzongkhag Agriculture Officer III
+70,Asst. Dzongkhag Agriculture Officer I
+71,Asst. Dzongkhag Agriculture Officer II
+72,Asst. Dzongkhag Agriculture Officer III
+73,Dzongkhag Livestock Officer I
+74,Dzongkhag Livestock Officer II
+75,Dzongkhag Livestock Officer III
+76,Asst. Dzongkhag Livestock Officer I
+77,Asst. Dzongkhag Livestock Officer II
+78,Asst. Dzongkhag Livestock Officer III
+79,Specialist III
+80,Animal Health Specialist I
+81,Principal Livestock Health Officer
+82,Chief Vet. Officer
+83,Dy. Chief Vet. Officer
+84,Sr. Vet. Officer
+85,Vet. Officer
+86,Sr. Livestock Health Supervisor
+87,Livestock Health Supervisor I
+88,Livestock Health Supervisor II
+89,Livestock Health Supervisor III
+90,Livestock Health Supervisor IV
+91,Livestock Health Supervisor V
+92,Specialist III
+93,Chief Livestock Production Officer
+94,Dy. Chief Livestock Production Officer
+95,Sr.Livestock Production Officer
+96,Livestock Production Officer
+97,Sr. Livestock Production Supervisor 
+98,Livestock Production Supervisor I
+99,Livestock Production Supervisor II
+100,Livestock Production Supervisor III
+101,Livestock Production Supervisor IV
+102,Livestock Production Supervisor V
+103,Specialist III
+104,Chief Feed & Fodder Officer 
+105,Principal Feed and Fodder Development Officer   
+106,Dy. Chief Feed & Fodder Officer
+107,Sr. Feed & Fodder Officer
+108,Feed & Fodder Officer
+109,Sr. Feed & Fodder Supervisor 
+110,Feed & Fodder Supervisor I
+111,Feed & Fodder Supervisor II
+112,Feed & Fodder Supervisor III
+113,Feed & Fodder Supervisor IV
+114,Specialist III
+115,Chief Dairy Officer 
+116,Principal Dairy Development Officer   
+117,Dy. Chief  Dairy Officer
+118,Sr. Dairy Officer
+119,Dairy Officer
+120,Sr. Dairy Supervisor 
+121,Dairy Supervisor I
+122,Dairy Supervisor II
+123,Dairy Supervisor III
+124,Dairy Supervisor IV
+125,Specialist III
+126,Chief Plant Protection Officer
+127,Principal Plant Protection Officer
+128,Dy. Chief Plant Protection Officer
+129,Sr. Plant Protection Officer
+130,Plant Protection Officer
+131,Sr. Plant Protection Supervisor 
+132,Plant Protection Supervisor I
+133,Plant Protection Supervisor II
+134,Floriculture Asst. I
+135,Floriculture Asst. II
+136,Floriculture Asst. III
+137,Specialist III
+138,Chief  Soil Survey & Land Evaluation Officer
+139,Soil Survey & Land Evaluation Researcher 
+140,Dy. Chief  Soil Survey & Land Evaluation Officer
+141,Sr. Soil Survey & Land Evaluation Officer
+142,Soil Survey & Land Evaluation Officer
+143,Sr. Soil Survey & Land Evaluation Supervisor
+144,Soil Survey & Land Evaluation Supervisor I
+145,Soil Survey & Land Evaluation Supervisor II
+146,Chief Land Management Officer
+147,Principal Land Management Officer
+148,Dy. Chief Land Management Officer
+149,Sr. Land Management Officer
+150,Land Management Officer
+151,Sr. Land Management Supervisor 
+152,Land Management Supervisor I
+153,Land Management Supervisor II
+154,Specialist III
+155,Chief Soil Fertility & Plant Nutrition Officer
+156,Principal Soil Fertility & Plant Nutrition Officer
+157,Dy. Chief Soil Fertility & Plant Nutrition Officer
+158,Sr. Soil Fertility & Plant Nutrition Officer
+159,Soil Fertility & Plant Nutrition Officer
+160,Sr. Soil Fertility & Plant Nutrition Supervisor
+161,Soil Fertility & Plant Nutrition Supervisor I
+162,Soil Fertility & Plant Nutrition Supervisor II
+163,Specialist III
+164,Chief Mushroom Officer
+165,Principal Mushroom Officer 
+166,Dy. Chief Mushroom Officer 
+167,Sr. Mushroom Officer 
+168,Mushroom Officer 
+169,Sr. Mushroom Supervisor 
+170,Mushroom Supervisor I 
+171,Mushroom Supervisor II
+172,Specialist III
+173,Chief Regulatory & Quarantine Officer
+174,Principal Biosecurity Officer 
+175,Dy. Chief Regulatory & Quarantine Officer
+176,Sr. Regulatory & Quarantine Officer
+177,Regulatory & Quarantine Officer
+178,Sr. Regulatory & Quarantine Inspector
+179,Regulatory & Quarantine Inspector I
+180,Regulatory & Quarantine Inspector II
+181,Regulatory & Quarantine Inspector III
+182,Specialist III
+183,Principal Architect
+184,Chief Architect
+185,Executive Architect
+186,Sr. Architect
+187,Architect
+188,Asst. Architect I
+189,Asst. Architect II
+190,Sr. Draftsperson 
+191,Draftsperson 
+192,Jr. Draftperson I
+193,Jr. Draftperson II
+194,Interior Designer I
+195,Interior Designer II
+196,Interior Designer III
+197,Specialist III
+198,Chief Heritage Architect
+199,Principal Heritage Architect 
+200,Dy. Chief Conservation Architect 
+201,Sr. Conservation Architect 
+202,Conservation Architect 
+203,Conservation Architect Assistant I
+204,Conservation Architect Assistant II
+205,Conservation Architect Assistant III
+206,Chief Heritage Engineer
+207,Principal Conservation Engineer 
+208,Dy. Chief Heritage Engineer
+209,Sr. Conservation Engineer
+210,Conservation Engineer 
+211,Principal Archaeologist
+212,Sr. Archaeologist I
+213,Sr. Archaeologist II
+214,Archaeologist
+215,Specialist III
+216,Chief Engineer
+217,Principal Engineer
+218,Executive Engineer
+219,Dy. Executive Engineer
+220,Asst.Engineer II
+221,Asst. Engineer I
+222,Asst. Engineer IV
+223,Jr. Engineer
+224,Dzongkhag Engineer I
+225,Dzongkhag Engineer II
+226,Dzongkhag Engineer III
+227,Dzongkhag Engineer IV
+228,Dzongkhag Engineer V
+229,Chief Standards and Code Officer
+230,Dy. Chief Standards and Code Officer
+231,Sr. Standards and Code Officer
+232,Standards and Code Officer
+233,Chief Licensing Officer
+234,Dy. Chief Licensing Officer
+235,Sr. Licensing Officer
+236,Licensing Officer
+237,Chief Tariff Officer
+238,Dy. Chief Tariff Officer
+239,Sr. Tariff Officer
+240,Tariff Officer
+241,Sr. Road Inspector
+242,Road Inspector I
+243,Road Inspector II
+244,Asst. Road Inspector
+245,Jr. Road Inspector
+246,Specialist III
+247,Chief Agriculture Engineer 
+248,Executive Agriculture Engineer 
+249,Dy. Executive Agriculture Engineer
+250,Agriculture Engineer 
+251,Asst. Agriculture Engineer I 
+252,Asst. Agriculture Engineer II 
+253,Jr. Agriculture Engineer 
+254,Specialist III
+255,Chief Geologist 
+256,Principal Geologist
+257,Executive Geologist
+258,Sr. Geologist
+259,Geologist
+260,Geology Asst. I
+261,Geology Asst. II
+262,Geology Asst. III
+263,Geology Asst. IV
+264,Geology Asst. V
+265,Geology Asst. VI
+266,Chief Engineer (Mining)
+267,Principal Engineer (Mining)
+268,Executive Engineer (Mining)
+269,Sr. Engineer (Mining)
+270,Engineer (Mining)
+271,Principal Drilling Engineer
+272,Executive Drilling Engineer
+273,Sr. Drilling Engineer
+274,Drilling Engineer
+275,Sr. Mines Inspector 
+276,Mines Inspector I
+277,Mines Inspector II
+278,Mines Inspector III
+279,Mines Inspector IV
+280,Mines Inspector V
+281,Sr. Mineral Prospector 
+282,Mineral Prospector I
+283,Mineral Prospector II
+284,Mineral Prospector III
+285,Mineral Prospector IV
+286,Mineral Prospector V
+287,Sr. Despatch  Inspector 
+288,Despatch  Inspector I
+289,Despatch  Inspector II
+290,Despatch  Inspector III
+291,Despatch  Inspector IV
+292,Despatch  Inspector V
+293,Specialist III
+294,Principal Meteorology/Hydrology Officer 
+295,Chief Meteorology/Hydrology Officer 
+296,Dy. Chief Meteorology/Hydrology Officer 
+297,Sr. Meteorology/Hydrology Officer
+298,Meteorology/Hydrology Officer
+299,Asst. Meteorological/Hydrology Officer
+300,Sr. Meteorology/Hydrology Technician 
+301,Meteorology/Hydrology Technician I
+302,Meteorology/Hydrology Technician II
+303,Meteorology/Hydrology Technician III
+304,Meteorology/Hydrology Technician IV
+305,Meteorology/Hydrology Technician V
+306,Specialist III
+307,Chief Land Registrar
+308,Principal Arbitration Officer
+309,Dy. Chief Land Registrar
+310,Sr. Land Registrar
+311,Land Registrar
+312,Asst. Land Registrar I
+313,Asst.  Land Registrar II
+314,Sr. Land Record Supervisor
+315,Land Record Asst. I
+316,Land Record Asst. II
+317,Land Record Asst. III
+318,Land Record Asst. IV
+319,Land Record Asst. V
+320,Dzongkhag Land Register I
+321,Dzongkhag Land Register II
+322,Dzongkhag Land Register III
+323,Dzongkhag Land Register IV
+324,Dzongkhag Land Register V
+325,Dzongkhag Land Register VI
+326,Specialist III
+327,Chief Map Production Officer
+328,Principal Map Production Officer
+329,Dy. Chief Map Production Officer
+330,Sr. Map Production Officer
+331,Map Production Officer
+332,Asst. Map Production Officer
+333,Sr. Map Production Technician I
+334,Sr. Map Production Technician II
+335,Map Production Technician I
+336,Map Production Technician II
+337,Map Production Technician III
+338,Map Production Technician IV
+339,Specialist III
+340,Chief Survey Engineer
+341,Superintendent Survey Engineer
+342,Dy. Chief Survey Engineer
+343,Sr. Survey Engineer
+344,Survey Engineer
+345,Survey Associate I
+346,Survey Associate II
+347,Survey Associate III
+348,Sr. Surveyor I
+349,Sr. Surveyor II
+350,Surveyor I
+351,Surveyor II
+352,Surveyor III
+353,Surveyor IV
+354,Trainee Surveyor
+355,Survey Field Asst.
+356,Specialist III
+357,Principal Urban  Planner
+358,Chief Urban Planner
+359,Dy. Chief Urban Planner
+360,Sr. Urban Planner
+361,Urban Planner
+362,Urban Planner Asst. I
+363,Urban Planner Asst. II
+364,Urban Planner Asst. III
+365,Specialist III
+366,Chief Urban Designer
+367,Principal Urban Designer
+368,Dy. Chief Urban Designer
+369,Sr. Urban Designer
+370,Urban Designer 
+371,Specialist III
+372,Chief Development Control Officer
+373,Dy. Chief Development Control Officer
+374,Sr. Development Control Officer
+375,Development Control Officer
+376,Sr. Building Inspector 
+377,Building Inspector I
+378,Building Inspector II
+379,Building Inspector III
+380,Specialist III
+381,Chief GIS Officer
+382,Principal GIS Officer
+383,Dy. Chief GIS Officer
+384,Sr. GIS Officer
+385,GIS Officer
+386,Sr. GIS Technician
+387,GIS Technician I
+388,GIS Technician II
+389,Sr. GIS Operator
+390,GIS Asst. I
+391,GIS Asst. II
+392,GIS Asst. III
+393,GIS Asst. IV
+394,GIS Asst. V
+395,Sr. Technician I
+396,Sr. Technician II
+397,Sr. Technician III
+398,Technician I
+399,Technician II
+400,Technician III
+401,Basic Operator I
+402,Basic Operator II
+403,Basic Operator III
+404,Basic Operator IV
+405,Sr. Sanitary  Inspector
+406,Sanitary  Inspector I
+407,Sanitary  Inspector II
+408,Sanitary  Inspector III
+409,Sanitary  Inspector IV
+410,Sanitary  Inspector V
+411,Chief Cultural Officer
+412,Sr. Cultural Officer I
+413,Sr. Cultural Officer II
+414,Cultural Officer
+415,Asst. Cultural Officer I
+416,Asst. Cultural Officer II
+417,Dzongkhag Cultural Officer I
+418,Dzongkhag Cultural Officer II
+419,Dzongkhag Cultural Officer III
+420,Dzongkhag Cultural Officer IV
+421,Dzongkhag Cultural Officer V
+422,Dzongkhag Cultural Officer VI
+423,Chief Driglam Officer
+424,Dy. Chief Driglam Officer
+425,Sr. Driglop
+426,Driglop 
+427,Asst. Driglop I
+428,Asst. Driglop II
+429,Master Artisan I
+430,Sr. Artisan I
+431,Sr. Artisan II
+432,Sr. Artisan III
+433,Sr. Artisan IV
+434,Sr. Artisan V
+435,Sr. Artisan VI
+436,Artisan I
+437,Artisan II
+438,Artisan III
+439,Asst. Artisan I
+440,Asst. Artisan II
+441,Asst. Artisan III
+442,Specialist III
+443,Dzongkha Analyst 
+444,Chief Language Dev. Officer
+445,Dy. Chief Language Dev. Officer
+446,Sr. Language Dev. Officer 
+447,Language Dev. Officer
+448,Asst. Language Dev. Officer I
+449,Asst. Language Dev. Officer II
+450,Chief Dzongkha Coordinator
+451,Dy. Chief Dzongkha Coordinator
+452,Sr. Dzongkha Coordinator 
+453,Dzongkha Coordinator
+454,Asst. Dzongkha Coordinator I
+455,Asst. Dzongkha Coordinator II
+456,Director II (Training)
+457,Specialist III
+458,Principal I
+459,Principal II
+460,Principal III
+461,Principal IV
+462,Principal V
+463,Vice Principal I
+464,Vice Principal II
+465,Vice Principal III
+466,Vice Principal IV
+467,Dean (Academic Affairs)
+468,Dean (Students Affairs)
+469,Dean (Research & Industrial Linkages)
+470,Registrar
+471,Principal (Vocational)
+472,Vice Principal (Vocational)
+473,Specialist III
+474,Controller of Examinations
+475,Chief Curriculum Officer
+476,Principal Curriculum Officer
+477,Curriculum Officer I
+478,Curriculum Officer II
+479,Curriculum Officer III
+480,Chief Education Monitoring Officer
+481,Principal Education Monitoring Officer
+482,Education Monitoring Officer I
+483,Education Monitoring Officer II
+484,Subject Coordinator I
+485,Subject Coordinator II
+486,Subject Coordinator III
+487,Chief Dzongkhag Education Officer
+488,Dy. Chief Dzongkhag Education Officer II
+489,Sr.Dzongkhag Education Officer
+490,Asst. Dzongkhag Education Officer I
+491,Asst. Dzongkhag Education Officer II
+492,Asst. Dzongkhag Education Officer
+493,Master Teacher
+494,Sr. Teacher I
+495,Sr. Teacher II
+496,Teacher I
+497,Teacher II
+498,Teacher III
+499,Professor 
+500,Associate Professor
+501,Asst. Professor 
+502,Research Fellow
+503,Sr. Lecturer
+504,Lecturer 
+505,Associate Lecturer 
+506,Asst. Lecturer I
+507,Asst. Lecturer II
+508,Sr. Instructor I
+509,Sr. Instructor II
+510,Sr. Instructor III
+511,Instructor
+512,Asst. Instructor I
+513,Jr. Instructor I
+514,Jr. Instructor II
+515,Jr. Instructor III
+516,Jr. Instructor IV
+517,Jr. Instructor V
+518,Jr. Instructor VI
+519,Secretary 
+520,Gyalpoi Zimpon
+521,Vice-Chancellor
+522,Cabinet Secretary
+523,Surveyor General
+524,Director General
+525,Dy. Auditor General
+526,Executive Director
+527,Director
+528,Dzongdag I
+529,Dzongdag II
+530,Director (Tertiary)
+531,Director (Academic Affairs)
+532,Director (Research)
+533,Director (Planning & Resources)
+534,Director (National Library)
+535,Director (National Museum)
+536,University Registrar
+537,Ambassador 
+538,Ambassador 
+539,Ambassador 
+540,Zhung Dronyer
+541,Registrar (BMHC)
+542,Secretary of Examinations
+543,Secretary General (BOC)
+544,Secretary General
+545,Executive Secretary
+546,Attorney General
+547,Consul General 
+548,Dy. Attorney General
+549,Dy. Permanent Representative
+550,Dy. Chief of Mission
+551,Registrar General (IP)
+552,Registrar General
+553,Specialist III
+554,Asst. Auditor General
+555,Chief Auditor
+556,Audit Analyst 
+557,Dy. Chief Auditor
+558,Sr. Audit Officer
+559,Audit Officer
+560,Asst. Audit Officer
+561,Sr. Auditor
+562,Auditor  I
+563,Auditor II
+564,Auditor III
+565,Specialist III
+566,Chief Accounts Officer
+567,Financial Analyst 
+568,Dy. Chief Accounts Officer
+569,Sr. Accounts Officer
+570,Accounts Officer
+571,Asst. Accounts Officer
+572,Chief Budget Officer
+573,Budget Analyst 
+574,Dy. Chief Budget Officer
+575,Sr. Budget Officer
+576,Budget Officer
+577,Asst. Budget Officer
+578,Budget Asst. III
+579,Budget Asst. IV
+580,Budget Asst. V
+581,Budget Asst. VI
+582,Accounts Asst. III
+583,Accounts Asst. IV
+584,Accounts Asst. V
+585,Accounts Asst. VI
+586,Accounts Asst. VII
+587,Election Fund Manager I
+588,Election Fund Manager II
+589,Election Fund Manager III
+590,Election Fund Manager IV
+591,Specialist III
+592,Chief Internal Auditor
+593,Internal Audit Analyst 
+594,Dy. Chief Internal Auditor
+595,Sr. Internal Auditor
+596,Internal Auditor
+597,Asst. Internal Auditor
+598,Specialist III
+599,Collector (Tax)
+600,Tax Analyst 
+601,Joint Collector(Tax)
+602,Dy. Collector (Tax)
+603,Asst. Collector (Tax)
+604,Asst. Tax Officer
+605,Collector (Revenue)
+606,Revenue Analyst 
+607,Joint Collector (Revenue)
+608,Dy. Collector (Revenue)
+609,Asst. Collector (Revenue)
+610,Asst. Revenue Officer
+611,Dzongkhag Revenue Officer I
+612,Dzongkhag Revenue Officer II
+613,Dzongkhag Revenue Officer III
+614,Dzongkhag Revenue Officer IV
+615,Dzongkhag Revenue Officer V
+616,Collector (Customs)
+617,Principal Customs & Excise Officer 
+618,Joint  Collector(Customs)
+619,Dy. Collector (Customs)
+620,Asst. Collector (Customs)
+621,Asst. Customs Officer
+622,Regional Director 
+623,Sr. Revenue/Customs/Tax Inspector
+624,Revenue/Customs/Tax Inspector I
+625,Revenue/Customs/Tax  Inspector II
+626,Revenue/Customs/Tax  Inspector III
+627,Revenue/Customs/Tax/  Inspector IV
+628,Revenue/Customs/Tax/ Inspector V
+629,Minister Counsellor 
+630,Chief of Division
+631,Counsellor (Foreign Services)
+632,Dy. Chief of Division
+633,First Secretary
+634,Second Secretary
+635,Third Secretary
+636,Attache
+637,Sr. Desk Officer
+638,Desk Officer
+639,Asst. Desk Officer
+640,Consul General
+641,Consul
+642,Vice-Consul
+643,Consul Officer 
+644,Asst. Consul Officer 
+645,Dy. Chief of Protocol
+646,Asst. Chief of Protocol
+647,Sr. Protocol Officer
+648,Protocol Officer
+649,Asst. Protocol Officer
+650,Specialist III
+651,Chief Environment Officer
+652,Environment Analyst 
+653,Dy. Chief Environment Officer
+654,Sr. Environment Officer
+655,Environment Officer
+656,Asst. Environment Officer I
+657,Asst. Environment Officer II
+658,Sr. Environment Qlty. Std. Tech. I
+659,Sr. Environment Qlty. Std. Tech. II
+660,Environment Qlty. Std. Tech. I
+661,Environment Qlty. Std. Tech. II
+662,Environment Qlty. Std. Tech III
+663,Environment Qlty. Std. Tech IV
+664,Dzongkhag Environment Officer I
+665,Dzongkhag Environment Officer II
+666,Dzongkhag Environment Officer III
+667,Dzongkhag Environment Officer IV
+668,Dzongkhag Environment Officer V
+669,Dzongkhag Environment Officer VI
+670,Specialist III
+671,Chief Forestry Officer
+672,Principal Forestry Officer
+673,Dy. Chief Forestry Officer
+674,Sr. Forestry Officer
+675,Forestry Officer
+676,Dzongkhag Forestry Officer I
+677,Dzongkhag Forestry Officer II
+678,Dzongkhag Forestry Officer III
+679,Asst. Dzongkhag Forestry Officer I
+680,Asst. Dzongkhag Forestry Officer II
+681,Asst. Dzongkhag Forestry Officer III
+682,Sr. Forest Ranger 
+683,Forest Ranger I
+684,Forest Ranger II
+685,Sr. Forester
+686,Forester
+687,Asst. Forester
+688,Chief Admin. Officer
+689,Dy. Chief Admin. Officer
+690,Sr. Admin. Officer 
+691,Admin. Officer
+692,Asst. Admin. Officer I
+693,Asst. Admin. Officer II
+694,Sr. Dzongrab
+695,Dzongrab
+696,Sr. Drungpa
+697,Drungpa
+698,Sr. Secretary to DT Chairman I
+699,Sr. Secretary to DT Chairman II
+700,Sr. Secretary to DT Chairman III
+701,Sr. Secretary to DT Chairman IV
+702,Secretary to DT Chairman
+703,Sr. Geog Admin. Officer I
+704,Sr. Geog Admin. Officer II
+705,Geog Admin. Officer I
+706,Geog Admin. Officer II
+707,Geog Admin. Officer III
+708,Sr. Dispatcher
+709,Dispatcher I
+710,Dispatcher II
+711,Sr. Telephone Operator I
+712,Sr. Telephone Operator II
+713,Telephone Operator I
+714,Telephone Operator II
+715,Driver
+716,Driver I
+717,Driver II
+718,Driver III
+719,Sr. Receptionist
+720,Receptionist I
+721,Receptionist II
+722,Sr. Record Officer I
+723,Sr. Record Officer II
+724,Record Officer
+725,Asst. Record Officer I
+726,Asst. Record Officer II
+727,Sr. Record Asst. I
+728,Sr. Record Asst. II
+729,Sr. Record Asst. III
+730,Record Asst. I
+731,Record Asst. II
+732,Record Asst. III
+733,Specialist III
+734,Chief Estate Manager
+735,Dy. Chief Estate Manager
+736,Sr. Estate Manager 
+737,Estate Manager
+738,Asst. Estate Manager  I
+739,Asst. Estate Manager  II
+740,Procurement Analyst 
+741,Chief Procurement Officer
+742,Dy. Chief Procurement Officer
+743,Sr.  Procurement Officer
+744,Procurement Officer
+745,Asst. Procurement Officer I
+746,Asst. Procurement Officer II
+747,Sr. Store Keeper III
+748,Sr. Store Keeper IV
+749,Sr. Store Keeper V
+750,Sr. Store Keeper VI
+751,Store Keeper
+752,Store Asst.
+753,Valet I
+754,Valet II
+755,Valet III
+756,Sr. Manager I
+757,Sr. Manager II
+758,Manager
+759,Asst. Manager I
+760,Asst. Manager II
+761,Specialist III
+762,Chief Program Officer
+763,Program Analyst 
+764,Program Director
+765,Dy. Chief Program Officer
+766,Sr. Program Officer
+767,Program Officer
+768,Asst. Program Officer
+769,Chief Program Coordinator
+770,Principal Program Coordinator
+771,Dy. Chief Program Coordinator
+772,Sr. Program Coordinator 
+773,Program Coordinator
+774,Asst. Program Coordinator
+775,Sr. Admin. Asst. III
+776,Sr. Admin. Asst. IV
+777,Sr. Admin. Asst. V
+778,Admin. Asst. I
+779,Admin. Asst. II
+780,Admin. Asst. III
+781,Office Asst.
+782,Sr. Personal Secretary I
+783,Sr. Personal Secretary II
+784,Sr. Personal Secretary III
+785,Personal Secretary I
+786,Personal Secretary II
+787,Personal Secretary III
+788,Sr. Personal Asst. III
+789,Sr. Personal Asst. IV
+790,Sr. Personal Asst. V
+791,Personal Asst. I
+792,Personal Asst. II
+793,Personal Asst. III
+794,Specialist III
+795,Chief Civil Registration & Census Officer
+796,Civil Registration & Census  Analyst
+797,Dy. Chief Civil Registration & Census Officer
+798,Sr. Civil Registration & Census Officer
+799,Civil Registration & Census  Officer
+800,Asst. Civil Registration & Census Officer I
+801,Asst. Civil Registration & Census Officer II
+802,Dzongkhag Civil Registration & Census Officer I
+803,Dzongkhag Civil Registration & Census Officer II
+804,Dzongkhag Civil Registration & Census Officer III
+805,Dzongkhag Civil Registration & Census Officer IV
+806,Dzongkhag Civil Registration & Census Officer V
+807,Dzongkhag Civil Registration & Census Officer VI
+808,Chief Immigration Officer
+809,Chief Immigration Officer (Regional)
+810,Immigration Policy Analyst 
+811,Dy. Chief Immigration Officer
+812,Sr. Immigration Officer
+813,Immigration Officer
+814,Asst. Immigration Officer I
+815,Asst. Immigration Officer II
+816,Sr. Immigraion Inspector
+817,Immigration Inspector I
+818,Immigration Inspector II
+819,Asst. Immigration Inspector I
+820,Asst. Immigration Inspector II
+821,Asst. Immigration Inspector III
+822,Specialist III
+823,Chief HR Officer
+824,HR Analyst 
+825,Dy. Chief HR Officer
+826,Sr. HR Officer 
+827,HR Officer
+828,Asst. HR Officer
+829,Chief Labour Officer V
+830,Dy. Chief Labour officer
+831,Occupational Health and Safety Officer 
+832,Dy. Chief Labour Officer
+833,Sr. Labour Oficer
+834,Labour Officer
+835,Asst. Labour officer
+836,Chief Training Coordinator
+837,Dy. Chief Training Coordinator
+838,Sr. Training Coordinator
+839,Training Coordinator I
+840,Training Coordinator II
+841,Sr. Inspector
+842,Inspector I
+843,Inspector II
+844,Asst. Inspector I
+845,Asst. Inspector II
+846,Asst. Inspector III
+847,Specialist III
+848,Chief Communication Officer
+849,Communication Analyst
+850,Dy. Chief Communication Officer
+851,Sr. Communication Officer
+852,Communication Officer
+853,Asst. Communication Officer I
+854,Asst. Communication Officer II
+855,Sr. Communications Supervisor
+856,Communication Supervisor I
+857,Communication Supervisor II
+858,Sr. Communication Technician I
+859,Sr. Communication Technician II
+860,Sr. Communication Technician III
+861,Communication Technician I
+862,Communication Technician II
+863,Specialist III
+864,Chief ICT Officer
+865,ICT Analyst
+866,Dy. Chief ICT Officer
+867,Sr. ICT Officer
+868,ICT Officer
+869,Asst. ICT Officer
+870,Sr. ICT Technical Associate III
+871,ICT Technical Associate I
+872,ICT Technical Associate II
+873,ICT Technician
+874,Data Assistant I
+875,Data Assistant II
+876,Data Assistant III
+877,Data Assistant IV
+878,Data Assistant V
+879,Data Assistant VI
+880,Specialist III
+881,Chief Information & Media Officer
+882,Information & Media Analyst
+883,Dy. Chief Information & Media Officer
+884,Sr. Information & Media Officer
+885,Information & Media Officer
+886,Asst. Information & Media Officer I
+887,Asst. Information & Media Officer II
+888,Sr. Information & Media Technical Associate
+889,Information & Media Technical Associate I
+890,Information & Media Technical Associate II
+891,Chief Chemist
+892,Dy. Chief Chemist
+893,Sr. Chemist
+894,Chemist
+895,Asst. Chemist
+896,Specialist III
+897,Chief Laboratory Officer
+898,Dy. Chief Laboratory Officer
+899,Sr. Laboratory Officer
+900,Laboratory Officer
+901,Sr. Laboratory Technician
+902,Laboratory Technician
+903,Asst. Laboratory Technician I
+904,Asst. Laboratory Technician II
+905,Sr. Laboratory Asst. I
+906,Sr. Laboratory Asst. II
+907,Sr. Laboratory Asst. III
+908,Sr. Laboratory Asst. IV
+909,Laboratory Asst. I
+910,Laboratory Asst. II
+911,Drangpon I (Dungkhag)
+912,Drangpon II (Dungkhag)
+913,Sr. Drangpon Ramjam
+914,Drangpon Ramjam
+915,Sr. Bench Clerk
+916,Bench Clerk I
+917,Bench Clerk II
+918,Bench Clerk III
+919,Bench Clerk IV
+920,Bench Clerk V
+921,Specialist III
+922,Chief Attorney
+923,Principal Attorney 
+924,Dy. Chief Attorney
+925,Sr. Attorney 
+926,Attorney
+927,Chief Legal Officer
+928,Dy. Chief Legal Officer
+929,Sr. Legal Officer
+930,Legal Officer
+931,Legal Asst. I
+932,Legal Asst. II
+933,Legal Asst. III
+934,Legal Asst. IV
+935,Chief Legislative Officer 
+936,Dy. Chief Legislative Officer 
+937,Sr. Legislative Officer
+938,Legislative Officer
+939,Specialist III
+940,Chief Investigation Officer
+941,Investigation Analyst
+942,Dy. Chief Investigation Officer
+943,Sr. Investigation Officer 
+944,Investigation Officer
+945,Asst. Investigation Officer
+946,Chief Electoral Registration Officer
+947,Dzongkhag Electoral Officer I
+948,Dzongkhag Electoral Officer II
+949,Dzongkhag Electoral Officer III
+950,Dzongkhag Electoral Officer IV
+951,Dzongkhag Electoral Officer V
+952,Dzongkhag Electoral Registration Officer I
+953,Dzongkhag Electoral Registration Officer II
+954,Dzongkhag Electoral Registration Officer III
+955,Dzongkhag  Electoral  Registration Officer IV
+956,Dzongkhag  Electoral Registration Officer V
+957,Dzongkhag  Electoral Registration Officer VI
+958,Electoral Registration Planner 
+959,Dy. Chief Electoral Registration Officer
+960,Sr. Electoral Registration Officer
+961,Electoral Registration Officer I
+962,Electoral Registration Officer II
+963,Chief Election Officer
+964,Principal Election Officer 
+965,Dy. Chief Election Officer
+966,Sr. Election Officer
+967,Election Officer I
+968,Election Officer II
+969,Sr. Delimitation Officer I
+970,Sr. Delimitation Officer II
+971,Sr. Delimitation Officer III
+972,Delimitation Officer I
+973,Delimitation Officer II
+974,Delimitation Officer III
+975,Delimitation Asst. I
+976,Delimitation Asst. II
+977,Delimitation Asst. III
+978,Delimitation Asst. IV
+979,Delimitation Clerk I
+980,Delimitation Clerk II
+981,Chief Court Registrar
+982,Dy. Chief Court Registrar
+983,Sr. Court Registrar 
+984,Court Registrar
+985,Registrar of Companies
+986,Dy. Registrar of Companies
+987,Asst. Registrar of Companies
+988,Specialist III
+989,Chief Archivist 
+990,Archival Record Analyst 
+991,Dy. Chief Archivist 
+992,Sr. Archivist 
+993,Archivist 
+994,Asst. Archivist I
+995,Asst. Archivist II
+996,Chief Conservation Officer
+997,Principal Conservator 
+998,Dy. Chief Conservation Officer
+999,Sr. Conservator 
+1000,Conservator
+1001,Asst. Conservator I
+1002,Asst. Conservator II
+1003,Conservation Asst. I
+1004,Conservation Asst. II
+1005,Conservation Asst. III
+1006,Conservation Asst. IV
+1007,Conservation Asst. V
+1008,Conservation Asst. VI
+1009,Sr. Fumigator 
+1010,Fumigator I
+1011,Fumigator II
+1012,Fumigator III
+1013,Fumigator IV
+1014,Fumigator V
+1015,Chief Curator
+1016,Principal Curator 
+1017,Dy. Chief Curator
+1018,Sr. Curator
+1019,Curator
+1020,Asst. Curator I
+1021,Asst. Curator II
+1022,Museum Asst. I
+1023,Museum Asst. II
+1024,Museum Asst. III
+1025,Museum Asst.  IV
+1026,Museum Asst.  V
+1027,Museum Asst.  VI
+1028,Chief Cultural Property Officer
+1029,Dy. Chief Cultural Property Record Officer
+1030,Sr. Cultural Property Record Officer
+1031,Cultural Property Record Officer
+1032,Asst. Cultural Property Record Officer I
+1033,Asst. Cultural Property Record Officer II
+1034,Specialist III
+1035,Chief Librarian
+1036,Principal Librarian 
+1037,Dy. Chief Librarian
+1038,Sr. Librarian 
+1039,Librarian 
+1040,Asst. Librarian I
+1041,Asst. Librarian II
+1042,Jr. Librarian I
+1043,Jr. Librarian II
+1044,Jr. Librarian III
+1045,Library Asst. I
+1046,Library Asst. II
+1047,Library Asst. III
+1048,Medical Director
+1049,Specialist I
+1050,Specialist II
+1051,Specialist III
+1052,Medical Suptd.
+1053,Chief Medical Officer
+1054,Sr. Medical Officer
+1055,Medical Officer
+1056,General Duty Medical Officer
+1057,Chief Dental Surgeon
+1058,Sr. Dental Surgeon
+1059,Dental Surgeon
+1060,General Duty Dental Surgeon
+1061,Anesthesiologist I
+1062,Anesthesiologist II
+1063,Anesthesiologist III
+1064,Dermatologist I
+1065,Dermatologist II
+1066,Dermatologist III
+1067,ENT Surgeon I
+1068,ENT Surgeon II
+1069,ENT Surgeon III
+1070,Forensic I
+1071,Forensic II
+1072,Forensic III
+1073,General Practitionist I
+1074,General Practitionist II
+1075,General Practitionist III
+1076,Gynaecologist I
+1077,Gynaecologist II
+1078,Gynaecologist III
+1079,Medicine I
+1080,Medicine II
+1081,Medicine III
+1082,Opthalmologist I
+1083,Opthalmologist II
+1084,Opthalmologist III
+1085,Dentist I
+1086,Dentist II
+1087,Dentist III
+1088,Orthopedist I
+1089,Orthopedist II
+1090,Orthopedist III
+1091,Orthodontist I
+1092,Orthodontist II
+1093,Orthodontist III
+1094,Paediatrician I
+1095,Paediatrician II
+1096,Paediatrician III
+1097,Pathologist I
+1098,Pathologist II
+1099,Pathologist III
+1100,Prosthodontist I
+1101,Prosthodontist II
+1102,Prosthodontist III
+1103,Psychiatrist I
+1104,Psychiatrist II
+1105,Psychiatrist III
+1106,Radiologist I
+1107,Radiologist II
+1108,Radiologist III
+1109,Surgeon I
+1110,Surgeon II
+1111,Surgeon III
+1112,Dy. Registrar (BMHC)
+1113,Asst. Registrar (BMHC)
+1114,Specialist III
+1115,Chief Dental Technologist
+1116,Dy. Chief Dental Technologist
+1117,Sr. Dental Technologist
+1118,Dental Technologist
+1119,Sr. Dental Technician 
+1120,Dental Technician I
+1121,Dental Technician II 
+1122,Dental Technician III
+1123,Chief Dental Therapist
+1124,Dy. Dental Therapist
+1125,Sr. Dental Therapist
+1126,Dental Therapist
+1127,Sr. Dental Hygienist 
+1128,Dental Hygienist I
+1129,Dental Hygienist II 
+1130,Dental Hygienist III
+1131,Sr. Dental Asst.
+1132,Dental Asst.
+1133,Chief Ophthalmic Technologist
+1134,Dy. Ophthalmic Technologist
+1135,Sr. Ophthalmic Technologist
+1136,Ophthalmic Technologist 
+1137,Sr. ENT Technician
+1138,ENT Technician I
+1139,ENT Technician II
+1140,ENT Technician III
+1141,ENT Technician IV
+1142,Chief Ortho Technologist
+1143,Dy. Ortho Technologist
+1144,Sr. Ortho Technologist
+1145,Ortho Technologist
+1146,Sr. Ortho Technician
+1147,Ortho Technician I
+1148,Ortho Technician II
+1149,Ortho Technician III
+1150,Ortho Technician IV
+1151,Chief OT Technologist
+1152,Dy. OT Technologist
+1153,Sr. OT Technologist
+1154,OT Technologist
+1155,Sr. OT Technician 
+1156,OT Technician I
+1157,OT Technician II
+1158,OT Technician III
+1159,OT Technician IV
+1160,Sr. Malaria Technician 
+1161,Malaria Technician I
+1162,Malaria Technician II
+1163,Malaria Technician III
+1164,Malaria Technician IV
+1165,Malaria Technician V
+1166,Sr. EPI Technician
+1167,EPI Technician I
+1168,EPI Technician II
+1169,EPI Technician III
+1170,EPI Technician IV
+1171,EPI Technician V
+1172,Sr. Medical Transcriptionist
+1173,Medical Transcriptionist I 
+1174,Medical Transcriptionist II 
+1175,Medical Transcriptionist III 
+1176,Medical Transcriptionist IV
+1177,Medical Transcriptionist V
+1178,Chief Radio Technologist 
+1179,Dy. Chief Radio Technologist
+1180,Sr. Radio Technologist
+1181,Radio Technologist
+1182,Sr. X-Ray Technician 
+1183,X-Ray Technician I
+1184,X-Ray Technician II
+1185,X-Ray Technician III
+1186,X-Ray Technician IV
+1187,Specialist III
+1188,Chief Physiotherapist
+1189,Dy. Chief Physiotherapist
+1190,Sr. Physiotherapist
+1191,Physiotherapist
+1192,Sr. Physiotherapy Technician
+1193,Physiotherapy Technician I
+1194,Physiotherapy Technician II
+1195,Physiotherapy Technician III
+1196,Sr. Physiotherapy Aide
+1197,Physiotherapy Aide I
+1198,Physiotherapy Aide II
+1199,Physiotherapy Aide III
+1200,Physiotherapy Aide IV
+1201,Physiotherapy Aide V
+1202,Specialist III
+1203,Nursing Suptd.
+1204,Dy. Nursing Suptd.
+1205,Asst. Nursing Suptd.
+1206,Clinical Nurse I
+1207,Clinical Nurse II
+1208,Clinical Nurse III
+1209,Clinical Nurse IV
+1210,Staff Nurse I
+1211,Staff Nurse II
+1212,Staff Nurse III
+1213,Asst. Nurse I
+1214,Asst. Nurse II
+1215,Asst. Nurse III
+1216,Asst. Nurse IV
+1217,Sr. Ward Assistant I
+1218,Sr. Ward Assistant II
+1219,Sr. Ward Assistant III
+1220,Sr. Ward Assistant IV
+1221,Sr. Ward Assistant V
+1222,Ward Asst. I
+1223,Ward Asst. II
+1224,Specialist III
+1225,Chief Epidemologist
+1226,Dy. Chief Epidemologist
+1227,Sr. Epidemologist
+1228,Epidemologist
+1229,Chief Entomologist
+1230,Dy. Chief Entomologist
+1231,Sr. Entomologist
+1232,Entomologist
+1233,Chief Nutritionist
+1234,Dy. Chief Nutritionist
+1235,Sr. Nutritionist
+1236,Nutritionist 
+1237,Chief Dietician
+1238,Dy. Chief Dietician
+1239,Sr. Dietician
+1240,Dietician
+1241,Dy. Chief Medical Record Officer
+1242,Sr. Medical Record Officer I
+1243,Sr. Medical Record Officer II
+1244,Medical Record Officer 
+1245,Asst. Medical Record Officer 
+1246,Sr. Medical Record Technician I
+1247,Sr. Medical Record Technician II
+1248,Medical Record Technician I
+1249,Medical Record Technician II
+1250,Medical Record Technician III
+1251,Medical Record Technician IV
+1252,Dzongkhag Health Officer I
+1253,Dzongkhag Health Officer II
+1254,Dzongkhag Health Officer III
+1255,Asst. Dzongkhag Health Officer I
+1256,Asst. Dzongkhag Health Officer II
+1257,Asst. Dzongkhag Health Officer III
+1258,Clinical Officer 
+1259,Asst. Clinical Officer 
+1260,Sr. Health Asst.
+1261,Health Asst. I
+1262,Health Asst. II
+1263,Sr. Basic Health Worker I
+1264,Sr. Basic Health Worker II
+1265,Sr. Basic Health Worker III
+1266,Sr. Basic Health Worker III
+1267,Basic Health Worker 
+1268,Liaison Officer I
+1269,Liaison Officer II
+1270,Specialist III
+1271,Chief Pharmacist
+1272,Dy. Chief Pharmacist
+1273,Sr. Pharmacist
+1274,Pharmacist
+1275,Sr. Pharmacy Technician
+1276,Pharmacy Technician I
+1277,Pharmacy Technician II
+1278,Pharmacy Technician III
+1279,Drug Controller
+1280,Chief Regulatory Officer
+1281,Dy. Regulatory Officer
+1282,Sr. Regulatory Officer
+1283,Regulatory Officer
+1284,Asst. Regulatory Officer
+1285,Sr. Drug Inspector 
+1286,Drug Inspector
+1287,Specialist III
+1288,Drungtsho Tso-zin
+1289,Drungtsho Tso-zin Wogm
+1290,Drungtsho Gongm
+1291,Drungtsho
+1292,Menpa Gongm
+1293,Menpa I
+1294,Menpa II
+1295,Menpa III
+1296,Specialist III
+1297,Principal Planning Officer
+1298,Chief Planning Officer
+1299,Dy. Chief Planning Officer
+1300,Sr. Planning Officer
+1301,Planning Officer
+1302,Asst. Planning Officer
+1303,Dzongkhag Planning Officer I
+1304,Dzongkhag Planning Officer II
+1305,Dzongkhag Planning Officer III
+1306,Asst. Dzongkhag Planning  Officer I
+1307,Asst. Dzongkhag Planning  Officer II
+1308,Asst. Dzongkhag Planning  Officer III
+1309,Specialist III
+1310,Principal Research Officer
+1311,Chief Research Officer
+1312,Program Director (Research)
+1313,Dy. Chief Research Officer 
+1314,Sr. Research Officer 
+1315,Research Officer
+1316,Asst. Research Officer
+1317,Sr. Research Asst.
+1318,Research Asst. I
+1319,Research Asst. II
+1320,Research Asst. III
+1321,Research Asst. IV
+1322,Research Asst. V
+1323,Chief Prevention Officer
+1324,Chief System Analyst
+1325,Dy. Chief System Analyst
+1326,Sr. System Analyst 
+1327,Specialist III
+1328,Principal Statistical Officer
+1329,Chief Statistical Officer
+1330,Dy. Chief Statistical Officer
+1331,Sr. Statistical Officer
+1332,Statistical Officer
+1333,Asst. Statistical Officer
+1334,Sr. Statistical Investigator
+1335,Statistical Investigator Asst. I
+1336,Statistical Investigator Asst. II
+1337,Statistical Investigator Asst. III
+1338,Statistical Investigator Asst. IV
+1339,Statistical Investigator Asst. V
+1340,Specialist III
+1341,Chief Counselor
+1342,Principal Counselor
+1343,Dy. Chief Counselor
+1344,Sr. Counselor 
+1345,Counselor
+1346,Asst. Counselor
+1347,Chief Scouts Officer
+1348,Dy. Chief Scouts Officer
+1349,Sr. Scouts Officer
+1350,Scouts Officer
+1351,Asst. Scouts Officer
+1352,Chief Sports Coordinator
+1353,Dy. Chief Sports Coordinator
+1354,Sr. Sports Coordinator
+1355,Sports Coordinator
+1356,Asst. Sports Coordinator I
+1357,Asst. Sports Coordinator II
+1358,Chief National Coach
+1359,Sr. National Coach  I
+1360,Sr. National Coach  II
+1361,National Coach I
+1362,National Coach II
+1363,National Coach III
+1364,Sr. Sports Coach 
+1365,Sports Coach I
+1366,Sports Coach II
+1367,Sports Coach III
+1368,Sports Coach IV
+1369,Sports Coach V
+1370,Specialist III
+1371,Chief Trade Officer
+1372,Trade Counselor
+1373,Regional Director (Trade & Industry) 
+1374,Dy. Chief Trade Officer
+1375,Sr. Trade Officer
+1376,Trade Officer
+1377,Asst. Trade Officer
+1378,Specialist III
+1379,Chief Marketing  Officer
+1380,Regional Director (Regional)
+1381,Dy. Chief Marketing  Officer
+1382,Sr. Marketing Officer
+1383,Marketing Officer
+1384,Asst. Marketing Officer
+1385,Marketing Asst. I
+1386,Marketing Asst. II
+1387,Marketing Asst. III
+1388,Specialist III
+1389,Chief Industries Officer
+1390,Industries Counselor
+1391,Dy. Chief Industries Officer
+1392,Sr. Industries Officer
+1393,Industries Officer
+1394,Asst. Industries Officer
+1395,Dy. Registrar
+1396,Sr. Examiner (Trademark/Patent/Design)
+1397,Examiner (Trademark/Patent/Design)
+1398, Asst. Examiner (Trademark/Patent/Design)
+1399,Sr. Copyright Officer
+1400,Copyright Officer
+1401,Asst. Copyright Officer
+1402,Chief Intellectual Property Officer
+1403,Dy. Chief Intellectual Property Officer
+1404,Sr. Intellectual Property Officer
+1405,Intellectual Property Officer
+1406,Asst. Intellectual Property Officer
+1407,Specialist III
+1408,Chief Tourism officer
+1409,Principal  Tourism Officer
+1410,Dy. Chief Tourism officer
+1411,Sr. Tourism Officer
+1412,Tourism Officer
+1413,Asst. Tourism Officer I
+1414,Asst. Tourism Officer II
+1415,Sr. Tourism Operator 
+1416,Tourism Operator I
+1417,Tourism Operator II
+1418,Tourism Operator III
+1419,Tourism Operations Asst. I
+1420,Tourism Operations Asst. II
+1421,Specialist III
+1422,Chief Airworthiness Officer
+1423,Superintendent Airworthiness
+1424,Dy. Chief Airworthiness Officer
+1425,Sr. Airworthiness Officer
+1426,Airworthiness Officer
+1427,Chief Flight Safety Officer
+1428,Superintendent Flight Safety Controller
+1429,Dy. Chief Flight Safety Officer
+1430,Sr. Flight Safety Officer
+1431,Flight Safety Officer
+1432,Asst. Flight Safety Officer I
+1433,Asst. Flight Safety Officer II
+1434,Chief Aerodrome Officer
+1435,Superintendent Aerodrome Controller
+1436,Dy. Chief Aerodrome Officer
+1437,Sr. Aerodrome Officer
+1438,Aerodrome Officer
+1439,Chief Fire & Rescue Officer 
+1440,Fire & Rescue Controller
+1441,Dy. Chief Fire & Rescue Officer
+1442,Sr. Fire & Rescue Officer 
+1443,Fire & Rescue Officer 
+1444,Asst. Fire & Rescue Officer I
+1445,Asst. Fire & Rescue Officer II
+1446,Sr. Fire & Rescue Foreman I 
+1447,Sr. Fire & Rescue Supervisor II
+1448,Fire & Rescue Foreman I
+1449,Fire & Rescue Foreman II
+1450,Fire & Rescue Foreman III
+1451,Fire & Rescue Foreman IV
+1452,Sr. Fire & Rescue Crew I
+1453,Sr. Fire & Rescue Crew II
+1454,Fire & Rescue Crew I
+1455,Fire & Rescue Crew II
+1456,Fire & Rescue Crew III
+1457,Fire & Rescue Crew IV
+1458,Chief Security Officer
+1459,Superintendent Security
+1460,Dy. Chief Security Officer
+1461,Sr. Security Officer
+1462,Security Officer
+1463,Asst. Security Officer I
+1464,Asst. Security Officer II
+1465,Sr. Security Supervisor 
+1466,Security Supervisor I
+1467,Security Supervisor II
+1468,Security Asst.
+1469,Security Asst. I
+1470,Security Asst. II
+1471,Specialist III
+1472,Chief Communication/Navi Officer
+1473,Superintendent Communication/Navigation Officer
+1474,Dy. Chief Communication Officer
+1475,Sr. Communication/Navi. Officer
+1476,Communication/Navi. Officer
+1477,Asst. Communication/Navigation Officer
+1478,Sr. Communication Supervisor
+1479,Communication Asst. (Operator) I
+1480,Communication Asst. (Operator) II
+1481,Communication Asst. (Operator) III
+1482,Chief AIS Officer
+1483,AIS Controller
+1484,Dy. Chief AIS Officer
+1485,Sr. AIS Officer
+1486,AIS Officer
+1487,Asst. AIS Officer
+1488,Chief Air Traffic Control Officer
+1489,Superintendent Air Traffic Controller
+1490,Dy. Chief Air Traffic Control Officer
+1491,Sr. Air Traffic Control Officer
+1492,Air Traffic Control Officer
+1493,Asst. Air Traffic Control Officer
+1494,Sr. Air Traffic Controller
+1495,Air Traffic Controller I
+1496,Air Traffic Controller II
+1497,Chief Aviation Meteorology Officer
+1498,Superintendent Aviation Meteorology 
+1499,Dy. Chief Aviation Meteorology Officer
+1500,Sr. Aviation Meteorology Officer
+1501,Aviation Meteorology Officer
+1502,Asst. Aviation Meterology Officer I
+1503,Asst. Aviation Meterology Officer II
+1504,Sr. Aviation Meterology Supervisor I
+1505,Sr. Aviation Meterology Supervisor II
+1506,Aviation Meterology Asst. I
+1507,Aviation Meterology Asst. II
+1508,Specialist III
+1509,Chief Transport Development Officer
+1510,Principal Transport Development Officer
+1511,Dy. Chief Transport Development Officer 
+1512,Sr. Transport Development Officer 
+1513,Transport Development Officer 
+1514,Asst. Transport Development Officer I
+1515,Asst. Transport Development Officer II
+1516,Chief Registration & Licensing Officer
+1517,Principal Registration & Licensing officer
+1518,Dy. Chief Registration &  Licensing Officer
+1519,Sr. Registration & Licensing Officer
+1520,Registration & Licensing Officer
+1521,Asst. Registration & Licensing Officer I
+1522,Asst. Registration & Licensing Officer II
+1523,Chief Transport Officer
+1524,Public Transport Analyst
+1525,Dy. Chief Transport Officer
+1526,Sr. Transport Officer
+1527,Transport Officer
+1528,Asst. Transport Officer I
+1529,Asst. Transport Officer II
+1530,Chief Transport Officer (Regional)
+1531,Dy. Chief Regional Transport Officer
+1532,Sr. Regional Transport Officer
+1533,Regional Transport Officer
+1534,Asst. Regional Transport Officer
+1535,Sr. Motor Vehicle Inspector I
+1536,Sr. Motor Vehicle Inspector II
+1537,Sr. Motor Vehicle Inspector III
+1538,Motor Vehicle Inspector I
+1539,Motor Vehicle Inspector II
+1540,Motor Vehicle Inspector III
+1541,Sports Instructor
+1542,Laboratory Asst.(Computer)
+1543,Care Giver
+1544,Teacher
+1545,Thromdey Education Officer
+1546,Sr. Thromdey Education Officer
+1547,Dy.Chief Thromdey Education Officer
+1548,Chief Thromdey Education Officer
+1549,Asst. Thromdey Education Officer
+1550,Dzongkhag Education Officer
+1551,Asst. Engineer III
+1552,Jr. Instructor VII
+1553,Jr. Instructor VIII
+1554,Asst. Instructor II
+1555,Sr. ICT Technical Associate I
+1556,Sr. ICT Technical Associate II
+1557,Sr. Personal Asst.1
+1558,Sr. Personal Asst.II
+1562,Sr. Laboratory Asst. V
+1563,Sr. Laboratory Asst. VI
+1564,Sr. Laboratory Technician I
+1565,Laboratory Technician II
+1566,Specialist I
+1567,Specialist II
+1568,Specialist III
+1569,Sr. Store Keeper II
+1570,Sr. Store Keeper I
+1571,Engineer
+1572,Teacher
+1573,Asst. Architect III
+1574,Asst. Architect IV
+1575,Cluster Lead Teacher
+1576,Master Lead Teachers 
+1577,School Lead Teacher
+1578,Sr. ICT Technical Associate II
+1579,Accounts Asst.
+1580,Accounts Asst.I
+1581,Accounts Asst.II
+1582,Accounts Asst.III
+1583,Sr. Admin. Asst. 
+1584,Sr. Admin. Asst.I
+1585,Sr. Admin. Asst.II
+1586,Sr. Admin. Asst.III
+1587,Sr. ICT Technical Associate
+1588,Sr. ICT Technical Associate I
+1589,Sr. ICT Technical Associate III
+1590,Asst. Engineer
+1591,Asst. Engineer I
+1592,Asst. Engineer II
+1593,Asst. Engineer III
+1594,Asst. Architect 
+1595,Asst. Architect I
+1596,Asst. Architect II
+1597,Asst. Architect III
+1598,Jr. Librarian IV
+1599,Jr. Librarian V
+1600,Sr. Store Keeper
+1601,Sr. Store Keeper I
+1602,Sr. Store Keeper II
