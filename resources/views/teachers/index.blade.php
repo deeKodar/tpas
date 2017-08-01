@@ -60,10 +60,10 @@
                                     <td>{{$teacher->employee_id}}</td>
                                     <td>{{$teacher->school->name}}</td>
                                     <td class=" last">
-                                        {{--  <a href="{{ route('school_class.edit', $class->id) }}" class="btn btn-xs btn-warning waves-effect waves-light" data-toggle="tooltip" data-placement="left" title="Edit Class"><i class="fa fa-pencil-square fa-lg" aria-hidden="true"></i> Edit</a>  --}}
-                                        <a href="{{url('/')}}/teachers/{{$teacher->id}}/edit" class="btn btn-xs btn-warning waves-effect waves-light" data-toggle="tooltip" data-placement="left" title="Edit Class"><i class="fa fa-pencil-square fa-lg" aria-hidden="true"></i> Edit</a>
-                                        <a href="{{$teacher->id}}" class="btn btn-xs btn-danger waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Delete Class"><i class="fa fa-trash fa-lg" aria-hidden="true"></i> Delete</a>
-                                        <a href="{{$teacher->id}}" class="btn btn-xs btn-success waves-effect waves-light" data-toggle="tooltip" data-placement="right" title="View Class Details"><i class="fa fa-eye fa-lg" aria-hidden="true"></i> View Detail</a>
+                                        
+                                        <a href="{{url('/')}}/teachers/{{$teacher->id}}/edit" class="btn btn-xs btn-warning waves-effect waves-light" data-toggle="tooltip" data-placement="left" title="Edit Teacher"><i class="fa fa-pencil-square fa-lg" aria-hidden="true"></i> Edit</a>
+                                        <a href="{{$teacher->id}}" class="btn btn-xs btn-danger waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Delete Teacher"><i class="fa fa-trash fa-lg" aria-hidden="true"></i> Delete</a>
+                                        <a href="{{$teacher->id}}" class="btn btn-xs btn-success waves-effect waves-light" data-toggle="tooltip" data-placement="right" title="View Teacher Details"><i class="fa fa-eye fa-lg" aria-hidden="true"></i> View Detail</a>
                                     </td>
                                 </tr>
                             @endforeach

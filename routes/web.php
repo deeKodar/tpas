@@ -39,6 +39,10 @@ Route::get('/teachers/{id}/edit', [
 	'as' => 'editTeacher'
 	]);
 Route::get('/teachers', 'TeacherController@index');
+Route::patch('/teachers/{id}/update', [
+	'uses'=>'TeacherController@update',
+	'as' => 'updateTeacher'
+]);
 
 
 
