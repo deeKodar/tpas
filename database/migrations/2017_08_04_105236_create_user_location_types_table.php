@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDzongkhagsTable extends Migration
+class CreateUserLocationTypesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateDzongkhagsTable extends Migration
      */
     public function up()
     {
-        //create columns for dzongkhags_table
-        Schema::create('dzongkhags', function (Blueprint $table) {
+        Schema::create('user_location_types', function (Blueprint $table) {
             $table->increments('id');
-            $table->primary('id');
             $table->string('name');
+            
         });
     }
 
@@ -28,6 +27,6 @@ class CreateDzongkhagsTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('user_location_types');
     }
 }

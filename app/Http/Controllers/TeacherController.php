@@ -31,9 +31,9 @@ class TeacherController extends Controller
 
 	      $teachers = Teacher::with('school')->get();
 
-          dd($teachers);
           
-    	// return view('teachers.index', compact('teachers'));
+
+    	 return view('teachers.index', compact('teachers'));
     }
 
    

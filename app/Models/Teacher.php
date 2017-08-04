@@ -47,6 +47,7 @@ class Teacher extends Model
 
         return $this->belongsTo(School::class);
         //return $this->belongsTo('App\Models\School','id');
+        
     }
 
     public function classType() {
