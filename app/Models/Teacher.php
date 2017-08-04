@@ -37,20 +37,25 @@ class Teacher extends Model
 
         return $this->hasOne('App\School','id');
     }
+
     public function classType() {
         return $this->hasOne('App\ClassType','id');
     }
+
     public function teacherEmploymentType() {
 
         return $this->hasOne('App\TeacherEmploymentType','id');
     }
+
     public function qualification() {
         return $this->hasOne('App\Qualification','id');
     }
+
     public function fieldOfStudy() {
 
         return $this->hasOne('App\FieldOfStudy','id');
     }
+
     public function teacherStatusType() {
 
         return $this->hasOne('App\TeacherStatusType','id');

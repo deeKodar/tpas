@@ -17,7 +17,7 @@ class CreateSchoolsTables extends Migration
             $table->char('id',13);
             $table->primary('id');
             $table->string('name');
-            $table->char('school_level_id',4);
+            $table->integer('school_level_id');
             $table->char('dzongkhag_id',2);
             $table->integer('school_status_type_id');
             $table->integer('user_id');

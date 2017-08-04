@@ -65,8 +65,8 @@
                 <ul class="nav side-menu">
                     <li><a><i class="fa fa-table"></i> Master Data <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
-                            <li><a href="#">Classes</a></li>
-                            <li><a href="#">School Levels</a></li>
+                            <li><a href="{{ route('school_class.index') }}">Classes</a></li>
+                            <li><a href="{{ route('school.index') }}">Schools</a></li>
                             <li><a href="#">Subjects</a></li>
                             <li><a href="#">Standard Teaching Hours</a></li>
                         </ul>

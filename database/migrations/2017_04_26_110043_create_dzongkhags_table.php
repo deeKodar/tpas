@@ -15,8 +15,8 @@ class CreateDzongkhagsTable extends Migration
     {
         //create columns for dzongkhags_table
         Schema::create('dzongkhags', function (Blueprint $table) {
-            $table->char('code', 2);
-            $table->primary('code');
+            $table->char('id', 2);
+            $table->primary('id');
             $table->string('name');
         });
     }
