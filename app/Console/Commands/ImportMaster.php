@@ -21,6 +21,8 @@ use App\Models\Qualification;
 use App\Models\FieldOfStudy;
 use App\Models\Gewog;
 use App\Models\Nationality;
+use App\Models\Role;
+use App\Models\Permission;
 use Illuminate\Database\Eloquent\Model;
 
 class ImportMaster extends Command
@@ -74,6 +76,8 @@ class ImportMaster extends Command
         $this->importMaster('position_levels',new PositionLevel);
         $this->importMaster('nationalities',new Nationality);
         $this->importSchoolLevels();
+        $this->importRolesPermissions('roles',new Role);
+        $this->importRolesPermissions('permissions',new Permission);
         
     }
 
@@ -184,5 +188,33 @@ class ImportMaster extends Command
         }
 
     }
+
+public function importRolesPermissions($filename, Model $model) {
+            if (($handle = fopen ( public_path () . '/master/'.$filename.'.csv', 'r' )) !== FALSE) {
+                $this->line("Importing ".$filename." tables...");
+                $i=0;
+                while ( ($data = fgetcsv ( $handle, 1000, ',' )) !== FALSE ) {
+                    $data = [
+                        'id' => $data[0],
+                        'name' => $data[1],
+                        'label' => $data[2],
+                    ];
+                     try {
+                        if($model::firstOrCreate($data)) {
+                            $i++;
+                        }
+                    } catch(\Exception $e) {
+                        echo "Duplicate Entry";
+                        return;
+
+                    }
+                }
+
+            fclose ( $handle );
+            $this->line($i." entries successfully added in the ".$filename." table.");
+        }
+
+    }
+  
 
 }

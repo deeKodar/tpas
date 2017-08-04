@@ -28,9 +28,12 @@ class TeacherController extends Controller
 
     public function index() {
 
-	     $teachers = Teacher::with('school')->get();
 
-    	return view('teachers.index', compact('teachers'));
+	      $teachers = Teacher::with('school')->get();
+
+          dd($teachers);
+          
+    	// return view('teachers.index', compact('teachers'));
     }
 
    
@@ -136,7 +139,7 @@ class TeacherController extends Controller
 
         $teacher=Teacher::find($id);
 
-$userid = Auth::id();
+        $userid = Auth::id();
 
         $teacher->employee_id = request('employee_id');
         $teacher->citizenship_id = request('citizenship_id');
@@ -169,6 +172,36 @@ $userid = Auth::id();
 
         return redirect('/teachers');
 
+
+    }
+
+    public function view($id){
+
+        $teacher = Teacher::find($id);
+
+         $subjects = Subject::all();
+        $classes=SchoolClass::all();
+        $schools=School::all();
+        $qualifications = Qualification::all();
+        $employmenttypes=TeacherEmploymentType::all();
+        $fields=FieldOfStudy::all();
+        $teacherstatus=TeacherStatusType::all();
+        $positionlevels=PositionLevel::all();
+        $positiontitles=PositionTitle::all();
+        $nationalities=Nationality::all();
+        return View::make('teachers.view')
+        ->with('teacher', Teacher::find($id))
+            ->with(compact('subjects'))
+            ->with(compact('fields'))
+            ->with(compact('schools'))
+            ->with(compact('classes'))
+            ->with(compact('employmenttypes'))
+            ->with(compact('qualifications'))
+            ->with(compact('teacherstatus'))
+            ->with(compact('positionlevels'))
+            ->with(compact('positiontitles'))
+            ->with(compact('nationalities'))
+            ->with(compact('classes'));
 
     }
 }

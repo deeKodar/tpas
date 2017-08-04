@@ -22,6 +22,7 @@
         
         <!-- sidebar menu -->
         <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+
             <div class="menu_section">
                 <h3>TEACHER ADMINISTRATION</h3>
                 <ul class="nav side-menu">
@@ -32,12 +33,15 @@
                             <li><a href="#">Teacher Transfers</a></li>
                         </ul>
                     </li>
+                     @can('control_teachers')
                     <li><a><i class="fa fa-sitemap" aria-hidden="true"></i> Teacher Management <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
                             <li><a href=" {{ url('/teachers/') }}">Manage Teachers</a></li>
                             <li><a href="#">Manage Transfers</a></li>
                         </ul>
                     </li>
+                    @endcan
+                    @can('control_transfers')
                     <li><a><i class="fa fa-exchange" aria-hidden="true"></i> Transfer Applications<span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
                             <li><a href="#">Manage Applications</a></li>
@@ -45,21 +49,18 @@
                             <li><a href="#">Contact / Follow-up</a></li>
                         </ul>
                     </li>
+                    @endcan
+                    @can('control_projections')
                     <li><a><i class="fa fa-pie-chart" aria-hidden="true"></i> Project Management <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
                             <li><a href="#">Manage Projections</a></li>
                             <li><a href="#">Log Teacher Projections</a></li>
                         </ul>
                     </li>
-                    {{--  <li>
-                        <a href="javascript:void(0)">
-                            <i class="fa fa-laptop"></i>
-                            One link
-                            <span class="label label-success pull-right">Flag</span>
-                        </a>
-                    </li>  --}}
+                   @endcan
                 </ul>
             </div>
+            
             <div class="menu_section">
                 <h3>SYSTEM ADMINISTRATION</h3>
                 <ul class="nav side-menu">
@@ -73,9 +74,9 @@
                     </li>
                     <li><a><i class="fa fa-users"></i> User Access Control <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
-                            <li><a href="#">Users</a></li>
-                            <li><a href="#">Roles</a></li>
-                            <li><a href="#">Permissions</a></li>
+                            <li><a href="{{url('/')}}/users/">Users</a></li>
+                            <li><a href="{{url('/')}}/roles/">Roles</a></li>
+                            <li><a href="{{url('/')}}/permissions/">Permissions</a></li>
                         </ul>
                     </li>
                     <li>
@@ -93,6 +94,7 @@
                     
                 </ul>
             </div>
+            @can('control_reports')
             <div class="menu_section">
                 <h3>SYSTEM REPORTS</h3>
                 <ul class="nav side-menu">
@@ -105,6 +107,7 @@
                     </li>
                 </ul>
             </div>
+            @endcan
             {{--  <div class="menu_section">
                 <h3>OTHERS</h3>
                 <ul class="nav side-menu">

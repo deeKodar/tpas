@@ -9,6 +9,7 @@ class Teacher extends Model
 {
      protected $fillable = ['employee_id','citizenship_id','first_name','middle_name','last_name','citizenship','gender','date_of_birth','position_level','position_title','employment_type_id','initial_appointment_date','current_appointment_date','qualification_id','field_of_study_id','school_id','class_id','core_subject_id','elective_subject_one_id','elective_subject_two_id','elective_subject_three_id','employee_status_type_id','marital_status','user_id','version'];
 
+
      /*
     |--------------------------------------------------------------------------
     | GLOBAL VARIABLES

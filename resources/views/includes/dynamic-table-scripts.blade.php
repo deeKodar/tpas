@@ -21,4 +21,6 @@
 <script src="{{ asset("vendors/pdfmake/build/pdfmake.min.js") }}"></script>
 <script src="{{ asset("vendors/pdfmake/build/vfs_fonts.js") }}"></script>
 
+
+ 
 @stack('scripts')

@@ -43,6 +43,16 @@ Route::patch('/teachers/{id}/update', [
 	'uses'=>'TeacherController@update',
 	'as' => 'updateTeacher'
 ]);
+Route::get('/teachers/{id}/view', 'TeacherController@view');
+
+Route::get('/roles/','RoleController@index');
+Route::get('/roles/{id}/edit','RoleController@edit');
+Route::patch('/roles/{id}/update','RoleController@update');
+Route::delete('/roles/{id}/delete','RoleController@delete');
+Route::post('/roles/store','RoleController@store');
+Route::get('/roles/create','RoleController@create');
+
+Route::get('/users','UserController@index');
 
 
 
