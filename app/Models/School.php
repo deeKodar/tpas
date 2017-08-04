@@ -10,6 +10,7 @@ use App\Models\SchoolStatusType;
 
 class School extends Model
 {
+
     protected $table = 'schools';
     protected $primaryKey = 'id';
 //    public $timestamps = true;

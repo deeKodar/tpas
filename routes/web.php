@@ -16,7 +16,7 @@ Route::get('/logout', 'Auth\LoginController@logout');
 Route::get('/', 'HomeController@index');
 Route::get('teachers','TeacherController@index');
 Route::get('/teachers/create','TeacherController@create');
-Route::get('/import/master','ImportMasterTables@index');
+
 
 //Route group entries for School Class CRUD
 Route::group(['prefix' => 'school_class'], function() {
@@ -82,7 +82,6 @@ Route::group(['prefix' => 'school'], function() {
         'uses' => 'SchoolController@postSchoolUpdate',
         'as' => 'school.update'
     ]);
-
 });
 
 
@@ -94,4 +93,23 @@ Route::get('/teachers/{id}/edit', [
 	'uses' => 'TeacherController@edit',
 	'as' => 'editTeacher'
 	]);
+
+Route::get('/teachers', 'TeacherController@index');
+Route::patch('/teachers/{id}/update', [
+	'uses'=>'TeacherController@update',
+	'as' => 'updateTeacher'
+]);
+Route::get('/teachers/{id}/view', 'TeacherController@view');
+
+Route::get('/roles/','RoleController@index');
+Route::get('/roles/{id}/edit','RoleController@edit');
+Route::patch('/roles/{id}/update','RoleController@update');
+Route::delete('/roles/{id}/delete','RoleController@delete');
+Route::post('/roles/store','RoleController@store');
+Route::get('/roles/create','RoleController@create');
+
+Route::get('/users','UserController@index');
+
+
+
 

@@ -197,6 +197,11 @@
         </div>
     </div>
 
+
+    	@can('add_teacher')
+
+    	<h1>You have the right to add a teacher</h1>
+    	@endcan
     </div>
     <!-- /page content -->
 

@@ -15,6 +15,7 @@ class CreatePositionTitlesTable extends Migration
     {
         Schema::create('position_titles', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name');
             $table->timestamps();
         });
     }

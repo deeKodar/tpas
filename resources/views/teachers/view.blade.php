@@ -12,7 +12,7 @@
           <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3>Edit</h3>
+                <h3>View</h3>
               </div>
 
               <div class="title_right">
@@ -31,7 +31,7 @@
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>View a Teacher</h2>
+                    <h2>Form to edit an existing teacher</h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -51,49 +51,49 @@
                   </div>
                   <div class="x_content">
                     <br />
-                    <form method = "POST" action=" {{url('/')}}/teachers/{{$teacher->id}}/update" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+                    <form method = "POST" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
                         {{ csrf_field() }}
-                        {{ method_field('PATCH') }}
+                       
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first_name">First Name <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="first_name" name="first_name" required="required" class="form-control col-md-7 col-xs-12" value="{{ $teacher->first_name }}">
+                          <input type="text" id="first_name" name="first_name" required="required" class="form-control col-md-7 col-xs-12" value="{{ $teacher->first_name }}" disabled>
                         </div>
                       </div>
                        <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="middle_name">Middle Name <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="middle_name" name="middle_name" class="form-control col-md-7 col-xs-12" value="{{ $teacher->middle_name }}">
+                          <input type="text" id="middle_name" name="middle_name" class="form-control col-md-7 col-xs-12" value="{{ $teacher->middle_name }}" disabled>
                         </div>
                       </div>
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last_name">Last Name <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="last_name" name="last_name" required="required" class="form-control col-md-7 col-xs-12" value="{{ $teacher->last_name }}">
+                          <input type="text" id="last_name" name="last_name" required="required" class="form-control col-md-7 col-xs-12" value="{{ $teacher->last_name }}" disabled>
                         </div>
                       </div>
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="employee_id">Employee Id <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" name="employee_id" required="required" class="form-control col-md-7 col-xs-12" value="{{ $teacher->employee_id }}">
+                          <input type="text" name="employee_id" required="required" class="form-control col-md-7 col-xs-12" value="{{ $teacher->employee_id }}" disabled>
                         </div>
                       </div>
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="citizenship_id">CID<span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" name="citizenship_id" required="required" class="form-control col-md-7 col-xs-12" value="{{ $teacher->citizenship_id }}">
+                          <input type="text" name="citizenship_id" required="required" class="form-control col-md-7 col-xs-12" value="{{ $teacher->citizenship_id }}" disabled>
                         </div>
                       </div>
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="citizenship">Citizenship<span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                           <select name="citizenship" required="required" class="form-control col-md-7 col-xs-12">
+                           <select name="citizenship" required="required" class="form-control col-md-7 col-xs-12" disabled>
                             
                           @foreach($nationalities as $nationality)
                           @if($teacher->citizenship==$nationality->id)
@@ -109,7 +109,7 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="gender">Gender<span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <select required="required" name="gender" class="form-control col-md-7 col-xs-12" >
+                          <select required="required" name="gender" class="form-control col-md-7 col-xs-12" disabled >
                             @if($teacher->gender=='M')
                             <option value="M" selected>Male</option>
                             <option value="F" >Female</option>
@@ -128,7 +128,7 @@
                           <div class="control-group">
                             <div class="controls">
                               <div class="col-md-6 xdisplay_inputx form-group has-feedback">
-                                <input type="text" class="form-control has-feedback-left" id="single_cal2" value="{{ date('m/d/Y',strtotime($teacher->date_of_birth)) }} " name="date_of_birth" aria-describedby="inputSuccess2Status">
+                                <input type="text" class="form-control has-feedback-left" id="single_cal2" value="{{ date('m/d/Y',strtotime($teacher->date_of_birth)) }} " name="date_of_birth" aria-describedby="inputSuccess2Status" disabled>
                                 <span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
                                 <span id="inputSuccess2Status" class="sr-only">(success)</span>
                               </div>
@@ -141,7 +141,7 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="position_level">Position Level<span class="required">*</span>
                         </label>
                          <div class="col-md-6 col-sm-6 col-xs-12">
-                        <select name="position_level" required="required" class="form-control col-md-7 col-xs-12">
+                        <select name="position_level" required="required" class="form-control col-md-7 col-xs-12" disabled>
                            
                           @foreach($positionlevels as $positionlevel)
                           @if($teacher->position_level==$positionlevel->id)
@@ -158,7 +158,7 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="position_title">Position Title<span class="required">*</span>
                         </label>
                          <div class="col-md-6 col-sm-6 col-xs-12">
-                        <select name="position_title" required="required" class="form-control col-md-7 col-xs-12">
+                        <select name="position_title" required="required" class="form-control col-md-7 col-xs-12" disabled>
                            
                           @foreach($positiontitles as $positiontitle)
                           @if($teacher->position_title==$positiontitle->id)
@@ -174,7 +174,7 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="employment_type_id">Employment Type ID<span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                       <select name="employment_type_id" required="required" class="form-control col-md-7 col-xs-12">
+                       <select name="employment_type_id" required="required" class="form-control col-md-7 col-xs-12" disabled>
                            
                           @foreach($employmenttypes as $employmenttype)
                           @if($teacher->employment_type_id==$employmenttype->id)
@@ -196,7 +196,7 @@
                           <div class="control-group">
                             <div class="controls">
                               <div class="col-md-6 xdisplay_inputx form-group has-feedback">
-                                <input type="text" class="form-control has-feedback-left" id="single_cal3" value="{{ date('m/d/Y',strtotime($teacher->current_appointment_date)) }} " name="current_appointment_date" aria-describedby="inputSuccess2Status">
+                                <input type="text" class="form-control has-feedback-left" id="single_cal3" value="{{ date('m/d/Y',strtotime($teacher->current_appointment_date)) }} " name="current_appointment_date" aria-describedby="inputSuccess2Status" disabled>
                                 <span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
                                 <span id="inputSuccess2Status" class="sr-only">(success)</span>
                               </div>
@@ -212,7 +212,7 @@
                           <div class="control-group">
                             <div class="controls">
                               <div class="col-md-6 xdisplay_inputx form-group has-feedback">
-                                <input type="text" class="form-control has-feedback-left" id="single_cal1" value="{{ date('m/d/Y',strtotime($teacher->initial_appointment_date)) }} " name="initial_appointment_date" aria-describedby="inputSuccess2Status">
+                                <input type="text" class="form-control has-feedback-left" id="single_cal1" value="{{ date('m/d/Y',strtotime($teacher->initial_appointment_date)) }} " name="initial_appointment_date" aria-describedby="inputSuccess2Status" disabled>
                                 <span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
                                 <span id="inputSuccess2Status" class="sr-only">(success)</span>
                               </div>
@@ -224,7 +224,7 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="qualification_id">Qualification ID<span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <select name="qualification_id" required="required" class="form-control col-md-7 col-xs-12">
+                          <select name="qualification_id" required="required" class="form-control col-md-7 col-xs-12" disabled>
                             
                           @foreach($qualifications as $qualification)
                           @if($teacher->qualification_id==$qualification->id)
@@ -240,7 +240,7 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="field_of_study_id">Field of study <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <select name="field_of_study_id" required="required" class="form-control col-md-7 col-xs-12">
+                          <select name="field_of_study_id" required="required" class="form-control col-md-7 col-xs-12" disabled>
                             
                           @foreach($fields as $field)
                           @if($teacher->field_of_study_id)
@@ -256,7 +256,7 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="class_id">Class ID<span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <select name="class_id" required="required" class="form-control col-md-7 col-xs-12">
+                          <select name="class_id" required="required" class="form-control col-md-7 col-xs-12" disabled>
                             
                           @foreach($classes as $c)
                           @if($teacher->class_id==$c->id)
@@ -272,7 +272,7 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="school_id">School ID<span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <select name="school_id" required="required" class="form-control col-md-7 col-xs-12">
+                          <select name="school_id" required="required" class="form-control col-md-7 col-xs-12" disabled>
                             
                           @foreach($schools as $s)
                           @if($teacher->school_id==$s->id)
@@ -288,7 +288,7 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="core_subject_id">Core Subject Code <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <select name="core_subject_id" required="required" class="form-control col-md-7 col-xs-12">
+                          <select name="core_subject_id" required="required" class="form-control col-md-7 col-xs-12" disabled>
                             
                           @foreach($subjects as $subject)
                           @if($teacher->core_subject_id==$subject->id)
@@ -305,7 +305,7 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="elective_subject_one_id">Elective Subject 1<span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                         <select name="elective_subject_one_id" required="required" class="form-control col-md-7 col-xs-12">
+                         <select name="elective_subject_one_id" required="required" class="form-control col-md-7 col-xs-12" disabled>
                             
                           @foreach($subjects as $subject)
                           @if($teacher->elective_subject_one_id==$subject->id)
@@ -321,7 +321,7 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="elective_subject_two_id">Elective Subject 2<span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <select name="elective_subject_two_id" required="required" class="form-control col-md-7 col-xs-12">
+                          <select name="elective_subject_two_id" required="required" class="form-control col-md-7 col-xs-12" disabled>
                             
                           @foreach($subjects as $subject)
                           @if($teacher->elective_subject_two_id==$subject->id)
@@ -337,7 +337,7 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="elective_subject_three_id">Elective Subject 3<span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <select name="elective_subject_three_id" required="required" class="form-control col-md-7 col-xs-12">
+                          <select name="elective_subject_three_id" required="required" class="form-control col-md-7 col-xs-12" disabled>
                             
                           @foreach($subjects as $subject)
                           @if($teacher->elective_subject_three_id==$subject->id)
@@ -353,7 +353,7 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="employee_status_type_id">Employee status <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <select name="employee_status_type_id" required="required" class="form-control col-md-7 col-xs-12">
+                          <select name="employee_status_type_id" required="required" class="form-control col-md-7 col-xs-12" disabled>
                            
                           @foreach($teacherstatus as $status)
                           @if($teacher->employee_status_type_id==$status->id)
@@ -369,7 +369,7 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="marital_status">Marital Status<span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <select name="marital_status" required="required" class="form-control col-md-7 col-xs-12">
+                          <select name="marital_status" required="required" class="form-control col-md-7 col-xs-12" disabled>
                             
                          @if($teacher->marital_status=='Single')
                           <option value="Single" selected>Single</option>
@@ -403,9 +403,9 @@
                       <div class="ln_solid"></div>
                       <div class="form-group">
                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                          <a href="{{url('/')}}/teachers" class="btn btn-primary" type="button">Cancel</a>
-              
-                          <button type="submit" class="btn btn-success">Update</button>
+                          <a href="{{url('/')}}/teachers" class="btn btn-primary" type="button" ">Go Back</a>
+                          <a href="{{url('/')}}/teachers/{{$teacher->id}}/edit" class="btn btn-primary" type="button">Edit</a>
+                         
                         </div>
                       </div>
 

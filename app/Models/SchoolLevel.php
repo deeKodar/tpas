@@ -15,6 +15,5 @@ class SchoolLevel extends Model
 //    public function school() {
 //        $this->belongsTo('App\Models\School', 'school_level_id');
 //    }
-
-
 }
+
