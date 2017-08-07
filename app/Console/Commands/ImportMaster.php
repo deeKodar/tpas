@@ -95,7 +95,7 @@ class ImportMaster extends Command
                             $i++;
                         }
                     } catch(\Exception $e) {
-                        echo "Duplicate Entry";
+                        $this->error('Something went wrong!');
                         return;
 
                     }
@@ -113,7 +113,7 @@ class ImportMaster extends Command
                 $i=0;
                 while ( ($data = fgetcsv ( $handle, 1000, ',' )) !== FALSE ) {
                     $data = [
-                        'code' => $data[0],
+                        'id' => $data[0],
                         'name' => $data[1],
                     ];
                     try {
@@ -122,7 +122,7 @@ class ImportMaster extends Command
 
                         }
                     } catch(\Exception $e) {
-                        echo "Duplicate Entry";
+                       $this->error('Something went wrong!');
                         return;
 
                     }
@@ -139,7 +139,7 @@ class ImportMaster extends Command
                 $i=0;
                 while ( ($data = fgetcsv ( $handle, 1000, ',' )) !== FALSE ) {
                     $data = [
-                        'code' => $data[0],
+                        'id' => $data[0],
                         'dzongkhag_id' => $data[1],
                         'name' => $data[2],
                         
@@ -150,7 +150,7 @@ class ImportMaster extends Command
 
                         }
                     } catch(\Exception $e) {
-                        echo "Duplicate Entry from gewog tables";
+                        $this->error('Something went wrong!');
                         return;
 
                     }
@@ -177,7 +177,7 @@ class ImportMaster extends Command
 
                         }
                     } catch(\Exception $e) {
-                        echo "Duplicate Entry";
+                        $this->error('Something went wrong!');
                         return;
 
                     }
@@ -204,7 +204,7 @@ public function importRolesPermissions($filename, Model $model) {
                             $i++;
                         }
                     } catch(\Exception $e) {
-                        echo "Duplicate Entry";
+                        $this->error('Something went wrong!');
                         return;
 
                     }

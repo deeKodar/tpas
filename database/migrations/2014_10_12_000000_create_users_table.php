@@ -17,7 +17,7 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
-            $table->integer('roleid')
+            $table->integer('role_id')
             ->references('id')
             ->on('role')
             ->onDelete('cascade');
