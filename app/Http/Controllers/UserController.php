@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Role;
 use App\Models\Dzongkhag;
+use App\Models\School;
 
 class UserController extends Controller
 {
@@ -27,8 +28,8 @@ class UserController extends Controller
 
 
     	$roles = Role::all();
-        $roles = Dzongkhag::all();
-    	return view('users.create', compact('roles'));
+        $dzongkhags = Dzongkhag::all();
+    	return view('users.create', compact('roles','dzongkhags'));
 
 
     }
@@ -37,8 +38,20 @@ class UserController extends Controller
 
     	$roles = Role::all();
     	$user = User::find($id);
+
     	return view('users.edit', compact('roles','user'));
 
+    }
+
+    public function schoolFromDzongkhag($id) {
+
+        $schools = School::where('dzongkhag_id', $id)->get();
+        echo "<option value='' selected disabled>Select a school</option>";
+        foreach($schools as $school) {
+
+            echo "<option value=".$school->id.">".$school->name."</option>";
+        }
+        
     }
 
     public function store(Request $request) {
@@ -48,6 +61,7 @@ class UserController extends Controller
 	    'user_name' => 'required|max:255',
 	    'email' => 'required|unique:users|email',
 	    'password' => 'required|max:255|min:6',
+        'password_confirm' => 'required|min:6|same:password',
 	    'role_id' => 'required'
 		]);
 

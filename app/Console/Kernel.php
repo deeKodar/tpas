@@ -26,7 +26,9 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         // Commands\Inspire::class,
-        Commands\ImportMaster::class
+        Commands\ImportMaster::class,
+        Commands\RegisterAdmin::class
+        
     ];
 
     /**

@@ -28,9 +28,9 @@ $(document).ready(function(){
 
 function populateSchools()
 {
-   var dzongkhag=$('#dzongkhag').val();
+   var dzongkhag=$('#dzongkhagslist').val();
     
-    $.post('{{url('/')}}/users/schoolFromDzongkhag/',
+    $.get('{{url('/')}}/users/schoolfromdzongkhag/'+dzongkhag,
   {
     dzongkhag:dzongkhag
     
@@ -38,7 +38,7 @@ function populateSchools()
     function(data) 
     {
     
-    $('#schools').html(data);
+    $('#schoolslist').html(data);
     }); 
 }
 

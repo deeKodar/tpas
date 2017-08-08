@@ -132,6 +132,7 @@ Route::group(['prefix' => 'users'], function() {
     Route::post('store','UserController@store');
     Route::get('edit/{id}','UserController@edit');
     Route::patch('update/{id}','UserController@update');
+    Route::get('schoolfromdzongkhag/{id}','UserController@schoolFromDzongkhag');
 
 });
 

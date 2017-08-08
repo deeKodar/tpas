@@ -100,10 +100,10 @@
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12" >
                         
-                        <select id="dzongkhags" class="form-control col-md-7 col-xs-12" onchange="populateSchools()">
+                        <select id="dzongkhagslist" class="form-control col-md-7 col-xs-12" onchange="populateSchools()">
                           <option selected disabled>Select Dzongkhag</option>
                           @foreach($dzongkhags as $dzongkhag)
-                          <option value="{{$dzongkhag->id}}">{{dzongkhag->name}}</option>
+                          <option value="{{$dzongkhag->id}}">{{$dzongkhag->name}}</option>
                           @endforeach
                         </select>
                       
@@ -114,7 +114,7 @@
                         </label>
                     <div class="col-md-6 col-sm-6 col-xs-12">
                      
-                        <select class="form-control col-md-7 col-xs-12" id="schools" ><option disabled selected>Select School</option>
+                        <select class="form-control col-md-7 col-xs-12" id="schoolslist" ><option disabled selected>Select School</option>
                           
                         </select>
                       

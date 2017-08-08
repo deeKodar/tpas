@@ -24,7 +24,7 @@ class School extends Model
     public function dzongkhag() {
         return $this->belongsTo(Dzongkhag::class);
     }
-
+    
     public function schoolStatusType() {
         return $this->belongsTo(SchoolStatusType::class, 'school_status_type_id');
     }
