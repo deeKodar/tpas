@@ -68,7 +68,7 @@
                         <ul class="nav child_menu">
                             <li><a href="{{ route('school_class.index') }}">Classes</a></li>
                             <li><a href="{{ route('school.index') }}">Schools</a></li>
-                            <li><a href="#">Subjects</a></li>
+                            <li><a href="{{ route('subject.index') }}">Subjects</a></li>
                             <li><a href="#">Standard Teaching Hours</a></li>
                         </ul>
                     </li>

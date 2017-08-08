@@ -12,7 +12,7 @@ class SchoolSeeder extends Seeder
     public function run()
     {
         $school = new \App\Models\School([
-            'id' => '1111222233333',
+            'school_code' => '1111222233333',
             'name' => 'Tshangkha Primary School',
             'school_level_id' => '1',
             'dzongkhag_id' => '19',
@@ -23,7 +23,7 @@ class SchoolSeeder extends Seeder
         $school->save();
 
         $school = new \App\Models\School([
-            'id' => '3333333333333',
+            'school_code' => '3333333333333',
             'name' => 'Zulikha Primary School',
             'school_level_id' => '1',
             'dzongkhag_id' => '20',

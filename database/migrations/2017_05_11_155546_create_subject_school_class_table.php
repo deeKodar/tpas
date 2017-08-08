@@ -14,9 +14,16 @@ class CreateSubjectSchoolClassTable extends Migration
     public function up()
     {
          Schema::create('subject_school_class', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('subject_id')->unsigned();
-            $table->integer('school_class_id')->unsigned();
+            //$table->increments('id');
+            $table->integer('subject_id')->unsigned()->nullable();
+            $table->foreign('subject_id')->references('id')
+                ->on('subjects')->onDelete('cascade');
+
+            $table->integer('school_class_id')->unsigned()->nullable();
+            $table->foreign('school_class_id')->references('id')
+                ->on('school_classes')->onDelete('cascade');
+
+            $table->timestamps();
         });
     }
 

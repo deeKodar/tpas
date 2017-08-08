@@ -84,6 +84,39 @@ Route::group(['prefix' => 'school'], function() {
     ]);
 });
 
+//Route group entries for Subjects
+Route::group(['prefix' => 'subject'], function() {
+    Route::get('', [
+        'uses' => 'SubjectController@getSubjectIndex',
+        'as' => 'subject.index'
+    ]);
+    Route::get('create', [
+        'uses' => 'SubjectController@getSubjectCreate',
+        'as' => 'subject.create'
+    ]);
+
+    Route::post('store', [
+        'uses' => 'SubjectController@postSubjectStore',
+        'as' => 'subject.store'
+    ]);
+
+    Route::get('edit/{id}', [
+        'uses' => 'SubjectController@getSubjectEdit',
+        'as' => 'subject.edit'
+    ]);
+
+    Route::get('delete/{id}', [
+        'uses' => 'SubjectController@getSubjectDelete',
+        'as' => 'subject.delete'
+    ]);
+
+    Route::post('update', [
+        'uses' => 'SubjectController@postSubjectUpdate',
+        'as' => 'subject.update'
+    ]);
+
+});
+
 
 Route::post('/teachers/store', [
 	'uses' => 'TeacherController@store',

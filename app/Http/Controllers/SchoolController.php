@@ -8,6 +8,8 @@ use App\Models\SchoolClass;
 use App\Models\School;
 use App\Models\SchoolLevel;
 use App\Models\SchoolStatusType;
+use Illuminate\Support\Facades\Auth;
+use View;
 
 class SchoolController extends Controller
 {
@@ -127,13 +129,16 @@ class SchoolController extends Controller
         $userId = Auth::id();
 
         $school = new School([
-            'id' => $request->input('id'),
+            'school_code' => $request->input('school_code'),
             'name' => $request->input('school_name'),
             'school_level_id' => $request->input('school_level_id'),
+            'dzongkhag_id' => $request->input('dzongkhag_id'),
             'school_status_type_id' => $request->input('school_status_type_id'),
             'user_id' => $userId,
-            'version' => '1'
+            'version' => 1
         ]);
+
+       // dd($school);
 
         $school->save();
 
@@ -146,8 +151,25 @@ class SchoolController extends Controller
 
         $school = School::find($id);
 
-        return view('school.edit', ['school' => $school, 'schoolId' => $id]);
+        $schoolLevels = \DB::table('school_levels')->pluck('name', 'id')->all();
+        $selectedSchoolLevel = \DB::table('school_levels')->where('id', $school->school_level_id)->pluck('name', 'id')->first();
 
+        $dzongkhags = \DB::table('dzongkhags')->pluck('name', 'id')->all();
+        $selectedDzongkhag = \DB::table('dzongkhags')->where('id', $school->dzongkhag_id)->pluck('name', 'id')->first();
+
+        $schoolStatusTypes = \DB::table('school_status_types')->pluck('name', 'id')->all();
+        $selectedSchoolStatusType = \DB::table('school_status_types')->where('id', $school->school_status_type_id)->pluck('name', 'id')->first();
+
+        //dd($selectedSchoolLevel, $selectedDzongkhag, $selectedSchoolStatusType);
+
+        //return view('school.edit', ['school' => $school, 'schoolId' => $id]);
+        return view('school.edit', ['school' => $school, 'schoolId' => $id])
+            ->with(compact('schoolLevels'))
+            ->with(compact('selectedSchoolLevel'))
+            ->with(compact('dzongkhags'))
+            ->with(compact('selectedDzongkhag'))
+            ->with(compact('schoolStatusTypes'))
+            ->with(compact('selectedSchoolStatusType'));
     }
 
     //update the particular school in storage
@@ -161,33 +183,26 @@ class SchoolController extends Controller
 
         $school = School::find($request->input('id'));
         $school->id = $request->input('id');
-        $school->name = $request->input('class_name');
+        $school->school_code = $request->input('school_code');
+        $school->name = $request->input('school_name');
         $school->school_level_id = $request->input('school_level_id');
+        $school->dzongkhag_id = $request->input('dzongkhag_id');
         $school->school_status_type_id = $request->input('school_status_type_id');
         $school->user_id = $userId;
-        $school->version = '2';
+        $school->version = request('version') + 1;
         $school->save();
 
-        return redirect()->route('school.index.index')->with('info', 'School name updated as: ' . $request->input('school_name'));
+        return redirect()->route('school.index')->with('info', 'School name updated as: ' . $request->input('school_name'));
 
     }
 
     //remove the specified school from storage
     public function getSchoolDelete($id) {
 
-        $school = SchoolClass::find($id);
+        $school = School::find($id);
         $school->delete();
 
-        return redirect()->route('school.index.index')->with('info', 'School deleted successfully');
+        return redirect()->route('school.index')->with('info', 'School deleted successfully');
     }
 
-//    public function getAllDzongkhags() {
-//        //$dzongkhags = Dzongkhag::lists('name', 'id');
-//        $dzongkhags = Dzongkhag::All();
-//        $selectedDzongkhag = School::first()->dzongkhag_id;
-//
-//        return compact('dzongkhags', 'selectedDzongkhag');
-//        //return view('school.index', compact('dzongkhags'));
-//        //return compact('dzongkhags');
-//    }
 }
