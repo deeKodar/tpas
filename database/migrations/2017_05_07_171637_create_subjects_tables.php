@@ -20,6 +20,7 @@ class CreateSubjectsTables extends Migration
             // $table->integer('class_id');
             // $table->char('school_level_id',4);
             $table->integer('subject_type_id');
+            $table->timestamps();
 
         });
     }

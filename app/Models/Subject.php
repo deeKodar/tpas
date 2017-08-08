@@ -8,9 +8,9 @@ class Subject extends Model
 {
     protected $table = 'subjects';
     protected $primaryKey = 'id';
-    public $timestamps = false;
+    public $timestamps = true;
     // protected $guarded = ['id'];
-    protected $fillable = ['name', 'subject_type_id'];
+    protected $fillable = ['name', 'subject_type_id', 'create_at', 'updated_at'];
     // protected $hidden = [];
     // protected $dates = [];
 
@@ -26,14 +26,14 @@ class Subject extends Model
     |--------------------------------------------------------------------------
     */
 
-    public function subject_type()
+    public function subjectType()
     {
         return $this->belongsTo('App\Models\SubjectType', 'subject_type_id');
     }
 
     public function schoolClasses()
     {
-        return $this->belongsToMany('App\Models\SchoolClass', 'subject_school_class');
+        return $this->belongsToMany('App\Models\SchoolClass', 'subject_school_class')->withTimestamps();
     }
 
 }

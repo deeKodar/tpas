@@ -83,6 +83,7 @@ Route::group(['prefix' => 'school'], function() {
     ]);
 });
 
+
 //Route list teachers
 Route::group(['prefix' => 'teachers'], function() {
 
@@ -123,7 +124,7 @@ Route::group(['prefix' => 'roles'], function() {
     
 
 });
-
+//Route for users
 Route::group(['prefix' => 'users'], function() {
 
     Route::get('','UserController@index');
@@ -133,6 +134,40 @@ Route::group(['prefix' => 'users'], function() {
     Route::patch('update/{id}','UserController@update');
 
 });
+
+//Route group entries for Subjects
+Route::group(['prefix' => 'subject'], function() {
+    Route::get('', [
+        'uses' => 'SubjectController@getSubjectIndex',
+        'as' => 'subject.index'
+    ]);
+    Route::get('create', [
+        'uses' => 'SubjectController@getSubjectCreate',
+        'as' => 'subject.create'
+    ]);
+
+    Route::post('store', [
+        'uses' => 'SubjectController@postSubjectStore',
+        'as' => 'subject.store'
+    ]);
+
+    Route::get('edit/{id}', [
+        'uses' => 'SubjectController@getSubjectEdit',
+        'as' => 'subject.edit'
+    ]);
+
+    Route::get('delete/{id}', [
+        'uses' => 'SubjectController@getSubjectDelete',
+        'as' => 'subject.delete'
+    ]);
+
+    Route::post('update', [
+        'uses' => 'SubjectController@postSubjectUpdate',
+        'as' => 'subject.update'
+    ]);
+
+});
+
 
 
 

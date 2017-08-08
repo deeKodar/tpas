@@ -15,7 +15,7 @@ class School extends Model
     protected $primaryKey = 'id';
 //    public $timestamps = true;
 
-    protected $fillable = ['name', 'school_level_id', 'dzongkhag_id', 'school_status_type_id', 'created_at', 'updated_at', 'version'];
+    protected $fillable = ['school_code', 'name', 'school_level_id', 'dzongkhag_id', 'school_status_type_id','user_id', 'created_at', 'updated_at', 'version'];
 
     public function schoolLevel() {
         return $this->belongsTo(SchoolLevel::class, 'school_level_id');
