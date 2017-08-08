@@ -17,6 +17,13 @@
     <body class="nav-md">
         <div class="container body">
             <div class="main_container">
+                
+  @if(session()->has('message.level'))
+    <div class="alert alert-{{ session('message.level') }} alert-dismissable fade in"> 
+         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    {!! session('message.content') !!}
+    </div>
+@endif
 
                 @include('includes/sidebar')
 

@@ -19,6 +19,7 @@ class CreateUserLocationsTable extends Migration
             ->references('id')
             ->on('dzongkhag');
 
+
             $table->integer('school_id')
             ->references('id')
             ->on('school');

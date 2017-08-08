@@ -14,8 +14,7 @@
 Auth::routes();
 Route::get('/logout', 'Auth\LoginController@logout');
 Route::get('/', 'HomeController@index');
-Route::get('teachers','TeacherController@index');
-Route::get('/teachers/create','TeacherController@create');
+
 
 
 //Route group entries for School Class CRUD
@@ -84,31 +83,57 @@ Route::group(['prefix' => 'school'], function() {
     ]);
 });
 
+//Route list teachers
+Route::group(['prefix' => 'teachers'], function() {
 
-Route::post('/teachers/store', [
-	'uses' => 'TeacherController@store',
-	'as' => 'storeTeacher'
-	]);
-Route::get('/teachers/{id}/edit', [
-	'uses' => 'TeacherController@edit',
-	'as' => 'editTeacher'
-	]);
+    Route::get('','TeacherController@index');
 
-Route::get('/teachers', 'TeacherController@index');
-Route::patch('/teachers/{id}/update', [
-	'uses'=>'TeacherController@update',
-	'as' => 'updateTeacher'
-]);
-Route::get('/teachers/{id}/view', 'TeacherController@view');
+    Route::post('store', [
+    	'uses' => 'TeacherController@store',
+    	'as' => 'storeTeacher'
+    	]);
+    Route::get('edit/{id}', [
+    	'uses' => 'TeacherController@edit',
+    	'as' => 'editTeacher'
+    	]);
 
-Route::get('/roles/','RoleController@index');
-Route::get('/roles/{id}/edit','RoleController@edit');
-Route::patch('/roles/{id}/update','RoleController@update');
-Route::delete('/roles/{id}/delete','RoleController@delete');
-Route::post('/roles/store','RoleController@store');
-Route::get('/roles/create','RoleController@create');
+    Route::get('/teachers', 'TeacherController@index');
+    Route::patch('update/{id}', [
+    	'uses'=>'TeacherController@update',
+    	'as' => 'updateTeacher'
+    ]);
+    Route::get('view/{id}', 'TeacherController@view');
 
-Route::get('/users','UserController@index');
+
+    Route::get('create','TeacherController@create');
+
+});
+
+
+//Route list Roles
+Route::group(['prefix' => 'roles'], function() {
+
+    Route::get('','RoleController@index');
+    Route::get('{id}/edit','RoleController@edit');
+    Route::patch('{id}/update','RoleController@update');
+    Route::delete('{id}/delete','RoleController@delete');
+    Route::post('store','RoleController@store');
+    Route::get('create','RoleController@create');
+
+    
+
+});
+
+Route::group(['prefix' => 'users'], function() {
+
+    Route::get('','UserController@index');
+    Route::get('create', 'UserController@create');
+    Route::post('store','UserController@store');
+    Route::get('edit/{id}','UserController@edit');
+    Route::patch('update/{id}','UserController@update');
+
+});
+
 
 
 

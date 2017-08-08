@@ -6,6 +6,7 @@
 
 
 @section('main_container')
+
     <div class="right_col" role="main">
         <div class="">
             <div class="page-title">
@@ -40,6 +41,7 @@
                         <div class="clearfix"></div>
                     </div>
                     <div class="x_content">
+                      
                         <table id="datatable-checkbox" class="table table-striped table-bordered bulk_action">
                             <thead>
                             <tr>
@@ -58,10 +60,10 @@
                                 <tr>
                                     <td>{{$user->id}}</td>
                                     <td>{{$user->name}}</td>
-                                    <td>{{$user->roles->name}}</td>
+                                    <td>{{$user->role->name}}</td>
                                   <td>{{$user->email}}</td>
                                     <td class=" last">
-                                           <a href="{{url('/')}}/users/{{$user->id}}/edit" class="btn btn-xs btn-warning waves-effect waves-light" data-toggle="tooltip" data-placement="left" title="Edit role"><i class="fa fa-pencil-square fa-lg" aria-hidden="true"></i> Edit</a>
+                                           <a href="{{url('/')}}/users/edit/{{$user->id}}" class="btn btn-xs btn-warning waves-effect waves-light" data-toggle="tooltip" data-placement="left" title="Edit role"><i class="fa fa-pencil-square fa-lg" aria-hidden="true"></i> Edit</a>
                                        
                                         <Button class="btn btn-xs btn-danger waves-effect waves-light" data-toggle="modal" ><i class="fa fa-trash fa-lg" aria-hidden="true" data-target=".bs-example-modal-sm"></i> Delete</Button>
                                        
@@ -122,8 +124,10 @@
             </div>
         </div>
     </div>
+    
 @endsection
 @push('scripts')
 @include('includes/dynamic-table-scripts')
 @endpush
+
 

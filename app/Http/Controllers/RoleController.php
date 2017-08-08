@@ -41,7 +41,16 @@ class RoleController extends Controller
 		$role->name = request('role_name');
 		$role->label = request('role_label');
 
-		$role->save();
+		if($role->save()){
+
+             $request->session()->flash('message.level', 'success');
+            $request->session()->flash('message.content', 'Role successfully created');
+            
+        }
+        else {
+        $request->session()->flash('message.level', 'danger');
+        $request->session()->flash('message.content', 'Error!');
+    }
 
 		return redirect('/roles');
 
@@ -53,7 +62,18 @@ class RoleController extends Controller
     	$role->name = request('role_name');
     	$role->label = request('role_label');
 
-    	$role->save();
+    	if($role->save()) {
+        {
+
+             $request->session()->flash('message.level', 'success');
+            $request->session()->flash('message.content', 'User successfully updated');
+            
+        }
+        else {
+        $request->session()->flash('message.level', 'danger');
+        $request->session()->flash('message.content', 'Error!');
+    }
+}
 
     	return redirect('/roles');
 
