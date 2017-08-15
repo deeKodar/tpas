@@ -168,6 +168,39 @@ Route::group(['prefix' => 'subject'], function() {
 
 });
 
+//Route group entries for Standard Subject Hours
+Route::group(['prefix' => 'standard_subject_hour'], function() {
+    Route::get('', [
+        'uses' => 'StandardSubjectHourController@getStandardSubjectHourIndex',
+        'as' => 'standard_subject_hour.index'
+    ]);
+    Route::get('create', [
+        'uses' => 'StandardSubjectHourController@getStandardSubjectHourCreate',
+        'as' => 'standard_subject_hour.create'
+    ]);
+
+    Route::post('store', [
+        'uses' => 'StandardSubjectHourController@postStandardSubjectHourStore',
+        'as' => 'standard_subject_hour.store'
+    ]);
+
+    Route::get('edit/{id}', [
+        'uses' => 'StandardSubjectHourController@getStandardSubjectHourEdit',
+        'as' => 'standard_subject_hour.edit'
+    ]);
+
+    Route::get('delete/{id}', [
+        'uses' => 'StandardSubjectHourController@getStandardSubjectHourDelete',
+        'as' => 'standard_subject_hour.delete'
+    ]);
+
+    Route::post('update', [
+        'uses' => 'StandardSubjectHourController@postStandardSubjectHourUpdate',
+        'as' => 'standard_subject_hour.update'
+    ]);
+
+});
+
 
 
 

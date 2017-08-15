@@ -42,6 +42,7 @@
                     <table id="datatable-checkbox" class="table table-striped table-bordered bulk_action">
                       <thead>
                         <tr> 
+                          <th>Sl.No</th>
                           <th>Class ID</th>
                           <th>Class Name</th>
                           <th class="column-title no-link last"><span class="nobr">Action</span>
@@ -50,8 +51,9 @@
                       </thead>
 
                       <tbody>
-                      @foreach($schoolClasses as $class)
+                      @foreach($schoolClasses as $index => $class)
                         <tr>
+                          <td>{{ $index + 1 }}</td>
                           <td>{{$class->id}}</td>
                           <td>{{$class->name}}</td>
                           <td class=" last">

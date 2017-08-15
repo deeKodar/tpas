@@ -29,7 +29,7 @@
                     <li><a><i class="fa fa-tachometer" aria-hidden="true"></i> Dashboards <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
                             <li><a href="#">Teacher Projections</a></li>
-                            <li><a href="#">Teacher Vancancies</a></li>
+                            <li><a href="#">Teacher Vacancies</a></li>
                             <li><a href="#">Teacher Transfers</a></li>
                         </ul>
                     </li>
@@ -69,7 +69,7 @@
                             <li><a href="{{ route('school_class.index') }}">Classes</a></li>
                             <li><a href="{{ route('school.index') }}">Schools</a></li>
                             <li><a href="{{ route('subject.index') }}">Subjects</a></li>
-                            <li><a href="#">Standard Teaching Hours</a></li>
+                            <li><a href="{{ route('standard_subject_hour.index') }}">Standard Teaching Hours</a></li>
                         </ul>
                     </li>
                     <li><a><i class="fa fa-users"></i> User Access Control <span class="fa fa-chevron-down"></span></a>

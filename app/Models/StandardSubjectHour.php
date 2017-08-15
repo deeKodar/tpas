@@ -10,12 +10,17 @@ class StandardSubjectHour extends Model
     protected $primaryKey = 'id';
     public $timestamps = false;
     // protected $guarded = ['id'];
-    protected $fillable = ['subject_school_class_id', 'standard_hour', 'standard_minute'];
+    protected $fillable = ['school_class_id', 'subject_id', 'standard_hour', 'standard_minute'];
 
 
-     public function subjectSchoolClass()
+     public function schoolClass()
     {
-        return $this->belongsTo('App\Models\SubjectSchoolClass', 'id');
+        return $this->belongsTo('App\Models\SchoolClass', 'school_class_id');
+    }
+
+    public function subject()
+    {
+        return $this->belongsTo('App\Models\Subject', 'subject_id');
     }
 
 }

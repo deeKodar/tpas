@@ -9,7 +9,7 @@
         <div class="">
             <div class="page-title">
                 <div class="title_left">
-                    <h3>Subject Management<small></small></h3>
+                    <h3>Standard Subject Hour Management<small></small></h3>
                 </div>
                 <div class="title_right">
                 </div>
@@ -18,9 +18,9 @@
             <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                     <div class="x_title">
-                        <div class="nav navbar-left add-button">
-                            <a href="{{ route('subject.create') }}" class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i> Add Subject</a>
-                        </div>
+                        {{--<div class="nav navbar-left add-button">--}}
+                            {{--<a href="{{ route('subject.create') }}" class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i> Add Subject</a>--}}
+                        {{--</div>--}}
                         <ul class="nav navbar-right panel_toolbox">
                             <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                             </li>
@@ -43,28 +43,29 @@
                             <thead>
                             <tr>
                                 {{--<th>ID</th>--}}
-                                <th>Sl.No</th>
+                                <th>ID</th>
                                 <th>Subject Name</th>
-                                <th>Subject Type</th>
-                                <th>Created</th>
-                                <th>Updated</th>
+                                <th>Class Name</th>
+                                <th>Standard Hour</th>
+                                <th>Standard Minutes</th>
                                 <th class="column-title no-link last"><span class="nobr">Action</span>
                                 </th>
                             </tr>
                             </thead>
 
                             <tbody>
-                            @foreach($subjects as $index => $subject)
+                            @foreach($standardSubjectHours as $index => $standardSubjectHour)
                                 <tr>
                                     {{--<td>{{$school->id}}</td>--}}
+                                    {{--<td>{{$standardSubjectHour->id}}</td>--}}
                                     <td>{{ $index + 1 }}</td>
-                                    <td>{{$subject->name}}</td>
-                                    <td>{{$subject->subjectType->name}}</td>
-                                    <td>{{$subject->created_at}}</td>
-                                    <td>{{$subject->updated_at}}</td>
+                                    <td>{{$standardSubjectHour->subject->name}}</td>
+                                    <td>{{$standardSubjectHour->schoolClass->name}}</td>
+                                    <td>{{$standardSubjectHour->standard_hour}}</td>
+                                    <td>{{$standardSubjectHour->standard_minute}}</td>
                                     <td class=" last">
-                                        <a href="{{ route('subject.edit', ['id' => $subject->id]) }}" class="btn btn-xs btn-warning waves-effect waves-light" data-toggle="tooltip" data-placement="left" title="Edit Subject"><i class="fa fa-pencil-square fa-lg" aria-hidden="true"></i> Edit</a>
-                                        <a href="{{ route('subject.delete', ['id' => $subject->id]) }}" class="btn btn-xs btn-danger waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Delete Subject"><i class="fa fa-trash fa-lg" aria-hidden="true"></i> Delete</a>
+                                        <a href="{{ route('standard_subject_hour.edit', ['id' => $standardSubjectHour->id]) }}" class="btn btn-xs btn-warning waves-effect waves-light" data-toggle="tooltip" data-placement="left" title="Edit Standard Hour"><i class="fa fa-pencil-square fa-lg" aria-hidden="true"></i> Edit</a>
+                                        {{--<a href="{{ route('subject.delete', ['id' => $subject->id]) }}" class="btn btn-xs btn-danger waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Delete Subject"><i class="fa fa-trash fa-lg" aria-hidden="true"></i> Delete</a>--}}
                                         {{--<a href="{{ route('#') }}" class="btn btn-xs btn-success waves-effect waves-light" data-toggle="tooltip" data-placement="right" title="View Class Details"><i class="fa fa-eye fa-lg" aria-hidden="true"></i> View Detail</a>--}}
                                     </td>
                                 </tr>

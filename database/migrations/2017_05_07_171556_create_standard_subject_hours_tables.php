@@ -15,9 +15,11 @@ class CreateStandardSubjectHoursTables extends Migration
     {
         Schema::create('standard_subject_hours', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('subject_school_class_id')->unsigned();
-            $table->string('standard_hour');
-            $table->string('standard_minute');
+            $table->integer('school_class_id')->unsigned();
+            $table->integer('subject_id')->unsigned();
+            $table->string('standard_hour')->default('0');
+            $table->string('standard_minute')->default('0');
+            $table->timestamps();
         });
     }
 

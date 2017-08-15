@@ -109,9 +109,9 @@ class SchoolController extends Controller
     //show form for creating new school
     public function getSchoolCreate() {
 
-       $schoolLevels = \DB::table('school_levels')->pluck('name', 'id')->all();
-       $dzongkhags = \DB::table('dzongkhags')->pluck('name', 'id')->all();
-       $schoolStatusTypes = \DB::table('school_status_types')->pluck('name', 'id')->all();
+       $schoolLevels = SchoolLevel::pluck('name', 'id')->all();
+       $dzongkhags = Dzongkhag::pluck('name', 'id')->all();
+       $schoolStatusTypes = SchoolStatusType::pluck('name', 'id')->all();
 
        return view('school.create')
             ->with(compact('schoolLevels'))
@@ -138,8 +138,6 @@ class SchoolController extends Controller
             'version' => 1
         ]);
 
-       // dd($school);
-
         $school->save();
 
         return redirect()->route('school.index')->with('info', 'School: ' . $request->input('school_name') . 'created successfully');
@@ -151,18 +149,15 @@ class SchoolController extends Controller
 
         $school = School::find($id);
 
-        $schoolLevels = \DB::table('school_levels')->pluck('name', 'id')->all();
-        $selectedSchoolLevel = \DB::table('school_levels')->where('id', $school->school_level_id)->pluck('name', 'id')->first();
+        $schoolLevels = SchoolLevel::pluck('name', 'id')->all();
+        $selectedSchoolLevel = SchoolLevel::where('id', $school->school_level_id)->pluck('id')->first();
 
-        $dzongkhags = \DB::table('dzongkhags')->pluck('name', 'id')->all();
-        $selectedDzongkhag = \DB::table('dzongkhags')->where('id', $school->dzongkhag_id)->pluck('name', 'id')->first();
+        $dzongkhags = Dzongkhag::pluck('name', 'id')->all();
+        $selectedDzongkhag = Dzongkhag::where('id', $school->dzongkhag_id)->pluck('id')->first();
 
-        $schoolStatusTypes = \DB::table('school_status_types')->pluck('name', 'id')->all();
-        $selectedSchoolStatusType = \DB::table('school_status_types')->where('id', $school->school_status_type_id)->pluck('name', 'id')->first();
+        $schoolStatusTypes = SchoolStatusType::pluck('name', 'id')->all();
+        $selectedSchoolStatusType = SchoolStatusType::where('id', $school->school_status_type_id)->pluck('id')->first();
 
-        //dd($selectedSchoolLevel, $selectedDzongkhag, $selectedSchoolStatusType);
-
-        //return view('school.edit', ['school' => $school, 'schoolId' => $id]);
         return view('school.edit', ['school' => $school, 'schoolId' => $id])
             ->with(compact('schoolLevels'))
             ->with(compact('selectedSchoolLevel'))

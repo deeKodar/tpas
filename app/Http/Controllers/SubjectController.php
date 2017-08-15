@@ -30,10 +30,15 @@ class SubjectController extends Controller
     //show form for creating new subject
     public function getSubjectCreate() {
 
-        $subjectTypes = \DB::table('subject_types')->pluck('name', 'id')->all();
+        $subjectTypes = SubjectType::pluck('name', 'id')->all();
+
+        $schoolClasses = SchoolClass::pluck('name', 'id')->all();
+
+        //dd($schoolClasses);
 
         return view('subject.create')
-            ->with(compact('subjectTypes'));
+            ->with(compact('subjectTypes'))
+            ->with(compact('schoolClasses'));
     }
 
     //store newly created subject in storage
@@ -42,11 +47,26 @@ class SubjectController extends Controller
         //$userId = Auth::id();
 
         $subject = new Subject([
-            'name' => $request->input('name'),
+            'name' => $request->input('subject_name'),
             'subject_type_id' => $request->input('subject_type_id'),
         ]);
 
+       // $schoolClasses
+        //$schoolClasses[] = $request->input('schoolClassId[]');
+        $schoolClasses = $request->input('schoolClassIds');
+
+       // dd($schoolClasses);
+
+
         $subject->save();
+
+        //$subject->schoolClasses()->attach($schoolClassId);
+
+        foreach ($schoolClasses as $schoolClass) {
+
+            $subject->schoolClasses()->attach($schoolClass);
+
+        }
 
         return redirect()->route('subject.index')->with('info', 'Subject: ' . $request->input('subject_name') . 'created successfully');
 
@@ -57,12 +77,21 @@ class SubjectController extends Controller
 
         $subject = Subject::find($id);
 
-        $subjectTypes = \DB::table('subject_types')->pluck('name', 'id')->all();
-        $selectedSubjectType = \DB::table('subject_types')->where('id', $subject->subject_type_id)->pluck('name', 'id')->first()->toString();
+        $subjectTypes = SubjectType::pluck('name', 'id')->all();
+        $schoolClasses = SchoolClass::pluck('name', 'id')->all();
+        //dd($schoolClasses);
 
-        return view('subject.edit', ['school' => $subject, 'subjectId' => $id])
+        //pass only the 'id' value to view so that laravel Form::select() third arg can understand it as a id for default selected dropdown value
+        $selectedSubjectType = SubjectType::where('id', $subject->subject_type_id)->pluck('id')->first();
+        $selectedSchoolClasses = $subject->schoolClasses()->where('subject_id', $subject->id)->pluck('id');
+
+        //dd($selectedSchoolClasses);
+
+        return view('subject.edit', ['subject' => $subject, 'subjectId' => $id])
             ->with(compact('subjectTypes'))
-            ->with(compact('selectedSubjectType'));
+            ->with(compact('selectedSubjectType'))
+            ->with(compact('schoolClasses'))
+            ->with(compact('selectedSchoolClasses'));
     }
 
     //update the particular subject in storage
@@ -72,10 +101,21 @@ class SubjectController extends Controller
 
         $subject = Subject::find($request->input('id'));
 
-        $subject->id = $request->input('id');
+        //$subject->id = $request->input('id');
         $subject->name = $request->input('subject_name');
         $subject->subject_type_id = $request->input('subject_type_id');
+
+        $schoolClasses = $request->input('schoolClassIds');
+        //dd($schoolClasses);
+
         $subject->save();
+
+        $subject->schoolClasses()->detach();
+
+        foreach ($schoolClasses as $schoolClass) {
+            $subject->schoolClasses()->attach($schoolClass);
+            //$subject->schoolClasses()->updateExistingPivot($schoolClasses, ['updated_at' => `NOW()`]);
+        }
 
         return redirect()->route('subject.index')->with('info', 'Subject name updated as: ' . $request->input('subject_name'));
 
@@ -85,6 +125,13 @@ class SubjectController extends Controller
     public function getSubjectDelete($id) {
 
         $subject = Subject::find($id);
+
+        $schoolClasses = Subject::find ($id)->schoolClasses();
+
+        $schoolClasses->detach();
+
+        //$subject->schoolClasses()->detach($id);
+
         $subject->delete();
 
         return redirect()->route('subject.index')->with('info', 'Subject deleted successfully');
