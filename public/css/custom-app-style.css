@@ -2,3 +2,9 @@
     padding-right: 50px;
    
 } */
+
+#content form .submit, .login_content form input[type=submit] {
+    float: none !important; 
+    width:100% !important;
+    margin-left:0px !important;
+}

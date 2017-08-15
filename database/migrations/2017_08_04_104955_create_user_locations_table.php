@@ -14,19 +14,25 @@ class CreateUserLocationsTable extends Migration
     public function up()
     {
         Schema::create('user_locations', function (Blueprint $table) {
+
             $table->increments('id');
+
+            $table->integer('hq_id')
+            ->nullable();
+
             $table->integer('dzongkhag_id')
             ->references('id')
-            ->on('dzongkhag');
+            ->on('dzongkhag')
+            ->nullable();
+
 
 
             $table->integer('school_id')
             ->references('id')
-            ->on('school');
+            ->on('school')
+            ->nullale();
 
-            $table->integer('user_location_type_id')
-            ->references('id')
-            ->on('user_location_type');
+            
             
             
         });

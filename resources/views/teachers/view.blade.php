@@ -422,8 +422,8 @@
 
   @push('scripts')
 
-   <script src="{{ asset("vendor/moment/min/moment.min.js") }}"></script>
+   <script src="{{ asset("vendors/moment/min/moment.min.js") }}"></script>
 
-    <script src="{{ asset("vendor/bootstrap-daterangepicker/daterangepicker.js") }}"></script>
+    <script src="{{ asset("vendors/bootstrap-daterangepicker/daterangepicker.js") }}"></script>
 
   @endpush

@@ -13,7 +13,7 @@ class School extends Model
 
     protected $table = 'schools';
     protected $primaryKey = 'id';
-//    public $timestamps = true;
+
 
     protected $fillable = ['school_code', 'name', 'school_level_id', 'dzongkhag_id', 'school_status_type_id','user_id', 'created_at', 'updated_at', 'version'];
 
@@ -24,7 +24,7 @@ class School extends Model
     public function dzongkhag() {
         return $this->belongsTo(Dzongkhag::class);
     }
-    
+
     public function schoolStatusType() {
         return $this->belongsTo(SchoolStatusType::class, 'school_status_type_id');
     }
