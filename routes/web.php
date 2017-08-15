@@ -11,7 +11,27 @@
 |
 */
 
-Auth::routes();
+//Auth::routes();
+Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
+ Route::post('login', 'Auth\LoginController@login');
+ Route::post('logout', 'LoginController@logout')->name('logout');
+
+
+// Authentication Routes...
+Route::group(['prefix' => 'admin', 'namespace' => 'Auth'], function () {
+        
+        // Registration Routes...
+        //$this->get('register', 'RegisterController@showRegistrationForm')->name('register');
+        //$this->post('register', 'RegisterController@register');
+
+        // Password Reset Routes...
+        $this->get('password/reset', 'ForgotPasswordController@showLinkRequestForm')->name('password.request');
+        $this->post('password/email', 'ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+        $this->get('password/reset/{token}', 'ResetPasswordController@showResetForm')->name('password.reset');
+        $this->post('password/reset', 'ResetPasswordController@reset');
+
+});
+        
 Route::get('/logout', 'Auth\LoginController@logout');
 Route::get('/', 'HomeController@index');
 
@@ -115,11 +135,12 @@ Route::group(['prefix' => 'teachers'], function() {
 Route::group(['prefix' => 'roles'], function() {
 
     Route::get('','RoleController@index');
-    Route::get('{id}/edit','RoleController@edit');
-    Route::patch('{id}/update','RoleController@update');
-    Route::delete('{id}/delete','RoleController@delete');
+    Route::get('edit/{id}','RoleController@edit');
+    Route::patch('update/{id}','RoleController@update');
+    Route::delete('delete/{id}','RoleController@delete');
     Route::post('store','RoleController@store');
     Route::get('create','RoleController@create');
+    Route::get('view/{id}','RoleController@view');
 
     
 
@@ -127,11 +148,19 @@ Route::group(['prefix' => 'roles'], function() {
 //Route for users
 Route::group(['prefix' => 'users'], function() {
 
-    Route::get('','UserController@index');
+    Route::get('','UserController@index')->middleware('can:view_users,Auth::user()');
     Route::get('create', 'UserController@create');
     Route::post('store','UserController@store');
     Route::get('edit/{id}','UserController@edit');
     Route::patch('update/{id}','UserController@update');
+    Route::get('schoolfromdzongkhag/{id}','UserController@schoolFromDzongkhag');
+
+});
+
+Route::group(['prefix' => 'permissions'], function() {
+
+    Route::get('','PermissionController@index');
+    Route::get('create', 'PermissionController@create');
 
 });
 

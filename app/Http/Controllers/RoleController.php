@@ -23,8 +23,12 @@ class RoleController extends Controller
 
     public function edit($id) {
 
-    	return View::make('roles.edit')
-    	->with('role', Role::find($id));
+        $roles = Role::with('permissions')->get()->where('id',$id);
+
+        return view('roles.edit', compact('roles'));
+    	// return View::make('roles.edit')
+    	// ->with('role', Role::find($id)
+     //    ->with('permissions'));
 
     }
 
@@ -62,20 +66,29 @@ class RoleController extends Controller
     	$role->name = request('role_name');
     	$role->label = request('role_label');
 
-    	if($role->save()) {
-        {
+    	if($role->save()){
+        
 
              $request->session()->flash('message.level', 'success');
             $request->session()->flash('message.content', 'User successfully updated');
             
         }
-        else {
+        else{
         $request->session()->flash('message.level', 'danger');
         $request->session()->flash('message.content', 'Error!');
     }
-}
+
 
     	return redirect('/roles');
 
+    }
+
+
+    public function view($role) {
+
+        $role = Role::with('permissions')->get()->where('id',$role);
+        //$role=Role::get()->where('id',$role);
+        //dd($role);
+        return view('roles.view', compact('role'));
     }
 }

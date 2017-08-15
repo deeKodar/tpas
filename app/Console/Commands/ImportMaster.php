@@ -23,6 +23,7 @@ use App\Models\Gewog;
 use App\Models\Nationality;
 use App\Models\Role;
 use App\Models\Permission;
+use App\Models\PermissionRole;
 use Illuminate\Database\Eloquent\Model;
 
 class ImportMaster extends Command
@@ -78,6 +79,7 @@ class ImportMaster extends Command
         $this->importSchoolLevels();
         $this->importRolesPermissions('roles',new Role);
         $this->importRolesPermissions('permissions',new Permission);
+        $this->importPermissionsRolesPivot();
         
     }
 
@@ -212,6 +214,35 @@ public function importRolesPermissions($filename, Model $model) {
 
             fclose ( $handle );
             $this->line($i." entries successfully added in the ".$filename." table.");
+        }
+
+    }
+
+    public function importPermissionsRolesPivot() {
+
+         if (($handle = fopen ( public_path () . '/master/permission_role.csv', 'r' )) !== FALSE) {
+                $this->line("Importing roles and permissions...");
+                $i=0;
+                while ( ($data = fgetcsv ( $handle, 1000, ',' )) !== FALSE ) {
+                    $data = [
+                        
+                        'permission_id' => $data[0],
+                        'role_id' => $data[1],
+                    ];
+                    try {
+                         if(PermissionRole::firstOrCreate($data)){
+                            $i++;
+
+                        }
+                    } catch(\Exception $e) {
+                        $this->error('Something went wrong!');
+                        return;
+
+                    }
+                }
+
+            fclose ( $handle );
+            $this->line($i." entries added successfully in the permission_roles table");
         }
 
     }

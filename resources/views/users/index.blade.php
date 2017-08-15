@@ -60,7 +60,9 @@
                                 <tr>
                                     <td>{{$user->id}}</td>
                                     <td>{{$user->name}}</td>
+                                    
                                     <td>{{$user->role->name}}</td>
+                                    
                                   <td>{{$user->email}}</td>
                                     <td class=" last">
                                            <a href="{{url('/')}}/users/edit/{{$user->id}}" class="btn btn-xs btn-warning waves-effect waves-light" data-toggle="tooltip" data-placement="left" title="Edit role"><i class="fa fa-pencil-square fa-lg" aria-hidden="true"></i> Edit</a>

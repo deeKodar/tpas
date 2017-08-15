@@ -25,15 +25,19 @@
 
             <div class="menu_section">
                 <h3>TEACHER ADMINISTRATION</h3>
+
                 <ul class="nav side-menu">
                     <li><a><i class="fa fa-tachometer" aria-hidden="true"></i> Dashboards <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
                             <li><a href="#">Teacher Projections</a></li>
                             <li><a href="#">Teacher Vacancies</a></li>
                             <li><a href="#">Teacher Transfers</a></li>
+                           @can('view_projections') <li><a href="#">Teacher Projections</a></li>@endcan
+                           @can('view_vacancies') <li><a href="#">Teacher Vancancies</a></li>@endcan
+                            @can('view_transfer')<li><a href="#">Teacher Transfers</a></li>@endcan
                         </ul>
                     </li>
-                     @can('control_teachers')
+                     @can('edit_teachers')
                     <li><a><i class="fa fa-sitemap" aria-hidden="true"></i> Teacher Management <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
                             <li><a href=" {{ url('/teachers/') }}">Manage Teachers</a></li>
@@ -41,7 +45,7 @@
                         </ul>
                     </li>
                     @endcan
-                    @can('control_transfers')
+                    @can('edit_transfer')
                     <li><a><i class="fa fa-exchange" aria-hidden="true"></i> Transfer Applications<span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
                             <li><a href="#">Manage Applications</a></li>
@@ -50,7 +54,7 @@
                         </ul>
                     </li>
                     @endcan
-                    @can('control_projections')
+                    @can('edit_projections')
                     <li><a><i class="fa fa-pie-chart" aria-hidden="true"></i> Project Management <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
                             <li><a href="#">Manage Projections</a></li>
@@ -64,6 +68,7 @@
             <div class="menu_section">
                 <h3>SYSTEM ADMINISTRATION</h3>
                 <ul class="nav side-menu">
+                    @can('edit_master_table')
                     <li><a><i class="fa fa-table"></i> Master Data <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
                             <li><a href="{{ route('school_class.index') }}">Classes</a></li>
@@ -72,29 +77,35 @@
                             <li><a href="{{ route('standard_subject_hour.index') }}">Standard Teaching Hours</a></li>
                         </ul>
                     </li>
+                    @endcan
+                    @can('edit_users')
                     <li><a><i class="fa fa-users"></i> User Access Control <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
                             <li><a href="{{url('/')}}/users/">Users</a></li>
-                            <li><a href="{{url('/')}}/roles/">Roles</a></li>
-                            <li><a href="{{url('/')}}/permissions/">Permissions</a></li>
+                           @can('edit_roles') <li><a href="{{url('/')}}/roles/">Roles</a></li>@endcan
+                            @can('edit_permissions')<li><a href="{{url('/')}}/permissions/">Permissions</a></li>@endcan
                         </ul>
                     </li>
+                    @endcan
+                    @can('back_up_system')
                     <li>
                         <a href="javascript:void(0)">
                             <i class="fa fa-hdd-o"></i>
                             System Backup
                         </a>
                     </li> 
+                    @endcan
+                    @can('view_system_logs')
                     <li>
                         <a href="javascript:void(0)">
                             <i class="fa fa-file-text"></i>
                             View System Logs
                         </a>
                     </li> 
-                    
+                    @endcan
                 </ul>
             </div>
-            @can('control_reports')
+            @can('view_reports')
             <div class="menu_section">
                 <h3>SYSTEM REPORTS</h3>
                 <ul class="nav side-menu">
@@ -107,6 +118,7 @@
                     </li>
                 </ul>
             </div>
+
             @endcan
             {{--  <div class="menu_section">
                 <h3>OTHERS</h3>

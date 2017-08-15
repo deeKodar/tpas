@@ -15,6 +15,8 @@
     <link href="{{ asset("css/font-awesome.min.css") }}" rel="stylesheet">
     <!-- Custom Theme Style -->
     <link href="{{ asset("css/gentelella.min.css") }}" rel="stylesheet">
+    <!-- Custom TPAS styel -->
+    <link href="{{ asset("css/custom-app-style.css") }}" rel="stylesheet">
 
 </head>
 
@@ -32,16 +34,14 @@
 				{!! BootForm::password('password', 'Password', ['placeholder' => 'Password']) !!}
 				
 				<div>
-					{!! BootForm::submit('Log in', ['class' => 'btn btn-default submit']) !!}
-					<a class="reset_pass" href="{{  url('/password/reset') }}">Lost your password ?</a>
+					{!! BootForm::submit('Log in', ['class' => 'btn btn-info btn-lg submit']) !!}
+					
 				</div>
                     
 				<div class="clearfix"></div>
                     
 				<div class="separator">
-					<p class="change_link">New to site?
-						<a href="{{ url('/register') }}" class="to_register"> Create Account </a>
-					</p>
+					
                         
 					<div class="clearfix"></div>
 					<br />

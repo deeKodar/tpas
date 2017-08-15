@@ -1,3 +1,36 @@
-1,control_users,Add edit delete users
-2,control_teachers,Add edit delete teachers
-3,control_projections,Add view projections
+1,add_teachers,Add new teachers
+2,edit_teachers,Edit existing teachers
+3,delete_teachers,Delete existing teachers
+4,view_teachers,View teachers
+5,add_projections,Add class strength projection
+6,view_projections,View Projections
+7,edit_projections,Edit projections
+8,delete_projections,Delete projections
+9,add_transfer,Add Transfer
+10,edit_transfer,Edit Transfer
+11,delete_transfer,Delete Transfer
+12,view_transfer,View Transfer
+13,add_master_table,Add new master table
+14,edit_master_table,Edit master table
+15,delete_master_table,Delete master table
+16,view_master_table,View master table
+17,view_users,View users
+18,add_users,Add users
+19,edit_users,Edit users
+20,delete_users,Delete users
+21,back_up_system,Back up the TPAS system
+22,view_system_logs,View the system/application error and access logs
+23,add_roles,Add new roles
+24,edit_roles,Edit existing roles
+25,delete_roles,Delete role
+26,view_roles,View Role
+27,add_permissions,Add a new permission
+28,edit_permissions,Edit permission
+29,delete_permissions,Delete permission
+30,view_permissions,View permission
+31,view_reports,View reports
+32,view_transfer_application,View transfer application
+33,add_transfer_application,Add transfer application
+34,edit_transfer_application,Edit transfer application
+35,delete_transfer_application,Delete transfer application
+36,view_vacancies,View Teacher Vacancies

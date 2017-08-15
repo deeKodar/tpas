@@ -74,7 +74,7 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="confirm_password">Role <span class="required">*</span>
                         </label>
                        <div class="col-md-6 col-sm-6 col-xs-12">
-                           <select name="role_id" required="required" class="form-control col-md-7 col-xs-12">
+                           <select name="role_id" id="role" required="required" class="form-control col-md-7 col-xs-12">
                             <option value="" selected disabled>Please Select</option>
                           @foreach($roles as $role)
 
@@ -87,17 +87,69 @@
                         </select>
                         </div>
                     </div>
+                    <div class="form-group" id="dzongkhags" style="display:none;">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="dzongkhags">Dzongkhag <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12" >
+                        
+                        <select name="dzongkhag_id" id="dzongkhagslist" class="form-control col-md-7 col-xs-12" onchange="populateSchools()">
+                          
+                          
+                          @foreach($dzongkhags as $dzongkhag)
+                          @if($user->dzongkhag_id==$dzongkhag->id)
+                          <option value="{{ $dzongkhag->id}}" selected>{{$dzongkhag->name}}</option>
+                          @else
+                          <option value="{{$dzongkhag->id}}">{{$dzongkhag->name}}</option>
+                          @endif
+                          @endforeach
+                        </select>
+                      
+                      </div>
+                    </div>
+                    <div class="form-group" id="schools" style="display:none;">
+                       <label class="control-label col-md-3 col-sm-3 col-xs-12" for="schools">School <span class="required">*</span>
+                        </label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                     
+                        <select name="school_id" class="form-control col-md-7 col-xs-12" id="schoolslist" >
+                          @if(isset($user->school_id))
+                          @foreach($schools as $school)
+                          @if($user->school_id==$school->id)
+                          <option selected value="{{$school->id}}">{{$school->name}}</option>
+                          @endif
+                          @endforeach
+                          @else
+                          <option disabled selected>Select School</option>
+                          @endif
+                          
+                          
+                          
+                        </select>
+                      
+                    </div>
+                    </div>
                       <div class="ln_solid"></div>
                       <div class="form-group">
                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
                           <a href="{{url('/')}}/users" class="btn btn-primary" type="button">Cancel</a>
               
                           <button type="submit" class="btn btn-success">Update</button>
-                           <a href="{{url('/')}}/users/reset/{{$user->id}}" class="btn btn-primary btn-warning" type="button">Password Reset</a>
+                           
                         </div>
                       </div>
 
                     </form>
+                    <form class="form-horizontal" role="form" method="POST" action="{{ route('password.email') }}">
+                      {{ csrf_field() }}
+                       <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                      @if ($errors->has('email'))
+                      <span class="help-block"><strong>{{ $errors->first('email') }}</strong></span>
+                      @endif
+                                <input type="hidden"  id="email" name="email" value="{{$user->email}}"/>
+                            </div>
+                            <button type="submit" class="btn btn-default submit ">Send Password Reset Link
+                            </button>
+                          </form>
                   </div>
                 </div>
               </div>
@@ -109,7 +161,7 @@
 
 
   @push('scripts')
-
+@include('includes/edit_user_script')
    
   @endpush
 

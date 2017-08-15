@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class UserLocation extends Model
 {
-    protected $fillable=['id','name']
-    public $timestamps=false;
+    protected $fillable=['id','headquarter','dzongkhag_id','school_id'];
+
+    
+    
 }

@@ -20,6 +20,7 @@ class CreateDzongkhagsTable extends Migration
         });
     }
 
+
     /**
      * Reverse the migrations.
      *

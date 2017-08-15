@@ -20,7 +20,7 @@
                 <div class="x_panel">
                     <div class="x_title">
                         <div class="nav navbar-left add-button">
-                            <a href="{{url('/roles/create')}}" class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i> Add Role</a>
+                            <a href="{{url('/roles/create')}}" class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i> Add Permission</a>
                         </div>
                         <ul class="nav navbar-right panel_toolbox">
                             <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
@@ -43,9 +43,9 @@
                         <table id="datatable-checkbox" class="table table-striped table-bordered bulk_action">
                             <thead>
                             <tr>
-                                <th>Role ID</th>
-                                <th>Role Name</th>
-                                <th>Role Label</th>
+                                <th>Permission ID</th>
+                                <th>Permission Name</th>
+                                <th>Permission Label</th>
                                 
                                 <th class="column-title no-link last"><span class="nobr">Action</span>
                                 </th>
@@ -53,22 +53,21 @@
                             </thead>
 
                             <tbody>
-                            @foreach($roles as $role)
+                            @foreach($permissions as $permission)
                                 <tr>
-                                    <td>{{$role->id}}</td>
-                                    <td>{{$role->name}}</td>
-                                    <td>{{$role->label}}</td>
+                                    <td>{{$permission->id}}</td>
+                                    <td>{{$permission->name}}</td>
+                                    <td>{{$permission->label}}</td>
                                   
                                     <td class=" last">
                                         
-                                         <a href="{{url('/')}}/roles/view/{{$role->id}}" class="btn btn-xs btn-primary waves-effect waves-light" data-toggle="tooltip" data-placement="left" title="View role"><i class="fa fa-pencil-square fa-lg" aria-hidden="true"></i> View</a>
-
-                                        <a href="{{url('/')}}/roles/edit/{{$role->id}}" class="btn btn-xs btn-warning waves-effect waves-light" data-toggle="tooltip" data-placement="left" title="Edit role"><i class="fa fa-pencil-square fa-lg" aria-hidden="true"></i> Edit</a>
-                                       
                                         
+                                        <a href="#" class="btn btn-xs btn-warning waves-effect waves-light" data-toggle="tooltip" data-placement="left" title="Edit role"><i class="fa fa-pencil-square fa-lg" aria-hidden="true"></i> Edit</a>
+                                       
+                                        <Button class="btn btn-xs btn-danger waves-effect waves-light" data-toggle="modal" ><i class="fa fa-trash fa-lg" aria-hidden="true" data-target=".bs-example-modal-sm"></i> Delete</Button>
                                        
 
-                                                <!--<div class="modal fade bs-example-modal-sm" id="modal-delete-{{ $role->id }}" tabIndex="-1" aria-hidden="true" role="dialog">  
+                                                <!--<div class="modal fade bs-example-modal-sm" id="modal-delete-{{ $permission->id }}" tabIndex="-1" aria-hidden="true" role="dialog">  
                                                     <div class="modal-dialog modal-sm">
                                                       <div class="modal-content">
                                                         <div class="modal-header">
@@ -79,7 +78,7 @@
                                                         </div>
                                                         <div class="modal-footer">
 
-                                                                <form action="{{url('/')}}/roles/{{$role->id}}/delete" method="post">
+                                                                <form action="{{url('/')}}/roles/{{$permission->id}}/delete" method="post">
                                                                  {{ csrf_field() }}
                                                                  {{ method_field('DELETE')}}
                                                                  <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>

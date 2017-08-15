@@ -12,7 +12,7 @@
           <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3>Edit</h3>
+                <h3>View role details</h3>
               </div>
 
               <div class="title_right">
@@ -51,57 +51,60 @@
                   </div>
                   <div class="x_content">
                     <br />
-                    @foreach($roles as $role)
-                    <form method = "POST" action=" {{url('/')}}/roles/{{$role->id}}/update" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
-                        {{ csrf_field() }}
-                        {{ method_field('PATCH') }}
+                    <form  action="#" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
                         
+                        @foreach($role as $r)
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="role_id">Role ID <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="role_id" name="role_id" disabled class="form-control col-md-7 col-xs-12" value="{{ $role->id }}">
+                          <input type="text" id="role_id" name="role_id" disabled class="form-control col-md-7 col-xs-12" value="{{$r->id}}">
                         </div>
                       </div>
                        <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="role_name">Role Name<span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="role_name" name="role_name" class="form-control col-md-7 col-xs-12" value="{{ $role->name }}">
+                          <input type="text" id="role_name" name="role_name" class="form-control col-md-7 col-xs-12" value="{{ $r->name }}" disabled>
                         </div>
                       </div>
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="role_label">Role Label <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="role_label" name="role_label" required="required" class="form-control col-md-7 col-xs-12" value="{{ $role->label }}">
+                          <input type="text" id="role_label" name="role_label" required="required" class="form-control col-md-7 col-xs-12" value="{{ $r->label }}" disabled>
                         </div>
                       </div>
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="role_label">Permissions <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                            @foreach($role->permissions as $permission)
+
+                        @foreach($r->permissions as $permission)
                           <span class="tag">
                             <span>{{$permission->name}}</span>
                           </span>
                          @endforeach
+                        
+                         
+
+                        
+                       
+
+                        
                         </div>
                       </div>
-                      
-
-                       
+                      @endforeach
                       <div class="ln_solid"></div>
                       <div class="form-group">
                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                          <a href="{{url('/')}}/roles" class="btn btn-primary" type="button">Cancel</a>
+                          <a href="{{url('/')}}/roles" class="btn btn-primary" type="button">Go back</a>
               
-                          <button type="submit" class="btn btn-success">Update</button>
+                          
                         </div>
                       </div>
-                      
+
                     </form>
-                    @endforeach
                   </div>
                 </div>
               </div>
@@ -114,5 +117,7 @@
 
   @push('scripts')
 
+
+<script src="{{ asset('vendors/jquery.tagsinput/src/jquery.tagsinput.js') }}"></script>
    
   @endpush

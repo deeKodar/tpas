@@ -13,4 +13,7 @@ class Dzongkhag extends Model
 //    public function school() {
 //        $this->belongsTo('App\Models\School', 'dzongkhag_id');
 //    }
+
+
+    
 }
