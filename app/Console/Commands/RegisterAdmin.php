@@ -12,7 +12,7 @@ class RegisterAdmin extends Command
      *
      * @var string
      */
-    protected $signature = 'register:admin';
+    protected $signature = 'admin:register';
 
     /**
      * The console command description.
