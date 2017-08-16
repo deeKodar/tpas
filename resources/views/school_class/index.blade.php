@@ -43,7 +43,7 @@
                       <thead>
                         <tr> 
                           <th>Sl.No</th>
-                          <th>Class ID</th>
+                          {{--<th>Class ID</th>--}}
                           <th>Class Name</th>
                           <th class="column-title no-link last"><span class="nobr">Action</span>
                           </th>
@@ -54,7 +54,7 @@
                       @foreach($schoolClasses as $index => $class)
                         <tr>
                           <td>{{ $index + 1 }}</td>
-                          <td>{{$class->id}}</td>
+                          {{--<td>{{$class->id}}</td>--}}
                           <td>{{$class->name}}</td>
                           <td class=" last">
                             <a href="{{ route('school_class.edit', ['id' => $class->id]) }}" class="btn btn-xs btn-warning waves-effect waves-light" data-toggle="tooltip" data-placement="left" title="Edit Class"><i class="fa fa-pencil-square fa-lg" aria-hidden="true"></i> Edit</a>

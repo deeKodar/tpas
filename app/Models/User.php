@@ -63,8 +63,8 @@ class User extends Authenticatable
 
         return $this->hasOne(Dzongkhag::class);
     }
-    public function school() {
 
+    public function school() {
         return $this->hasOne(School::class);
     }
     

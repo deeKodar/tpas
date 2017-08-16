@@ -115,6 +115,7 @@
                                     <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
                                         <input type="hidden" name="id" value="{{ $schoolId }}">
                                         <input type="hidden" name="version" value="{{ $school->version }}"/>
+                                        <a href="{{ route('school.index') }}" class="btn btn-primary" type="button">Cancel</a>
                                         <button type="submit" class="btn btn-success">Update</button>
                                     </div>
                                 </div>

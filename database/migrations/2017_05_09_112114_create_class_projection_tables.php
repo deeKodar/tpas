@@ -16,7 +16,7 @@ class CreateClassProjectionTables extends Migration
         Schema::create('class_projections', function (Blueprint $table) {
             $table->increments('id');
             $table->char('school_id',13);
-            $table->integer('class_id');
+            $table->integer('school_class_id');
             $table->integer('student_count');
             $table->integer('section_count');
             $table->string('curriculum_year');

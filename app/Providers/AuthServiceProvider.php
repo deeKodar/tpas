@@ -28,6 +28,7 @@ class AuthServiceProvider extends ServiceProvider
 
         parent::registerPolicies();
 
+        //Comment this loop to run migration #php artisan migrate and uncomment after completing migration
         foreach($this->getPermissions() as $permission) {
 
             Gate::define($permission->name, function ($user) use ($permission) {

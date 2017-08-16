@@ -55,7 +55,7 @@
                     </li>
                     @endcan
                     @can('edit_projections')
-                    <li><a><i class="fa fa-pie-chart" aria-hidden="true"></i> Project Management <span class="fa fa-chevron-down"></span></a>
+                    <li><a><i class="fa fa-pie-chart" aria-hidden="true"></i>Projection Management<span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
                             <li><a href="#">Manage Projections</a></li>
                             <li><a href="#">Log Teacher Projections</a></li>
