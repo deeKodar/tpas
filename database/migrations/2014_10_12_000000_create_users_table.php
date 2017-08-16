@@ -21,8 +21,8 @@ class CreateUsersTable extends Migration
             ->references('id')
             ->on('roles');
             $table->rememberToken();
-            $table->integer('dzongkhag_id')->nullable;
-            $table->integer('school_id')->nullable;
+            $table->integer('dzongkhag_id')->nullable();
+            $table->integer('school_id')->nullable();
             $table->timestamps();
         });
     }

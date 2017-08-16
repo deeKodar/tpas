@@ -29,9 +29,6 @@
                 <ul class="nav side-menu">
                     <li><a><i class="fa fa-tachometer" aria-hidden="true"></i> Dashboards <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
-                            <li><a href="#">Teacher Projections</a></li>
-                            <li><a href="#">Teacher Vacancies</a></li>
-                            <li><a href="#">Teacher Transfers</a></li>
                            @can('view_projections') <li><a href="#">Teacher Projections</a></li>@endcan
                            @can('view_vacancies') <li><a href="#">Teacher Vancancies</a></li>@endcan
                             @can('view_transfer')<li><a href="#">Teacher Transfers</a></li>@endcan
@@ -41,7 +38,20 @@
                     <li><a><i class="fa fa-sitemap" aria-hidden="true"></i> Teacher Management <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
                             <li><a href=" {{ url('/teachers/') }}">Manage Teachers</a></li>
-                            <li><a href="#">Manage Transfers</a></li>
+                            @can('edit_transfer')<li>
+                                <a>Manage Transfers<span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li class="sub_menu">
+                                            <a href="#">Allocate Teachers</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Intra Dzongkhag Transfers</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Inter Dzongkhag Trasnfers</a>
+                                        </li>
+                                    </ul>
+                                </li>@endcan
                         </ul>
                     </li>
                     @endcan
