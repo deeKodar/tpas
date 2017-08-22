@@ -27,7 +27,7 @@ class AuthServiceProvider extends ServiceProvider
         //$this->registerPolicies();
 
         parent::registerPolicies();
-        $this->registerTpasPolicies();
+        //$this->registerTpasPolicies();
 
         
 
@@ -46,7 +46,7 @@ class AuthServiceProvider extends ServiceProvider
         }
 
     }
-    
+
     protected function getPermissions() {
 
         return Permission::with('roles')->get();
