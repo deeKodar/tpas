@@ -26,20 +26,6 @@ $(document).ready(function(){
     });
 });
 
-function populateSchools()
-{
-   var dzongkhag=$('#dzongkhagslist').val();
-    
-    $.get('{{url('/')}}/users/schoolfromdzongkhag/'+dzongkhag,
-  {
-    dzongkhag:dzongkhag
-    
-    },
-    function(data) 
-    {
-    
-    $('#schoolslist').html(data);
-    }); 
-}
+
 
 </script>
