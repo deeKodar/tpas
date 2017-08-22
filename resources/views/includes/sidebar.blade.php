@@ -65,9 +65,10 @@
                     </li>
                     @endcan
                     @can('view_projections')
-                    <li><a><i class="fa fa-pie-chart" aria-hidden="true"></i>Projection Management<span class="fa fa-chevron-down"></span></a>
+                    <li><a><i class="fa fa-pie-chart" aria-hidden="true"></i>Projections<span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
-                            <li><a href="{{ route('class_projection.index') }}">Manage Projections</a></li>
+                            <li><a href="{{ route('class_projection.index') }}">Manage Class Size</a></li>
+                            <li><a href="#">Teacher Gap Projections</a></li>
                             <li><a href="#">Log Teacher Projections</a></li>
                         </ul>
                     </li>

@@ -9,7 +9,7 @@
         <div class="">
             <div class="page-title">
                 <div class="">
-                    <h3>Class Projection Management: <b>[ {{ $locationName }} {{ $schoolLevelName }} ]</b></h3>
+                    <h3>Class Size Management: <b>[ {{ $locationName }} {{ $schoolLevelName }} ]</b></h3>
                     {{--<h4>School Name: <b>[ {{ $schoolName }} ]</b></h4>--}}
                 </div>
                 <div class="title_right">
@@ -22,7 +22,7 @@
                         {{--@if($roleId == 4)--}}
                         @can('add_projections')
                         <div class="nav navbar-left add-button">
-                            <a href="{{ route('class_projection.create') }}" class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i> Add Class Projection</a>
+                            <a href="{{ route('class_projection.create') }}" class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i> Add Class Size</a>
                         </div>
                         @endcan
                         {{--@endif--}}

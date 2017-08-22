@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ClassProjection;
-use App\Models\SchoolLevel;
-use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+use App\Models\ClassProjection;
+use App\Models\SchoolLevel;
+use App\Models\User;
 use App\Models\School;
 use App\Models\SchoolClass;
 use App\Models\ProjectionType;

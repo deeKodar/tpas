@@ -27,23 +27,21 @@ class AuthServiceProvider extends ServiceProvider
         //$this->registerPolicies();
 
         parent::registerPolicies();
-        //$this->registerTpasPolicies();
-
-        
+        //Comment this the line below to run migration #php artisan migrate and uncomment after completing migration
+        $this->registerTpasPolicies();
 
         
     }
 
     protected function registerTpasPolicies() {
 
-        //Comment this loop to run migration #php artisan migrate and uncomment after completing migration
-//        foreach($this->getPermissions() as $permission) {
-//
-//            Gate::define($permission->name, function ($user) use ($permission) {
-//
-//                    return $user->hasRole($permission->roles);
-//            });
-//        }
+        foreach($this->getPermissions() as $permission) {
+
+            Gate::define($permission->name, function ($user) use ($permission) {
+
+                    return $user->hasRole($permission->roles);
+            });
+        }
 
     }
 
