@@ -19,10 +19,9 @@
             <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                     <div class="x_title">
-                        <div class="nav navbar-left add-button">
-                            <a href="{{url('/teachers/create')}}" class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i> Add Teacher</a>
-                        </div>
+                       <h2>Inter Dzongkhag Transfer of Teachers : @if(isset($dzongkhag))<b><u>{{$dzongkhag->name}}</u></b>@endif dzongkhag</h2>
                         <ul class="nav navbar-right panel_toolbox">
+                           
                             <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                             </li>
                             <li class="dropdown">
@@ -45,9 +44,8 @@
                             <tr>
                                 <th>Sl.No</th>
                                 <th>Teacher Name</th>
-                                <th>EmpID</th>
-                                <th>School</th>
-                                 <th>Dzongkhag</th>
+                                <th>Employee ID</th>
+                                <th>School Name</th>
                                 <th class="column-title no-link last"><span class="nobr">Action</span>
                                 </th>
                             </tr>
@@ -60,17 +58,16 @@
                                     <td>{{$teacher->name}}</td>
                                     <td>{{$teacher->employee_id}}</td>
                                     <td>@if($teacher->school_id==0)
-                                         <span class="btn-danger" style="border-radius:10px;padding:5px;">Unallocated</span>
+                                        <span class="btn-danger" style="border-radius:10px;padding:5px;">Unallocated</span>
                                         @else
                                         {{$teacher->school->name}}
                                         @endif
                                         </td>
-                                        <td>{{$teacher->dzongkhag->name}}</td>
                                     <td class=" last">
                                         
-                                        <a href="{{url('/')}}/teachers/edit/{{$teacher->id}}" class="btn btn-xs btn-warning waves-effect waves-light" data-toggle="tooltip" data-placement="left" title="Edit Teacher"><i class="fa fa-pencil-square fa-lg" aria-hidden="true"></i> Edit</a>
-                                        <a href="{{$teacher->id}}" class="btn btn-xs btn-danger waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Delete Teacher"><i class="fa fa-trash fa-lg" aria-hidden="true"></i> Delete</a>
-                                        <a href="{{url('/')}}/teachers/view/{{$teacher->id}}" class="btn btn-xs btn-success waves-effect waves-light" data-toggle="tooltip" data-placement="right" title="View Teacher Details"><i class="fa fa-eye fa-lg" aria-hidden="true"></i> View Detail</a>
+                                        <a href="{{ route('teachers.transfer.inter', ['id' => $teacher->id]) }}" class="btn btn-xs btn-warning waves-effect waves-light" data-toggle="tooltip" data-placement="left" title="Inter dzongkhag transfer"><i class="fa fa-pencil-square fa-lg" aria-hidden="true"></i> Inter Transfer</a>
+
+                                        <a href="{{ route('teachers.view', ['id' => $teacher->id]) }}" class="btn btn-xs btn-success waves-effect waves-light" data-toggle="tooltip" data-placement="right" title="View Teacher Details"><i class="fa fa-eye fa-lg" aria-hidden="true"></i> View Detail</a>
                                     </td>
                                 </tr>
                             @endforeach
@@ -88,6 +85,7 @@
 
 @include('includes/dynamic-table-scripts')
 
+@include('includes/teacher_by_dzongkhag');
 
 @endpush
 

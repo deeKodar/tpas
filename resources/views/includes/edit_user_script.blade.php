@@ -3,7 +3,7 @@
 
 $(document).ready(function(){
     $('#role').load('change', function() {
-      populateSchools();
+      
       if ( this.value == '3')
       {
         $("#schools").hide();
@@ -51,20 +51,5 @@ $(document).ready(function(){
     });
 });
 
-function populateSchools()
-{
-   var dzongkhag=$('#dzongkhagslist').val();
-    
-    $.get('{{url('/')}}/users/schoolfromdzongkhag/'+dzongkhag,
-  {
-    dzongkhag:dzongkhag
-    
-    },
-    function(data) 
-    {
-    
-    $('#schoolslist').html(data);
-    }); 
-}
 
 </script>

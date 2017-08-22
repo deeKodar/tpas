@@ -124,12 +124,11 @@
 
                       <div class="form-group">
                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                          <a href="{{url('/')}}/users" class="btn btn-primary" type="button">Cancel</a>
+                          <a href="{{ URL::previous() }}" class="btn btn-primary" type="button">Cancel</a>
               
                           <button type="submit" class="btn btn-success">Create</button>
                         </div>
                       </div>
-
                     </form>
                   </div>
                 </div>
@@ -142,7 +141,10 @@
 
 
   @push('scripts')
+
 @include('includes/register_user_script')
+
+@include('includes/school_from_dzongkhag')
    
   @endpush
 

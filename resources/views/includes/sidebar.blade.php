@@ -42,13 +42,13 @@
                                 <a>Manage Transfers<span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
                                         <li class="sub_menu">
-                                            <a href="#">Allocate Teachers</a>
+                                            <a href="{{ route('teachers.transfer.allocate.index') }}">Allocate Teachers</a>
                                         </li>
                                         <li>
-                                            <a href="#">Intra Dzongkhag Transfers</a>
+                                            <a href="{{ route('teachers.transfer.intra.index') }}">Intra Dzongkhag Transfers</a>
                                         </li>
                                         <li>
-                                            <a href="#">Inter Dzongkhag Trasnfers</a>
+                                            <a href="{{ route('teachers.transfer.inter.index') }}">Inter Dzongkhag Trasnfers</a>
                                         </li>
                                     </ul>
                                 </li>@endcan

@@ -112,17 +112,11 @@
                     <div class="col-md-6 col-sm-6 col-xs-12">
                      
                         <select name="school_id" class="form-control col-md-7 col-xs-12" id="schoolslist" >
-                          @if(isset($user->school_id))
                           @foreach($schools as $school)
-                          @if($user->school_id==$school->id)
-                          <option selected value="{{$school->id}}">{{$school->name}}</option>
+                            @if(isset($user->school_id) && $user->school_id==$school->id)
+                            <option value="{{ $school->name }}" selected>{{$school->name}}</option>
                           @endif
                           @endforeach
-                          @else
-                          <option disabled selected>Select School</option>
-                          @endif
-                          
-                          
                           
                         </select>
                       
@@ -131,7 +125,7 @@
                       <div class="ln_solid"></div>
                       <div class="form-group">
                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                          <a href="{{url('/')}}/users" class="btn btn-primary" type="button">Cancel</a>
+                          <a href="{{ URL::previous() }}" class="btn btn-primary" type="button">Cancel</a>
               
                           <button type="submit" class="btn btn-success">Update</button>
                            
@@ -162,6 +156,7 @@
 
   @push('scripts')
 @include('includes/edit_user_script')
+@include('includes/school_from_dzongkhag')
    
   @endpush
 
