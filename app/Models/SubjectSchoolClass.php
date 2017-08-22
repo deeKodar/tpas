@@ -10,5 +10,5 @@ class SubjectSchoolClass extends Model
     protected $primaryKey = 'id';
     public $timestamps = false;
     // protected $guarded = ['id'];
-    protected $fillable = ['subject_id', 'school_class_id'];
+    protected $fillable = ['subject_id', 'school_class_id', 'created_at', 'updated_at'];
 }

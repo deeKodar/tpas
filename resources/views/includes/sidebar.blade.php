@@ -64,10 +64,10 @@
                         </ul>
                     </li>
                     @endcan
-                    @can('edit_projections')
+                    @can('view_projections')
                     <li><a><i class="fa fa-pie-chart" aria-hidden="true"></i>Projection Management<span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
-                            <li><a href="#">Manage Projections</a></li>
+                            <li><a href="{{ route('class_projection.index') }}">Manage Projections</a></li>
                             <li><a href="#">Log Teacher Projections</a></li>
                         </ul>
                     </li>

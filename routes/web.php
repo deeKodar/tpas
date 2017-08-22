@@ -230,6 +230,41 @@ Route::group(['prefix' => 'standard_subject_hour'], function() {
 
 });
 
+//Route group entries for Standard Subject Hours
+Route::group(['prefix' => 'class_projection'], function() {
+
+    Route::get('', [
+        'uses' => 'ClassProjectionController@getClassProjectionIndex',
+        'as' => 'class_projection.index'
+    ]);
+
+    Route::get('create', [
+        'uses' => 'ClassProjectionController@getClassProjectionCreate',
+        'as' => 'class_projection.create'
+    ]);
+
+    Route::post('store', [
+        'uses' => 'ClassProjectionController@postClassProjectionStore',
+        'as' => 'class_projection.store'
+    ]);
+
+    Route::get('edit/{id}', [
+        'uses' => 'ClassProjectionController@getClassProjectionEdit',
+        'as' => 'class_projection.edit'
+    ]);
+
+    Route::get('delete/{id}', [
+        'uses' => 'ClassProjectionController@getClassProjectionDelete',
+        'as' => 'class_projection.delete'
+    ]);
+
+    Route::post('update', [
+        'uses' => 'ClassProjectionController@postClassProjectionUpdate',
+        'as' => 'class_projection.update'
+    ]);
+
+});
+
 
 
 

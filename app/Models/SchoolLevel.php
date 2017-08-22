@@ -10,10 +10,15 @@ class SchoolLevel extends Model
     protected $primaryKey = 'id';
     public $timestamps = false;
     // protected $guarded = ['id'];
-    protected $fillable = ['name'];
+    protected $fillable = ['code', 'name'];
 
 //    public function school() {
 //        $this->belongsTo('App\Models\School', 'school_level_id');
+//    }
+
+//    public function schoolClasses()
+//    {
+//        return $this->belongsToMany('App\Models\SchoolClass', 'class_level');
 //    }
 }
 
