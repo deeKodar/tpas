@@ -27,21 +27,57 @@
         </div>
 
         <div class="clearfix"></div>
+            {{--<div>--}}
+                {{--<h1>rocket League Wins Comparision</h1>--}}
+
+                {{--<wins-graph :player="{{ json_encode($sonam) }}" :opponent="{{ json_encode($darshan) }}"></wins-graph>--}}
+
+            {{--</div>--}}
+
+
+        {{--<div class="row">--}}
+            {{--<div class="col-md-12 col-sm-12 col-xs-12">--}}
+                {{--<div class="x_panel">--}}
+                    {{--<div class="x_title">--}}
+                        {{--<h2>Subject Wise <small>Requisitions</small></h2>--}}
+                        {{--<ul class="nav navbar-right panel_toolbox">--}}
+                            {{--<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>--}}
+                            {{--</li>--}}
+                            {{--<li class="dropdown">--}}
+                                {{--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>--}}
+                                {{--<ul class="dropdown-menu" role="menu">--}}
+                                    {{--<li><a href="#">Settings 1</a>--}}
+                                    {{--</li>--}}
+                                    {{--<li><a href="#">Settings 2</a>--}}
+                                    {{--</li>--}}
+                                {{--</ul>--}}
+                            {{--</li>--}}
+                            {{--<li><a class="close-link"><i class="fa fa-close"></i></a>--}}
+                            {{--</li>--}}
+                        {{--</ul>--}}
+                        {{--<div class="clearfix"></div>--}}
+                    {{--</div>--}}
+                    {{--<div class="x_content">--}}
+                        {{--<canvas id="#"></canvas>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+        {{--</div>--}}
 
         <div class="row">
             <div class="col-md-6 col-sm-6 col-xs-12">
                 <div class="x_panel">
                     <div class="x_title">
-                        <h2>Transfer<small>Requisitions</small></h2>
+                        <h2>Teacher Transfer<small>Requisitions</small></h2>
                         <ul class="nav navbar-right panel_toolbox">
                             <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-filter"></i> Filter</a>
                                 <ul class="dropdown-menu" role="menu">
-                                    <li><a href="#">Settings 1</a>
+                                    <li><a href="#">National</a>
                                     </li>
-                                    <li><a href="#">Settings 2</a>
+                                    <li><a href="#">Dzongkhag</a>
                                     </li>
                                 </ul>
                             </li>
@@ -197,7 +233,6 @@
         </div>
     </div>
 
-
     	@can('add_teacher')
 
     	<h1>You have the right to add a teacher</h1>
@@ -208,6 +243,7 @@
 @endsection
 @push('scripts')
     @include('includes/dashboard-charts-scripts')
+    {{--<script src="{{ asset("js/chart-main.js") }}"></script>--}}
 @endpush
 
 

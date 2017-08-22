@@ -32,8 +32,9 @@ class SchoolClass extends Model
          return $this->belongsToMany('App\Models\Subject', 'subject_school_class')->withTimestamps();
      }
 
-
-
-
+//    public function schoolLevels()
+//    {
+//        return $this->belongsToMany('App\Models\SchoolLevel', 'class_level');
+//    }
 
 }

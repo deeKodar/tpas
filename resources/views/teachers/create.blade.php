@@ -159,6 +159,7 @@
                           </div>
                         </fieldset>
                       </div>
+
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="current_appointment_date">Current Appointment Date<span class="required">*</span>
                         </label>

@@ -50,4 +50,9 @@ elixir(function(mix) {
 
     // Font awesome
     mix.copy('vendor/bower_components/gentelella/vendors/font-awesome/fonts/', 'public/fonts');
+
+    //Added for Chart.js tutorial by Jeffrey!
+    mix.browserify('chart-main.js')
+        .sass('app.scss');
+
 });

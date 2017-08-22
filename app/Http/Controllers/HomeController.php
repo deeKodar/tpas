@@ -24,6 +24,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $sonam = ['name' => 'Sonam', 'wins' => '50'];
+        $darshan = ['name' => 'Darshan', 'wins' => '8'];
+        return view('home', compact('sonam', 'darshan'));
     }
 }
