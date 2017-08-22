@@ -24,7 +24,9 @@ use App\Models\Nationality;
 use App\Models\Role;
 use App\Models\Permission;
 use App\Models\PermissionRole;
+use App\Models\Hometown;
 use Illuminate\Database\Eloquent\Model;
+
 
 class ImportMaster extends Command
 {
@@ -72,6 +74,7 @@ class ImportMaster extends Command
         $this->importMaster('employment_types',new TeacherEmploymentType);
         $this->importMaster('qualification_types',new Qualification);
         $this->importMaster('field_types',new FieldOfStudy);
+        $this->importMaster('home_towns', new Hometown);
         $this->importGewogs();
         $this->importMaster('position_titles',new PositionTitle);
         $this->importMaster('position_levels',new PositionLevel);

@@ -14,6 +14,8 @@ use App\Models\SchoolClass;
 use App\Models\PositionLevel;
 use App\Models\PositionTitle;
 use App\Models\Nationality;
+use App\Models\Dzongkhag;
+use App\Models\Hometown;
 use Illuminate\Support\Facades\Auth;
 use View;
 
@@ -24,12 +26,13 @@ class TeacherController extends Controller
 	 public function __construct()
     {
         $this->middleware('auth');
+        
     }
 
     public function index() {
 
 
-	      $teachers = Teacher::with('school')->get();
+	      $teachers = Teacher::with('school','dzongkhag')->get();
 
           
 
@@ -39,7 +42,7 @@ class TeacherController extends Controller
    
 
     public function edit($id) {
-
+        
         $subjects = Subject::all();
         $classes=SchoolClass::all();
         $schools=School::all();
@@ -49,11 +52,14 @@ class TeacherController extends Controller
         $teacherstatus=TeacherStatusType::all();
         $positionlevels=PositionLevel::all();
         $positiontitles=PositionTitle::all();
+        $dzongkhags=Dzongkhag::all();
         $nationalities=Nationality::all();
+        $hometowns=Hometown::all();
     	return View::make('teachers.edit')
     	->with('teacher', Teacher::find($id))
             ->with(compact('subjects'))
             ->with(compact('fields'))
+            ->with(compact('dzongkhags'))
             ->with(compact('schools'))
             ->with(compact('classes'))
             ->with(compact('employmenttypes'))
@@ -62,7 +68,8 @@ class TeacherController extends Controller
             ->with(compact('positionlevels'))
             ->with(compact('positiontitles'))
             ->with(compact('nationalities'))
-            ->with(compact('classes'));
+            ->with(compact('classes'))
+            ->with(compact('hometowns'));
 
     }
 
@@ -78,6 +85,8 @@ class TeacherController extends Controller
 		$positionlevels=PositionLevel::all();
 		$positiontitles=PositionTitle::all();
 		$nationalities=Nationality::all();
+        $dzongkhags=Dzongkhag::all();
+        $hometowns=Hometown::all();
 
 		return View::make('teachers.create')
 		->with(compact('subjects'))
@@ -90,7 +99,9 @@ class TeacherController extends Controller
 		->with(compact('positionlevels'))
 		->with(compact('positiontitles'))
 		->with(compact('nationalities'))
-		->with(compact('classes'));
+        ->with(compact('dzongkhags'))
+		->with(compact('classes'))
+        ->with(compact('hometowns'));
     	
     }
     public function store() {
@@ -103,11 +114,7 @@ class TeacherController extends Controller
     	$userid = Auth::id();
 
     	$teacher->employee_id = request('employee_id');
-    	$teacher->citizenship_id = request('citizenship_id');
-    	$teacher->first_name = request('first_name');
-    	$teacher->middle_name= request('middle_name');
-    	$teacher->last_name = request('last_name');
-    	$teacher->citizenship = request('citizenship');
+    	$teacher->name = request('name');
     	$teacher->gender = request('gender');
     	$teacher->date_of_birth = date('Y-m-d',strtotime(request('date_of_birth')));
     	$teacher->position_level = request('position_level');
@@ -115,14 +122,19 @@ class TeacherController extends Controller
     	$teacher->employment_type_id = request('employment_type_id');
     	$teacher->initial_appointment_date = date('Y-m-d',strtotime(request('initial_appointment_date')));
     	$teacher->current_appointment_date = date('Y-m-d',strtotime(request('current_appointment_date')));
-    	$teacher->qualification_id = request('qualification_id');
+    	$teacher->initial_qualification_id = request('initial_qualification_id');
+        $teacher->current_qualification_id = request('current_qualification_id');
     	$teacher->field_of_study_id = request('field_of_study_id');
+        $teacher->dzongkhag_id = request('dzongkhag_id');
     	$teacher->school_id = request('school_id');
-    	$teacher->class_id = request('class_id');
     	$teacher->core_subject_id = request('core_subject_id');
-    	$teacher->elective_subject_one_id = request('elective_subject_one_id');
-    	$teacher->elective_subject_two_id = request('elective_subject_two_id');
-    	$teacher->elective_subject_three_id = request('elective_subject_three_id');
+    	$teacher->subject_one_id = request('subject_one_id');
+    	$teacher->subject_two_id = request('subject_two_id');
+    	$teacher->subject_three_id = request('subject_three_id');
+        $teacher->contract_from = date('Y-m-d',strtotime(request('contract_from')));;
+        $teacher->contract_to = date('Y-m-d',strtotime(request('contract_to')));
+        $teacher->remarks = request('remarks');
+        $teacher->hometown = request('hometown');
     	$teacher->employee_status_type_id = request('employee_status_type_id');
     	$teacher->marital_status = request('marital_status');
     	$teacher->user_id = $userid;
@@ -141,12 +153,8 @@ class TeacherController extends Controller
 
         $userid = Auth::id();
 
-        $teacher->employee_id = request('employee_id');
-        $teacher->citizenship_id = request('citizenship_id');
-        $teacher->first_name = request('first_name');
-        $teacher->middle_name= request('middle_name');
-        $teacher->last_name = request('last_name');
-        $teacher->citizenship = request('citizenship');
+       $teacher->employee_id = request('employee_id');
+        $teacher->name = request('name');
         $teacher->gender = request('gender');
         $teacher->date_of_birth = date('Y-m-d',strtotime(request('date_of_birth')));
         $teacher->position_level = request('position_level');
@@ -154,14 +162,19 @@ class TeacherController extends Controller
         $teacher->employment_type_id = request('employment_type_id');
         $teacher->initial_appointment_date = date('Y-m-d',strtotime(request('initial_appointment_date')));
         $teacher->current_appointment_date = date('Y-m-d',strtotime(request('current_appointment_date')));
-        $teacher->qualification_id = request('qualification_id');
+        $teacher->initial_qualification_id = request('initial_qualification_id');
+        $teacher->current_qualification_id = request('current_qualification_id');
         $teacher->field_of_study_id = request('field_of_study_id');
+        $teacher->dzongkhag_id = request('dzongkhag_id');
         $teacher->school_id = request('school_id');
-        $teacher->class_id = request('class_id');
         $teacher->core_subject_id = request('core_subject_id');
-        $teacher->elective_subject_one_id = request('elective_subject_one_id');
-        $teacher->elective_subject_two_id = request('elective_subject_two_id');
-        $teacher->elective_subject_three_id = request('elective_subject_three_id');
+        $teacher->subject_one_id = request('subject_one_id');
+        $teacher->subject_two_id = request('subject_two_id');
+        $teacher->subject_three_id = request('subject_three_id');
+        $teacher->contract_from = request('contract_from');
+        $teacher->contract_to = request('contract_to');
+        $teacher->remarks = request('remarks');
+        $teacher->hometown = request('hometown');
         $teacher->employee_status_type_id = request('employee_status_type_id');
         $teacher->marital_status = request('marital_status');
         $teacher->user_id = $userid;
@@ -189,6 +202,8 @@ class TeacherController extends Controller
         $positionlevels=PositionLevel::all();
         $positiontitles=PositionTitle::all();
         $nationalities=Nationality::all();
+        $dzongkhags=Dzongkhag::all();
+        $hometowns=Hometown::all();
         return View::make('teachers.view')
         ->with('teacher', Teacher::find($id))
             ->with(compact('subjects'))
@@ -201,7 +216,202 @@ class TeacherController extends Controller
             ->with(compact('positionlevels'))
             ->with(compact('positiontitles'))
             ->with(compact('nationalities'))
+            ->with(compact('classes'))
+            ->with(compact('hometowns'))
+            ->with(compact('dzongkhags'));
+
+    }
+
+    public function transferAllocateIndex() {
+
+        $this->user =  \Auth::user();
+
+        $teachers = Teacher::with('school')->get()
+        ->where('school_id',0)
+        ->where('dzongkhag_id',$this->user->dzongkhag_id);
+        $dzongkhag = Dzongkhag::find($this->user->dzongkhag_id);
+          
+
+         return view('teachers.transfers.allocate.index', compact('teachers', 'dzongkhag'));
+
+    }
+
+
+    protected function transferAllocate($id) {
+
+        
+
+        $teacher=Teacher::find($id);
+
+        
+
+        $schools=School::all();
+        
+        $teacherstatus=TeacherStatusType::all();
+        $positionlevels=PositionLevel::all();
+        
+        $dzongkhags=Dzongkhag::all();
+        $nationalities=Nationality::all();
+        return View::make('teachers.transfers.allocate.allocate')
+        ->with('teacher', Teacher::find($id))
+            ->with(compact('subjects'))
+            ->with(compact('fields'))
+            ->with(compact('dzongkhags'))
+            ->with(compact('schools'))
+            ->with(compact('classes'))
+            ->with(compact('employmenttypes'))
+            ->with(compact('qualifications'))
+            ->with(compact('teacherstatus'))
+            ->with(compact('positionlevels'))
+            ->with(compact('positiontitles'))
+            ->with(compact('nationalities'))
             ->with(compact('classes'));
+
+    }
+
+
+    protected function transferAllocateUpdate($id)  {
+
+       $teacher=Teacher::find($id);
+
+        $userid = Auth::id();
+
+       
+        $teacher->school_id = request('school_id');
+        
+        $teacher->user_id = $userid;
+        $teacher->version = request('version')+1;
+
+
+        $teacher->save();
+
+        return redirect('/teachers/transfer/allocate');
+
+
+    }
+
+    protected function transferIntraIndex() {
+
+         $this->user =  \Auth::user();
+
+        $teachers = Teacher::with('school')->get()
+        ->where('dzongkhag_id',$this->user->dzongkhag_id);
+        $dzongkhag = Dzongkhag::find($this->user->dzongkhag_id);
+          
+
+         return view('teachers.transfers.intra.index', compact('teachers', 'dzongkhag'));
+
+
+    }
+
+     protected function transferIntra($id) {
+
+        
+
+        $teacher=Teacher::find($id);
+
+        
+
+        $schools=School::all();
+        
+        $teacherstatus=TeacherStatusType::all();
+        $positionlevels=PositionLevel::all();
+        
+        $dzongkhags=Dzongkhag::all();
+        $nationalities=Nationality::all();
+        return View::make('teachers.transfers.intra.transfer')
+        ->with('teacher', Teacher::find($id))
+            ->with(compact('subjects'))
+            ->with(compact('fields'))
+            ->with(compact('dzongkhags'))
+            ->with(compact('schools'))
+            ->with(compact('classes'))
+            ->with(compact('employmenttypes'))
+            ->with(compact('qualifications'))
+            ->with(compact('teacherstatus'))
+            ->with(compact('positionlevels'))
+            ->with(compact('positiontitles'))
+            ->with(compact('nationalities'))
+            ->with(compact('classes'));
+
+    }
+
+
+    protected function transferIntraUpdate($id)  {
+
+       $teacher=Teacher::find($id);
+
+        $userid = Auth::id();
+
+       
+        $teacher->school_id = request('school_id');
+        
+        $teacher->user_id = $userid;
+        $teacher->version = request('version')+1;
+
+
+        $teacher->save();
+
+        return redirect('/teachers/transfer/intra');
+
+
+    }
+
+    protected function transferInterIndex() {
+
+         $this->user =  \Auth::user();
+
+        $teachers = Teacher::with('school')->get()
+        ->where('dzongkhag_id',$this->user->dzongkhag_id);
+       $dzongkhag = Dzongkhag::find($this->user->dzongkhag_id);
+
+         return view('teachers.transfers.inter.index', compact('teachers','dzongkhag'));
+
+
+    }
+
+     protected function transferInter($id) {
+
+        
+
+        $teacher=Teacher::find($id);
+
+        
+
+        $schools=School::all();
+        
+        $teacherstatus=TeacherStatusType::all();
+        $positionlevels=PositionLevel::all();
+        
+        $dzongkhags=Dzongkhag::all();
+        $nationalities=Nationality::all();
+        return View::make('teachers.transfers.inter.transfer')
+        ->with('teacher', Teacher::find($id))
+            ->with(compact('dzongkhags'))
+            ->with(compact('schools'))
+            ->with(compact('nationalities'));
+
+    }
+
+
+    protected function transferInterUpdate($id)  {
+
+       $teacher=Teacher::find($id);
+
+        $userid = Auth::id();
+
+       
+        $teacher->dzongkhag_id = request('dzongkhag_id');
+        $teacher->school_id=0;
+        
+        $teacher->user_id = $userid;
+        $teacher->version = request('version')+1;
+
+
+        $teacher->save();
+
+        return redirect('/teachers/transfer/inter');
+
 
     }
 }

@@ -85,7 +85,7 @@ class RegisterAdmin extends Command
 
     protected function getUserName() {
 
-        return $this->ask('Enter the user name');
+        return $this->ask('Enter user full name');
         
         
     }

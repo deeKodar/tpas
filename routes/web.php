@@ -107,23 +107,65 @@ Route::group(['prefix' => 'school'], function() {
 //Route list teachers
 Route::group(['prefix' => 'teachers'], function() {
 
-    Route::get('','TeacherController@index');
+    Route::get('','TeacherController@index')->middleware('can:view_teachers,Auth::user()');
 
     Route::post('store', [
     	'uses' => 'TeacherController@store',
-    	'as' => 'storeTeacher'
+    	'as' => 'teachers.store'
     	]);
     Route::get('edit/{id}', [
     	'uses' => 'TeacherController@edit',
-    	'as' => 'editTeacher'
+    	'as' => 'teachers.edit'
     	]);
 
-    Route::get('/teachers', 'TeacherController@index');
+    Route::group(['prefix' => 'transfer'], function() {
+
+            Route::get('allocate/', [
+                'uses' => 'TeacherController@transferAllocateIndex',
+                'as' => 'teachers.transfer.allocate.index'
+            ])->middleware('can:allocate_teachers,Auth::user()');
+
+            Route::get('allocate/{id}', [
+                'uses' => 'TeacherController@transferAllocate',
+                'as' => 'teachers.transfer.allocate'])->middleware('can:allocate_teachers, Auth::user()');
+            Route::patch('allocate/{id}', [
+                'uses' => 'TeacherController@transferAllocateUpdate',
+                'as' => 'teachers.transfer.allocate'])->middleware('can:allocate_teachers, Auth::user()');
+
+            Route::get('intra', [
+
+                'uses' => 'TeacherController@transferIntraIndex',
+                'as' => 'teachers.transfer.intra.index'])->middleware('can:transfer_intra, Auth::user()');
+            Route::get('intra/{id}', [
+                'uses' => 'TeacherController@transferIntra',
+                'as' => 'teachers.transfer.intra'])->middleware('can:transfer_intra, Auth::user()');
+            Route::patch('intra/{id}', [
+                'uses' => 'TeacherController@transferIntraUpdate',
+                'as' => 'teachers.transfer.intra'])->middleware('can:transfer_intra, Auth::user()');
+
+            Route::get('inter', [
+
+                'uses' => 'TeacherController@transferInterIndex',
+                'as' => 'teachers.transfer.inter.index'])->middleware('can:transfer_inter, Auth:user()');
+            Route::get('inter/{id}', [
+                'uses' => 'TeacherController@transferInter',
+                'as' => 'teachers.transfer.inter'])->middleware('can:transfer_inter, Auth:user()');
+            Route::patch('inter/{id}', [
+                'uses' => 'TeacherController@transferInterUpdate',
+                'as' => 'teachers.transfer.inter'])->middleware('can:transfer_inter, Auth:user()');
+
+    });
+    
+
+
     Route::patch('update/{id}', [
     	'uses'=>'TeacherController@update',
-    	'as' => 'updateTeacher'
+    	'as' => 'teachers.update'
     ]);
-    Route::get('view/{id}', 'TeacherController@view');
+    Route::get('view/{id}', [
+        'uses'=>'TeacherController@view',
+        'as' => 'teachers.view'
+    ]);
 
 
     Route::get('create','TeacherController@create');
