@@ -34,7 +34,7 @@
 				{!! BootForm::password('password', 'Password', ['placeholder' => 'Password']) !!}
 				
 				<div>
-					{!! BootForm::submit('Log in', ['class' => 'btn btn-info btn-lg submit']) !!}
+					{!! BootForm::submit('Log in', ['class' => 'btn btn-success btn-lg submit']) !!}
 					
 				</div>
                     
@@ -47,7 +47,7 @@
 					<br />
                         
 					<div>
-						<h1> Teacher Projection Tool</h1>
+						<h1> Teacher Projection & <br/> Allocation System</h1>
 						<p>©2017 Developed by Department of IT and Telecom</p>
 					</div>
 				</div>

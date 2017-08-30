@@ -9,7 +9,7 @@ function appendSchools() {
 
   var dzongkhag=$('#dzongkhagslist').val();
     
-    $.get('{{url('/')}}/users/schoolfromdzongkhag/'+dzongkhag,
+    $.get('{{url('/')}}/school/schoolfromdzongkhag/'+dzongkhag,
   {
     dzongkhag:dzongkhag
     
@@ -25,7 +25,7 @@ function populateSchools()
 {
    var dzongkhag=$('#dzongkhagslist').val();
     
-    $.get('{{url('/')}}/users/schoolfromdzongkhag/'+dzongkhag,
+    $.get('{{url('/')}}/school/schoolfromdzongkhag/'+dzongkhag,
   {
     dzongkhag:dzongkhag
     
@@ -36,5 +36,8 @@ function populateSchools()
     $('#schoolslist').html(data);
     }); 
 }
+
+
+
 
 </script>

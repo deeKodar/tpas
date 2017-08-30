@@ -8,6 +8,7 @@ use App\Models\Role;
 use App\Models\Dzongkhag;
 use App\Models\School;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -50,16 +51,6 @@ class UserController extends Controller
 
     }
 
-    public function schoolFromDzongkhag($id) {
-
-        $schools = School::where('dzongkhag_id', $id)->get();
-         echo "<option value='0' >** Unallocated **</option>";
-        foreach($schools as $school) {
-
-            echo "<option value=".$school->id.">".$school->name."</option>";
-        }
-        
-    }
 
 
 
@@ -180,6 +171,14 @@ class UserController extends Controller
 
     	return redirect('/users');
 
+
+
+    }
+
+    protected function profile() {
+
+        $user=User::find(Auth::id());
+        return view('users.profile', compact('user'));
 
 
     }

@@ -37,11 +37,12 @@ class CreateTeachersTables extends Migration
             $table->date('contract_to')->nullable();
             $table->string('remarks')->nullable();
             $table->string('hometown');
-            $table->integer('employee_status_type_id');
+            $table->integer('teacher_status_type_id');
             $table->enum('marital_status',['Married','Single','Divorced','Widow']);
             $table->integer('user_id');
             $table->timestamps();
             $table->integer('version')->default('1');
+            $table->softDeletes();
         });
     }
 

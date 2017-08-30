@@ -14,7 +14,6 @@ class School extends Model
     protected $table = 'schools';
     protected $primaryKey = 'id';
 
-
     protected $fillable = ['school_code', 'name', 'school_level_id', 'dzongkhag_id', 'school_status_type_id','user_id', 'created_at', 'updated_at', 'version'];
 
     public function schoolLevel() {
@@ -27,6 +26,17 @@ class School extends Model
 
     public function schoolStatusType() {
         return $this->belongsTo(SchoolStatusType::class, 'school_status_type_id');
+    }
+
+    public function teachers() {
+
+        return $this->hasMany(Teacher::class);
+    }
+
+    public function teacherCount($subject_id){
+
+        return $this->teachers->where('core_subject_id',$subject_id)->count();
+        
     }
 
 }

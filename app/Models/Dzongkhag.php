@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\User;
 
 class Dzongkhag extends Model
 {
@@ -14,6 +15,8 @@ class Dzongkhag extends Model
 //        $this->belongsTo('App\Models\School', 'dzongkhag_id');
 //    }
 
-
+public function user() {
+	$this->belongsTo(User::class);
+}
     
 }
