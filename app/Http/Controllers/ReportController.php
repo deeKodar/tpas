@@ -59,7 +59,7 @@ class ReportController extends Controller
                 $total_minutes+=$class_total_minutes;
 	    		echo "<tr>";
 	    		echo "<td>";
-	    		echo "Class ID : ".$class_projection->id;
+	    		echo "Class ID : ".$class_projection->school_class_id;
 	    		echo "</td>";
 	    		echo "<td>";
 	    		echo "Class Name: ".$class->name;
