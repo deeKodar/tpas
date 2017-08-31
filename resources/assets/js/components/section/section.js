@@ -11,7 +11,7 @@ export default Line.extend({
                         backgroundColor: 'green',
                         data: [5, 6, 3, 10, 6]
                     },
-                    {   
+                    {
                         label: 'Teachers 2018',
                         backgroundColor: 'red',
                         data: [6, 8, 5, 8, 7]
