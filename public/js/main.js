@@ -1602,65 +1602,20 @@ module.exports = {
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/school/school.vue":
+/***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/section/section.vue":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__("./node_modules/axios/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__school__ = __webpack_require__("./resources/assets/js/components/school/school.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__config__ = __webpack_require__("./resources/assets/js/config.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__section__ = __webpack_require__("./resources/assets/js/components/section/section.js");
+//
 //
 
 
 
-
-
 /* harmony default export */ __webpack_exports__["a"] = ({
-    //        name: 'sample-chart',
-
-    data: function data() {
-        return {
-            rows: null,
-            labels: null,
-            chartData: null
-        };
-    },
-
-
     components: {
-        'sample-chart': __WEBPACK_IMPORTED_MODULE_1__school__["a" /* default */]
-    },
-
-    created: function created() {},
-    mounted: function mounted() {
-        this.fillData();
-    },
-
-
-    methods: {
-        fillData: function fillData() {
-            var _this = this;
-
-            __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get(__WEBPACK_IMPORTED_MODULE_2__config__["a" /* classSectionData */]).then(function (response) {
-                console.log(response.data.data);
-                _this.rows = response.data.data.rows;
-                _this.labels = response.data.data.labels;
-
-                _this.chartData = {
-                    labels: _this.labels,
-                    datasets: [{
-                        label: 'Sections',
-                        backgroundColor: '#f87979',
-                        data: _this.rows
-                    }]
-                };
-            }).catch(function (error) {
-                console.log(error);
-            });
-        }
+        'section-chart': __WEBPACK_IMPORTED_MODULE_0__section__["a" /* default */]
     }
-
 });
 
 /***/ }),
@@ -41428,18 +41383,14 @@ module.exports = function normalizeComponent (
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-37ef9c7d\",\"hasScoped\":false}!./resources/assets/js/components/school/school.html":
+/***/ "./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-421e3f6e\",\"hasScoped\":false}!./resources/assets/js/components/section/section.html":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "class SchoolWrapper"
-  }, [_c('div', [_c('sample-chart', {
-    attrs: {
-      "chart-data": _vm.chartData
-    }
-  })], 1)])
+    staticClass: "SectionWrapper"
+  }, [_c('section-chart')], 1)
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -41448,7 +41399,7 @@ var esExports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-37ef9c7d", esExports)
+     require("vue-hot-reload-api").rerender("data-v-421e3f6e", esExports)
   }
 }
 
@@ -54199,57 +54150,43 @@ window.axios.defaults.headers.common = {
 
 /***/ }),
 
-/***/ "./resources/assets/js/components/school/school.js":
+/***/ "./resources/assets/js/components/section/section.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_chartjs__ = __webpack_require__("./node_modules/vue-chartjs/es/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_chartjs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue_chartjs__);
 
-//const { reactiveProp } = mixins
+
 /* harmony default export */ __webpack_exports__["a"] = (__WEBPACK_IMPORTED_MODULE_0_vue_chartjs__["Line"].extend({
-    // mixins: [reactiveProp],
-    props: ['chartData'],
-    data: function data() {
-        return {
-            options: {
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero: true
-                        },
-                        gridLines: {
-                            display: true
-                        }
-                    }],
-                    xAxes: [{
-                        gridLines: {
-                            display: false
-                        }
-                    }]
-                },
-                legend: {
-                    display: true
-                },
-                responsive: true,
-                maintainAspectRatio: false
-            }
-        };
-    },
     mounted: function mounted() {
-        // this.chartData is created in the mixin
-        this.renderChart(this.chartData, this.options);
+        this.renderChart({
+            labels: ['Class PP', 'Class I', 'Class II', 'Class III'],
+            datasets: [{
+                label: 'Teachers 2017',
+                backgroundColor: 'green',
+                data: [5, 6, 3, 10, 6]
+            }, {
+                label: 'Teachers 2018',
+                backgroundColor: 'red',
+                data: [6, 8, 5, 8, 7]
+            }]
+        }, {
+            responsive: true,
+            maintainAspectRatio: false,
+            barPercentage: .8
+        });
     }
 }));
 
 /***/ }),
 
-/***/ "./resources/assets/js/components/school/school.vue":
+/***/ "./resources/assets/js/components/section/section.vue":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_cacheDirectory_true_presets_env_modules_false_targets_browsers_2_uglify_true_node_modules_vue_loader_lib_selector_type_script_index_0_school_vue__ = __webpack_require__("./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/school/school.vue");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_37ef9c7d_hasScoped_false_school_html__ = __webpack_require__("./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-37ef9c7d\",\"hasScoped\":false}!./resources/assets/js/components/school/school.html");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_cacheDirectory_true_presets_env_modules_false_targets_browsers_2_uglify_true_node_modules_vue_loader_lib_selector_type_script_index_0_section_vue__ = __webpack_require__("./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/section/section.vue");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_421e3f6e_hasScoped_false_section_html__ = __webpack_require__("./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-421e3f6e\",\"hasScoped\":false}!./resources/assets/js/components/section/section.html");
 var disposed = false
 var normalizeComponent = __webpack_require__("./node_modules/vue-loader/lib/component-normalizer.js")
 /* script */
@@ -54263,15 +54200,15 @@ var __vue_scopeId__ = null
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
-  __WEBPACK_IMPORTED_MODULE_0__babel_loader_cacheDirectory_true_presets_env_modules_false_targets_browsers_2_uglify_true_node_modules_vue_loader_lib_selector_type_script_index_0_school_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_37ef9c7d_hasScoped_false_school_html__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_0__babel_loader_cacheDirectory_true_presets_env_modules_false_targets_browsers_2_uglify_true_node_modules_vue_loader_lib_selector_type_script_index_0_section_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_421e3f6e_hasScoped_false_section_html__["a" /* default */],
   __vue_styles__,
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/components/school/school.vue"
+Component.options.__file = "resources/assets/js/components/section/section.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] school.vue: functional components are not supported with templates, they should use render functions.")}
+if (Component.options.functional) {console.error("[vue-loader] section.vue: functional components are not supported with templates, they should use render functions.")}
 
 /* hot reload */
 if (false) {(function () {
@@ -54280,9 +54217,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-37ef9c7d", Component.options)
+    hotAPI.createRecord("data-v-421e3f6e", Component.options)
   } else {
-    hotAPI.reload("data-v-37ef9c7d", Component.options)
+    hotAPI.reload("data-v-421e3f6e", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -54375,18 +54312,6 @@ if (false) {(function () {
 
 /***/ }),
 
-/***/ "./resources/assets/js/config.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* unused harmony export apiDomain */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return classSectionData; });
-var apiDomain = 'http://tpas.app/';
-
-var classSectionData = apiDomain + 'class-section';
-
-/***/ }),
-
 /***/ "./resources/assets/js/main.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -54401,7 +54326,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_vue_socket_io__ = __webpack_require__("./node_modules/vue-socket.io/dist/build.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_vue_socket_io___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_vue_socket_io__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_subject_teacher_graph_SubjectTeacherGraph_vue__ = __webpack_require__("./resources/assets/js/components/subject-teacher-graph/SubjectTeacherGraph.vue");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_school_school_vue__ = __webpack_require__("./resources/assets/js/components/school/school.vue");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_section_section_vue__ = __webpack_require__("./resources/assets/js/components/section/section.vue");
 // import Vue from 'vue';
 // import WinsGraph from './components/WinsGraph';
 //
@@ -54543,6 +54468,7 @@ __webpack_require__("./resources/assets/js/bootstrap.js");
 //import ClassSectionGraph from './components/class-section-graph/ClassSectionGraph.vue';
 
 // import SectionGraphMain from './components/SampleGraph/SectionGraphMain.Vue';
+// import school from './components/school/school.vue'
 
 
 //Adding the X-CSRF-Token to all axios request
@@ -54571,7 +54497,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue__["default"].use(__WEBPACK_IMPORTED_MODULE_3_vue
 //Vue.component('class-section-graph', ClassSectionGraph)
 // Vue.component('class-section-graph', SectionGraphMain)
 __WEBPACK_IMPORTED_MODULE_0_vue__["default"].component('subject-teacher-graph', __WEBPACK_IMPORTED_MODULE_5__components_subject_teacher_graph_SubjectTeacherGraph_vue__["a" /* default */]);
-__WEBPACK_IMPORTED_MODULE_0_vue__["default"].component('class-section-graph', __WEBPACK_IMPORTED_MODULE_6__components_school_school_vue__["a" /* default */]);
+__WEBPACK_IMPORTED_MODULE_0_vue__["default"].component('class-section-graph', __WEBPACK_IMPORTED_MODULE_6__components_section_section_vue__["a" /* default */]);
 
 new __WEBPACK_IMPORTED_MODULE_0_vue__["default"]({
     el: '#graph',

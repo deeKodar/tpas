@@ -139,7 +139,8 @@ require ('./bootstrap.js')
 //import ClassSectionGraph from './components/class-section-graph/ClassSectionGraph.vue';
 import SubjectTeacherGraph from './components/subject-teacher-graph/SubjectTeacherGraph.vue';
 // import SectionGraphMain from './components/SampleGraph/SectionGraphMain.Vue';
-import school from './components/school/school.vue'
+// import school from './components/school/school.vue'
+import section from './components/section/section.vue'
 
 //Adding the X-CSRF-Token to all axios request
 axios.interceptors.request.use(function(config){
@@ -167,7 +168,7 @@ Vue.use(VueAxios, axios)
 //Vue.component('class-section-graph', ClassSectionGraph)
 // Vue.component('class-section-graph', SectionGraphMain)
 Vue.component('subject-teacher-graph', SubjectTeacherGraph)
-Vue.component('class-section-graph', school)
+Vue.component('class-section-graph', section)
 
 new Vue({
     el: '#graph',
