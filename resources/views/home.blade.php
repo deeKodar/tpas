@@ -8,242 +8,145 @@
 
     <!-- page content -->
     <div class="right_col" role="main">
-        <div class="">
+        <div class="" id="graph">
         <div class="page-title">
             <div class="title_left">
-                <h3>Dashboards :: <small>Teacher Allocation  & Projection Data </small></h3>
-            </div>
-
-            <div class="title_right">
-                <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search for...">
-                        <span class="input-group-btn">
-                      <button class="btn btn-default" type="button">Go!</button>
-                    </span>
-                    </div>
-                </div>
+                <h1>TRE Dashboards::</h1>
             </div>
         </div>
 
         <div class="clearfix"></div>
-            {{--<div>--}}
-                {{--<h1>rocket League Wins Comparision</h1>--}}
 
-                {{--<wins-graph :player="{{ json_encode($sonam) }}" :opponent="{{ json_encode($darshan) }}"></wins-graph>--}}
+        {{--<div id="graph">--}}
+            {{--<h4>rocket League Wins Comparision</h4>--}}
+            {{--<canvas height="150" width="300" id="graph"></canvas>--}}
+            {{--<wins-graph :player="{{ json_encode($sonam) }}" :opponent="{{ json_encode($darshan) }}"></wins-graph>--}}
 
-            {{--</div>--}}
-
-
-        {{--<div class="row">--}}
-            {{--<div class="col-md-12 col-sm-12 col-xs-12">--}}
-                {{--<div class="x_panel">--}}
-                    {{--<div class="x_title">--}}
-                        {{--<h2>Subject Wise <small>Requisitions</small></h2>--}}
-                        {{--<ul class="nav navbar-right panel_toolbox">--}}
-                            {{--<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>--}}
-                            {{--</li>--}}
-                            {{--<li class="dropdown">--}}
-                                {{--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>--}}
-                                {{--<ul class="dropdown-menu" role="menu">--}}
-                                    {{--<li><a href="#">Settings 1</a>--}}
-                                    {{--</li>--}}
-                                    {{--<li><a href="#">Settings 2</a>--}}
-                                    {{--</li>--}}
-                                {{--</ul>--}}
-                            {{--</li>--}}
-                            {{--<li><a class="close-link"><i class="fa fa-close"></i></a>--}}
-                            {{--</li>--}}
-                        {{--</ul>--}}
-                        {{--<div class="clearfix"></div>--}}
-                    {{--</div>--}}
-                    {{--<div class="x_content">--}}
-                        {{--<canvas id="#"></canvas>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-            {{--</div>--}}
         {{--</div>--}}
+            {{--<div>--}}
+                {{--<canvas width="200" height="150" id="graph"></canvas>--}}
+            {{--</div>--}}
 
-        <div class="row">
-            <div class="col-md-6 col-sm-6 col-xs-12">
-                <div class="x_panel">
-                    <div class="x_title">
-                        <h2>Teacher Transfer<small>Requisitions</small></h2>
-                        <ul class="nav navbar-right panel_toolbox">
-                            <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-filter"></i> Filter</a>
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="#">National</a>
-                                    </li>
-                                    <li><a href="#">Dzongkhag</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li><a class="close-link"><i class="fa fa-close"></i></a>
-                            </li>
-                        </ul>
-                        <div class="clearfix"></div>
-                    </div>
-                    <div class="x_content">
-                        <canvas id="lineChart"></canvas>
-                    </div>
-                </div>
-            </div>
+        {{--<div class="clearfix"></div>--}}
 
-            <div class="col-md-6 col-sm-6 col-xs-12">
-                <div class="x_panel">
-                    <div class="x_title">
-                        <h2>Subject Wise <small>Requisitions</small></h2>
-                        <ul class="nav navbar-right panel_toolbox">
-                            <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="#">Settings 1</a>
-                                    </li>
-                                    <li><a href="#">Settings 2</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li><a class="close-link"><i class="fa fa-close"></i></a>
-                            </li>
-                        </ul>
-                        <div class="clearfix"></div>
-                    </div>
-                    <div class="x_content">
-                        <canvas id="mybarChart"></canvas>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="clearfix"></div>
-        <div class="row">
-            <div class="col-md-6 col-sm-6 col-xs-12">
-                <div class="x_panel">
-                    <div class="x_title">
-                        <h2>Radar <small>Sessions</small></h2>
-                        <ul class="nav navbar-right panel_toolbox">
-                            <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="#">Settings 1</a>
-                                    </li>
-                                    <li><a href="#">Settings 2</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li><a class="close-link"><i class="fa fa-close"></i></a>
-                            </li>
-                        </ul>
-                        <div class="clearfix"></div>
-                    </div>
-                    <div class="x_content">
-                        <canvas id="canvasRadar"></canvas>
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="x_panel">
+                        <div class="x_title">
+                            <h2>Class-wise Section<small>Counts</small></h2>
+                            <ul class="nav navbar-right panel_toolbox">
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-filter"></i> Filter</a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="#">National</a>
+                                        </li>
+                                        <li><a href="#">Dzongkhag</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="x_content">
+                            {{--@foreach($classSection as $cs)--}}
+                                {{--<ul>--}}
+                                    {{--<li>{{ $cs['class'] }} - {{ $cs['section'] }}</li>--}}
+                                {{--</ul>--}}
+                            {{--@endforeach--}}
+                            <class-section-graph></class-section-graph>
+
+                        </div>
                     </div>
                 </div>
+
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="x_panel">
+                        <div class="x_title">
+                            <h2>Subject-wise Teachers<small>Availability</small></h2>
+                            <ul class="nav navbar-right panel_toolbox">
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-filter"></i> Filter</a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="#">National</a>
+                                        </li>
+                                        <li><a href="#">Dzongkhag</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="x_content">
+                            {{--<wins-graph :player="{{ json_encode($sonam) }}" :opponent="{{ json_encode($darshan) }}"></wins-graph>--}}
+                            <subject-teacher-graph></subject-teacher-graph>
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
-            <div class="col-md-6 col-sm-6 col-xs-12">
-                <div class="x_panel">
-                    <div class="x_title">
-                        <h2>Donut Graph <small>Sessions</small></h2>
-                        <ul class="nav navbar-right panel_toolbox">
-                            <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="#">Settings 1</a>
-                                    </li>
-                                    <li><a href="#">Settings 2</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li><a class="close-link"><i class="fa fa-close"></i></a>
-                            </li>
-                        </ul>
-                        <div class="clearfix"></div>
-                    </div>
-                    <div class="x_content">
-                        <canvas id="canvasDoughnut"></canvas>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="clearfix"></div>
-        <div class="row">
-            <div class="col-md-6 col-sm-6 col-xs-12">
-                <div class="x_panel">
-                    <div class="x_title">
-                        <h2>Pie Graph Chart <small>Sessions</small></h2>
-                        <ul class="nav navbar-right panel_toolbox">
-                            <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="#">Settings 1</a>
-                                    </li>
-                                    <li><a href="#">Settings 2</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li><a class="close-link"><i class="fa fa-close"></i></a>
-                            </li>
-                        </ul>
-                        <div class="clearfix"></div>
-                    </div>
-                    <div class="x_content">
-                        <canvas id="pieChart"></canvas>
-                    </div>
-                </div>
-            </div>
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="x_panel">
+                        <div class="x_title">
+                            <h2>Class-wise Section<small>Counts</small></h2>
+                            <ul class="nav navbar-right panel_toolbox">
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-filter"></i> Filter</a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="#">National</a>
+                                        </li>
+                                        <li><a href="#">Dzongkhag</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="x_content">
+                            {{--@foreach($classSection as $cs)--}}
+                            {{--<ul>--}}
+                            {{--<li>{{ $cs['class'] }} - {{ $cs['section'] }}</li>--}}
+                            {{--</ul>--}}
+                            {{--@endforeach--}}
+                            {{--<class-section-graph></class-section-graph>--}}
 
-            <div class="col-md-6 col-sm-6 col-xs-12">
-                <div class="x_panel">
-                    <div class="x_title">
-                        <h2>Pie Area Graph <small>Sessions</small></h2>
-                        <ul class="nav navbar-right panel_toolbox">
-                            <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="#">Settings 1</a>
-                                    </li>
-                                    <li><a href="#">Settings 2</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li><a class="close-link"><i class="fa fa-close"></i></a>
-                            </li>
-                        </ul>
-                        <div class="clearfix"></div>
-                    </div>
-                    <div class="x_content">
-                        <canvas id="polarArea"></canvas>
+                        </div>
                     </div>
                 </div>
+
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="x_panel">
+                        <div class="x_title">
+                            <h2>Subject-wise Teachers<small>Availability</small></h2>
+                            <ul class="nav navbar-right panel_toolbox">
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-filter"></i> Filter</a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="#">National</a>
+                                        </li>
+                                        <li><a href="#">Dzongkhag</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="x_content">
+                            {{--<wins-graph :player="{{ json_encode($sonam) }}" :opponent="{{ json_encode($darshan) }}"></wins-graph>--}}
+                            {{--<subject-teacher-graph></subject-teacher-graph>--}}
+                        </div>
+                    </div>
+                </div>
+
             </div>
-        </div>
     </div>
-
-    	@can('add_teacher')
-
-    	<h1>You have the right to add a teacher</h1>
-    	@endcan
     </div>
-    <!-- /page content -->
-
 @endsection
 @push('scripts')
-    @include('includes/dashboard-charts-scripts')
-    {{--<script src="{{ asset("js/chart-main.js") }}"></script>--}}
+    {{--@include('includes/scripts')--}}
+    {{--<script src="{{ asset("js/main.js") }}"></script>--}}
+    <script src="/js/main.js"></script>
 @endpush
 
 

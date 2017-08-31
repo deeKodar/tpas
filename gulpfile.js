@@ -1,5 +1,7 @@
 var elixir = require('laravel-elixir');
 
+require('laravel-elixir-vueify');
+
 /*
  |--------------------------------------------------------------------------
  | Elixir Asset Management
@@ -52,7 +54,8 @@ elixir(function(mix) {
     mix.copy('vendor/bower_components/gentelella/vendors/font-awesome/fonts/', 'public/fonts');
 
     //Added for Chart.js tutorial by Jeffrey!
-    mix.browserify('chart-main.js')
-        .sass('app.scss');
+    mix.browserify('main.js');
 
 });
+
+

@@ -33,7 +33,15 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Auth'], function () {
 });
         
 Route::get('/logout', 'Auth\LoginController@logout');
-Route::get('/', 'HomeController@index');
+//Route::get('/', 'HomeController@index');
+Route::get('/', [
+    'uses' => 'ReportChartController@index',
+    'as' => 'home.dashboard'
+]);
+
+Route::get('/class-section', [
+    'uses' => 'ReportChartController@getClassSection'
+]);
 
 
 

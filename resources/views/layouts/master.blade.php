@@ -10,7 +10,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>TPAS | Teacher Projection System</title>
-@include('includes/css')
+        @include('includes/css')
+
+        <script>
+            window.Laravel = { csrfToken: '{{ csrf_token() }}' }
+            window.tpas = { host: '{{ url("/") }}/' }
+        </script>
 
     </head>
 

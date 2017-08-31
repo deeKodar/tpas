@@ -29,7 +29,7 @@
                 <ul class="nav side-menu">
                     <li><a><i class="fa fa-tachometer" aria-hidden="true"></i> Dashboards <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
-                           @can('view_projections') <li><a href="#">Teacher Projections</a></li>@endcan
+                           @can('view_projections') <li><a href="{{ route('home.dashboard') }}">Teacher Projections</a></li>@endcan
                            @can('view_vacancies') <li><a href="#">Teacher Vancancies</a></li>@endcan
                             @can('view_transfer')<li><a href="#">Teacher Transfers</a></li>@endcan
                         </ul>
