@@ -26,4 +26,6 @@ class ClassProjection extends Model
     public function projectionType() {
         return $this->belongsTo(ProjectionType::class, 'projection_type_id');
     }
+
+   
 }

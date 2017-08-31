@@ -30,6 +30,14 @@ class Subject extends Model
     {
         return $this->belongsTo('App\Models\SubjectType', 'subject_type_id');
     }
+    public function hasClass($class_id) {
+
+       foreach($class_id as $c) {
+            return $this->schoolClasses->contains('id',$c->school_class_id);
+       }
+        
+
+    }
 
     public function schoolClasses()
     {

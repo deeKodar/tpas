@@ -62,11 +62,11 @@ class User extends Authenticatable
 
     public function dzongkhag() {
 
-        return $this->hasOne(Dzongkhag::class);
+        return $this->belongsTo(Dzongkhag::class);
     }
 
     public function school() {
-        return $this->hasOne(School::class);
+        return $this->belongsTo(School::class);
     }
     
 }

@@ -8,5 +8,5 @@
         <!-- Custom App Style -->
         <link href="{{ asset("css/custom-app-style.css") }}" rel="stylesheet">
 
-      
+    <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
         @stack('stylesheets')

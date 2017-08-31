@@ -361,9 +361,9 @@ class TeacherController extends Controller
 
          $this->user =  \Auth::user();
 
-        $teachers = Teacher::with('school')->get()
+        $teachers = Teacher::with('school','teacherStatusType')->get()
         ->where('dzongkhag_id',$this->user->dzongkhag_id);
-       $dzongkhag = Dzongkhag::find($this->user->dzongkhag_id);
+        $dzongkhag = Dzongkhag::find($this->user->dzongkhag_id);
 
          return view('teachers.transfers.inter.index', compact('teachers','dzongkhag'));
 
@@ -413,5 +413,16 @@ class TeacherController extends Controller
         return redirect('/teachers/transfer/inter');
 
 
+    }
+
+    protected function delete() {
+
+        $id = request('teacher_id');
+
+        $teacher = Teacher::find($id);
+
+        $teacher->delete();
+
+        return redirect('/teachers/');
     }
 }

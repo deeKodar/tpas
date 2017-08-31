@@ -200,4 +200,17 @@ class SchoolController extends Controller
         return redirect()->route('school.index')->with('info', 'School deleted successfully');
     }
 
+
+
+    public function schoolFromDzongkhag($id) {
+
+        $schools = School::where('dzongkhag_id', $id)->get();
+         echo "<option value='0' >** Unallocated **</option>";
+        foreach($schools as $school) {
+
+            echo "<option value=".$school->id.">".$school->name."</option>";
+        }
+        
+    }
+
 }

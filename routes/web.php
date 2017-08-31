@@ -16,19 +16,17 @@ Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
  Route::post('login', 'Auth\LoginController@login');
  Route::post('logout', 'LoginController@logout')->name('logout');
 
-
 // Authentication Routes...
 Route::group(['prefix' => 'admin', 'namespace' => 'Auth'], function () {
         
         // Registration Routes...
         //$this->get('register', 'RegisterController@showRegistrationForm')->name('register');
         //$this->post('register', 'RegisterController@register');
-
         // Password Reset Routes...
         $this->get('password/reset', 'ForgotPasswordController@showLinkRequestForm')->name('password.request');
         $this->post('password/email', 'ForgotPasswordController@sendResetLinkEmail')->name('password.email');
-        $this->get('password/reset/{token}', 'ResetPasswordController@showResetForm')->name('password.reset');
-        $this->post('password/reset', 'ResetPasswordController@reset');
+        $this->get('password/reset/', 'ResetPasswordController@showResetForm')->name('password.reset');
+        //$this->post('password/reset', 'ResetPasswordController@reset');
 
 });
         
@@ -109,6 +107,9 @@ Route::group(['prefix' => 'school'], function() {
         'uses' => 'SchoolController@postSchoolUpdate',
         'as' => 'school.update'
     ]);
+
+    Route::get('schoolfromdzongkhag/{id}','SchoolController@schoolFromDzongkhag');
+
 });
 
 
@@ -175,7 +176,10 @@ Route::group(['prefix' => 'teachers'], function() {
         'as' => 'teachers.view'
     ]);
 
-
+    Route::delete('delete', [
+        'uses' => 'TeacherController@delete',
+        'as' => 'teachers.delete'
+    ]);
     Route::get('create','TeacherController@create');
 
 });
@@ -203,7 +207,11 @@ Route::group(['prefix' => 'users'], function() {
     Route::post('store','UserController@store');
     Route::get('edit/{id}','UserController@edit');
     Route::patch('update/{id}','UserController@update');
-    Route::get('schoolfromdzongkhag/{id}','UserController@schoolFromDzongkhag');
+    Route::get('profile', [
+        'uses' => 'UserController@profile',
+        'as' => 'users.profile'
+    ]);
+    
 
 });
 
@@ -314,6 +322,19 @@ Route::group(['prefix' => 'class_projection'], function() {
     ]);
 
 });
+
+Route::group(['prefix' => 'report'], function() {
+
+
+    Route::get('projections/view', [
+        'uses' => 'ReportController@viewProjection',
+        'as' => 'report.projections.view']);
+
+    Route::get('projections/school/{school_id}/type/{proj_type}/year/{year}', 'ReportController@getSchoolProjection');
+    //Route::get('projections/school/{school_id}','ReportController@getSchoolProjection');
+
+});
+
 
 
 

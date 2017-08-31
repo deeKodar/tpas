@@ -20,23 +20,9 @@
                 <div class="x_panel">
                     <div class="x_title">
                         <div class="nav navbar-left add-button">
-                            <a href="{{url('/teachers/create')}}" class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i> Add Teacher</a>
+                            <a href="{{url('/teachers/create')}}" class="btn btn-success"><i class="fa fa-plus" aria-hidden="true"></i> Add Teacher</a>
                         </div>
-                        <ul class="nav navbar-right panel_toolbox">
-                            <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="#">Settings 1</a>
-                                    </li>
-                                    <li><a href="#">Settings 2</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li><a class="close-link"><i class="fa fa-close"></i></a>
-                            </li>
-                        </ul>
+                       
                         <div class="clearfix"></div>
                     </div>
                     <div class="x_content">
@@ -48,6 +34,7 @@
                                 <th>EmpID</th>
                                 <th>School</th>
                                  <th>Dzongkhag</th>
+                                 <th>Status</th>
                                 <th class="column-title no-link last"><span class="nobr">Action</span>
                                 </th>
                             </tr>
@@ -66,11 +53,19 @@
                                         @endif
                                         </td>
                                         <td>{{$teacher->dzongkhag->name}}</td>
+                                        <td>{{$teacher->teacherStatusType->name}}</td>
                                     <td class=" last">
-                                        
+                                         <form action="{{route('teachers.delete')}}" method="POST">
+                                            {{csrf_field()}}
+                                            {{ method_field('DELETE') }}
                                         <a href="{{url('/')}}/teachers/edit/{{$teacher->id}}" class="btn btn-xs btn-warning waves-effect waves-light" data-toggle="tooltip" data-placement="left" title="Edit Teacher"><i class="fa fa-pencil-square fa-lg" aria-hidden="true"></i> Edit</a>
-                                        <a href="{{$teacher->id}}" class="btn btn-xs btn-danger waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Delete Teacher"><i class="fa fa-trash fa-lg" aria-hidden="true"></i> Delete</a>
+
+                                       
+                                            <input type="hidden" name="teacher_id" value="{{$teacher->id}}"/>
+                                            <button type="submit" class="btn btn-xs btn-danger waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Delete Teacher"><i class="fa fa-trash fa-lg" aria-hidden="true"></i>Delete</button>
+                                       
                                         <a href="{{url('/')}}/teachers/view/{{$teacher->id}}" class="btn btn-xs btn-success waves-effect waves-light" data-toggle="tooltip" data-placement="right" title="View Teacher Details"><i class="fa fa-eye fa-lg" aria-hidden="true"></i> View Detail</a>
+                                        </form>
                                     </td>
                                 </tr>
                             @endforeach

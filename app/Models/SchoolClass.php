@@ -27,6 +27,12 @@ class SchoolClass extends Model
 //    {
 //        return $this->hasMany('App\Models\Subject', 'subject_school_class');
 //    }
+
+    public function hasSubject($id) {
+
+        return $this->subjects->contains('id',$id);
+
+    }
      public function subjects()
      {
          return $this->belongsToMany('App\Models\Subject', 'subject_school_class')->withTimestamps();

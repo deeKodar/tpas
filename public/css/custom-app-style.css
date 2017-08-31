@@ -8,3 +8,52 @@
     width:100% !important;
     margin-left:0px !important;
 }
+
+.app-title-line {
+    margin-top: 5px;
+    float: left;
+    display: inline;
+}
+
+.top_nav .navbar-right {
+    width:30% !important;
+}
+
+.nav.side-menu>li.active>a {
+    
+    background: linear-gradient(#1abb9c,#2C4257),#2A3F54 !important;
+    
+}
+
+.nav_title {
+   
+    background: #1cac93;
+    
+}
+
+.sidebar-footer a {
+	color:#ffffff;
+     background: #1cac93;
+     width: 100%;
+}
+
+span.sidebar-header {
+    padding-left: 10PX;
+}
+
+.site_title i {
+    border-radius: 40%;
+}
+
+.login_content h1 {
+    
+    line-height: 30px;
+   
+}
+
+body {
+    font-family: 'Dosis', "Helvetica Neue",Roboto,Arial,"Droid Sans",sans-serif !important;
+    
+    /* font-family: "Helvetica Neue",Roboto,Arial,"Droid Sans",sans-serif; */
+   
+}
