@@ -86,9 +86,9 @@ class ReportController extends Controller
     		echo "<tr><td>Required teacher(s):</td><td colspan=2>".$required_teachers."</td></tr>";
     		echo "<tr><td>Actual teacher(s):</td><td colspan=2>".$teachers."</td></tr>";
     		if($teacher_gap<0) {
-    			echo "<tr><td>Teacher Gap:</td><td colspan=2 class='btn-danger'>".$teacher_gap."(deficit)</td></tr>";
+    			echo "<tr><td>Teacher Gap:</td><td colspan=2 class='btn-danger'>".$teacher_gap." (deficit by ".$teacher_gap." teacher(s))</td></tr>";
     		} elseif($teacher_gap>0){
-    			echo "<tr><td>Teacher Gap:</td><td colspan=2 class='btn-danger'>".$teacher_gap."(surplus)</td></tr>";
+    			echo "<tr><td>Teacher Gap:</td><td colspan=2 class='btn-danger'>".$teacher_gap." (surplus by ".$teacher_gap." teacher(s))</td></tr>";
     		} else {
     			echo "<tr><td>Teacher Gap:</td><td colspan=2 class='btn-success'>".$teacher_gap."</td></tr>";
     		}
