@@ -39,6 +39,7 @@ class ReportController extends Controller
 			echo "<tr><th><h2>Subject</h2></th><th colspan=2><h2>".$subject->name."</h2></th></tr>";
 			$total_sections=0;
 			$total_minutes=0;
+            $class_total_minutes=0;
 			$hours=0;
 			$minutes=0;
 			$teachers= $school->teacherCount($subject->id);
@@ -48,12 +49,14 @@ class ReportController extends Controller
 	    		if($class->hasSubject($subject->id)) {
 	    		
 	    		$total_sections+=$class_projection->section_count;
-	    		$standards=StandardSubjectHour::get()->where('school_class_id',$class_projection->id)
+	    		$standards=StandardSubjectHour::get()->where('school_class_id',$class_projection->school_class_id)
 	    		->where('subject_id',$subject->id);
 	    		$standard=$standards->first();
-	    		$total_minutes+=(($standard->standard_hour)*60);
-	    		$total_minutes+=$standard->standard_minute;
-	    		
+	    		// $total_minutes+=(($standard->standard_hour)*60);
+	    		// $total_minutes+=$standard->standard_minute;
+       //          $total_minutes=$total_minutes*$class_projection->section_count;
+	    		$class_total_minutes=(($standard->standard_hour*60)+$standard->standard_minute)*$class_projection->section_count;
+                $total_minutes+=$class_total_minutes;
 	    		echo "<tr>";
 	    		echo "<td>";
 	    		echo "Class ID : ".$class_projection->id;
@@ -72,6 +75,7 @@ class ReportController extends Controller
 	    		
 	    		
     		}
+
     		
     		$hours=floor($total_minutes/60);
     		$minutes=($total_minutes%60);

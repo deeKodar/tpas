@@ -135,7 +135,7 @@ class TeacherController extends Controller
         $teacher->contract_to = date('Y-m-d',strtotime(request('contract_to')));
         $teacher->remarks = request('remarks');
         $teacher->hometown = request('hometown');
-    	$teacher->employee_status_type_id = request('employee_status_type_id');
+    	$teacher->teacher_status_type_id = request('employee_status_type_id');
     	$teacher->marital_status = request('marital_status');
     	$teacher->user_id = $userid;
     	$teacher->version = 1;
@@ -175,7 +175,7 @@ class TeacherController extends Controller
         $teacher->contract_to = request('contract_to');
         $teacher->remarks = request('remarks');
         $teacher->hometown = request('hometown');
-        $teacher->employee_status_type_id = request('employee_status_type_id');
+        $teacher->teacher_status_type_id = request('employee_status_type_id');
         $teacher->marital_status = request('marital_status');
         $teacher->user_id = $userid;
         $teacher->version = request('version')+1;

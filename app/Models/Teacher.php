@@ -16,7 +16,7 @@ class Teacher extends Model
 {
      use SoftDeletes;
 
-     protected $fillable = ['employee_id','name','gender','date_of_birth','position_level','position_title','employment_type_id','initial_appointment_date','current_appointment_date','initial_qualification_id','current_qualification_id','field_of_study_id','school_id','core_subject_id','subject_one_id','subject_two_id','subject_three_id','employee_status_type_id','marital_status','remarks','contract_from','contract_to','user_id','version'];
+     protected $fillable = ['employee_id','name','gender','date_of_birth','position_level','position_title','employment_type_id','initial_appointment_date','current_appointment_date','initial_qualification_id','current_qualification_id','field_of_study_id','school_id','core_subject_id','subject_one_id','subject_two_id','subject_three_id','teacher_status_type_id','marital_status','remarks','contract_from','contract_to','user_id','version'];
 
 
 
