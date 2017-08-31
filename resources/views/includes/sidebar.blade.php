@@ -29,9 +29,8 @@
                 <ul class="nav side-menu">
                     <li><a><i class="fa fa-tachometer" aria-hidden="true"></i> Dashboards <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
-                           @can('view_projections') <li><a href="{{ route('home.dashboard') }}">Teacher Projections</a></li>@endcan
-                           @can('view_vacancies') <li><a href="#">Teacher Vancancies</a></li>@endcan
-                            @can('view_transfer')<li><a href="#">Teacher Transfers</a></li>@endcan
+                           @can('view_projections') <li><a href="{{ route('home.dashboard') }}">Statistics</a></li>@endcan
+                           
                         </ul>
                     </li>
                      @can('edit_teachers')
@@ -48,13 +47,14 @@
                                             <a href="{{ route('teachers.transfer.intra.index') }}">Intra Dzongkhag Transfers</a>
                                         </li>
                                         <li>
-                                            <a href="{{ route('teachers.transfer.inter.index') }}">Inter Dzongkhag Trasnfers</a>
+                                            <a href="{{ route('teachers.transfer.inter.index') }}">Inter Dzongkhag Transfers</a>
                                         </li>
                                     </ul>
                                 </li>@endcan
                         </ul>
                     </li>
                     @endcan
+                    {{-- 
                     @can('edit_transfer')
                     <li><a><i class="fa fa-exchange" aria-hidden="true"></i> Transfer Applications<span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
@@ -64,12 +64,13 @@
                         </ul>
                     </li>
                     @endcan
+                     --}}
                     @can('view_projections')
                     <li><a><i class="fa fa-pie-chart" aria-hidden="true"></i>Projections<span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
                             <li><a href="{{ route('class_projection.index') }}">Manage Class Size</a></li>
                             <li><a href="{{ route('report.projections.view') }}">Teacher Gap Projections</a></li>
-                            <li><a href="#">Log Teacher Projections</a></li>
+                            {{--<li><a href="#">Log Teacher Projections</a></li>--}}
                         </ul>
                     </li>
                    @endcan
@@ -77,9 +78,10 @@
             </div>
             
             <div class="menu_section">
+                @can('edit_master_table')
                 <h3>SYSTEM ADMINISTRATION</h3>
                 <ul class="nav side-menu">
-                    @can('edit_master_table')
+                    
                     <li><a><i class="fa fa-table"></i> Master Data <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
                             <li><a href="{{ route('school_class.index') }}">Classes</a></li>
@@ -116,7 +118,7 @@
                     @endcan
                 </ul>
             </div>
-            @can('view_reports')
+          {{--  @can('view_reports')
             <div class="menu_section">
                 <h3>SYSTEM REPORTS</h3>
                 <ul class="nav side-menu">
@@ -130,7 +132,9 @@
                 </ul>
             </div>
 
+
             @endcan
+            --}}
             {{--  <div class="menu_section">
                 <h3>OTHERS</h3>
                 <ul class="nav side-menu">
