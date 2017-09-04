@@ -374,10 +374,7 @@ class TeacherController extends Controller
 
         
 
-        $teacher=Teacher::find($id);
-
-        
-
+        $teacher=Teacher::find($id);                                
         $schools=School::all();
         
         $teacherstatus=TeacherStatusType::all();
@@ -385,6 +382,7 @@ class TeacherController extends Controller
         
         $dzongkhags=Dzongkhag::all();
         $nationalities=Nationality::all();
+        
         return View::make('teachers.transfers.inter.transfer')
         ->with('teacher', Teacher::find($id))
             ->with(compact('dzongkhags'))

@@ -13,6 +13,8 @@ use App\Models\School;
 use App\Models\SchoolClass;
 use App\Models\ProjectionType;
 
+use App\Events\ProjectionAdded;
+
 class ClassProjectionController extends Controller
 {
     public function __construct() {
@@ -122,8 +124,8 @@ class ClassProjectionController extends Controller
             'version' => 1
         ]);
 
-        $classProjection->save();
-
+        $projection=$classProjection->save();
+        //event(new ProjectionAdded($projection));
         return redirect()->route('class_projection.index')->with('info', 'Class Projection created successfully');
 
     }
@@ -163,8 +165,9 @@ class ClassProjectionController extends Controller
         $classProjection->dzongkhag_id = $this->getUserDzongkhagId();
         $classProjection->user_id = $this->getUserId();
         $classProjection->version = request('version') + 1;
-        $classProjection->save();
+        $projection=$classProjection->save();
 
+        //event(new ProjectionAdded($projection));
         return redirect()->route('class_projection.index')->with('info', 'Class Projection updated successfully!');
 
     }
