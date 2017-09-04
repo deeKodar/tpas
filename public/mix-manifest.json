@@ -1,10 +1,8 @@
 {
-    "/js/main.js": "/js/main.js?id=ec262009f0ba2fc61791",
-    "/css/app.css": "/css/app.css?id=d41d8cd98f00b204e980",
-    "/css/bootstrap.min.css": "/css/bootstrap.min.css?id=ec3bb52a00e176a7181d",
-    "/css/font-awesome.min.css": "/css/font-awesome.min.css?id=4083f5d376eb849a458c",
-    "/css/gentelella.min.css": "/css/gentelella.min.css?id=094ad0591a9362fa0c23",
-    "/js/bootstrap.min.js": "/js/bootstrap.min.js?id=c5b5b2fa19bd66ff2321",
-    "/js/jquery.min.js": "/js/jquery.min.js?id=2f6b11a7e914718e0290",
-    "/js/gentelella.min.js": "/js/gentelella.min.js?id=1db49b81eb2c33630cbc"
+    "/css/bootstrap.min.css": "/css/bootstrap.min.css",
+    "/css/font-awesome.min.css": "/css/font-awesome.min.css",
+    "/css/gentelella.min.css": "/css/gentelella.min.css",
+    "/js/bootstrap.min.js": "/js/bootstrap.min.js",
+    "/js/jquery.min.js": "/js/jquery.min.js",
+    "/js/gentelella.min.js": "/js/gentelella.min.js"
 }

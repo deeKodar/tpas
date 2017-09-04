@@ -137,10 +137,10 @@ require ('./bootstrap.js')
 // import UserImage from './components/UserImage'
 // import ConfirmModal from './components/ConfirmModal'
 //import ClassSectionGraph from './components/class-section-graph/ClassSectionGraph.vue';
-import SubjectTeacherGraph from './components/subject-teacher-graph/SubjectTeacherGraph.vue';
+//import SubjectTeacherGraph from './components/subject-teacher-graph/SubjectTeacherGraph.vue';
 // import SectionGraphMain from './components/SampleGraph/SectionGraphMain.Vue';
-// import school from './components/school/school.vue'
-import section from './components/section/section.vue'
+import school from './components/school/school.vue'
+//import section from './components/section/section.vue'
 
 //Adding the X-CSRF-Token to all axios request
 axios.interceptors.request.use(function(config){
@@ -167,8 +167,8 @@ Vue.use(VueAxios, axios)
 // Vue.component('confirm-modal', ConfirmModal)
 //Vue.component('class-section-graph', ClassSectionGraph)
 // Vue.component('class-section-graph', SectionGraphMain)
-Vue.component('subject-teacher-graph', SubjectTeacherGraph)
-Vue.component('class-section-graph', section)
+//Vue.component('subject-teacher-graph', SubjectTeacherGraph)
+Vue.component('class-section-graph', school)
 
 new Vue({
     el: '#graph',

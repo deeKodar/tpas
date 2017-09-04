@@ -20,6 +20,7 @@
         },
 
         created() {
+            this.fillData()
 
         },
 
@@ -31,8 +32,9 @@
             fillData() {
                 axios.get(classSectionData)
                     .then(response => {
-                        console.log(response.data.data)
+                        //console.log(response.data.data)
                         this.rows = response.data.data.rows
+//                        console.log(response.data.data.rows)
                         this.labels = response.data.data.labels
 
                         this.chartData = {

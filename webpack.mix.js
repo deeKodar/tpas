@@ -15,9 +15,9 @@ const { mix } = require('laravel-mix');
 // mix.js('src/app.js', 'dist/')
 //    .sass('src/app.scss', 'dist/');
 
-mix.js('resources/assets/js/main.js', 'public/js')
-    .sass('resources/assets/sass/app.scss', 'public/css/app.css')
-    .version();
+// mix.js('resources/assets/js/main.js', 'public/js')
+//     .sass('resources/assets/sass/app.scss', 'public/css/app.css')
+//     .version();
 
 // Full API
 // mix.js(src, output);

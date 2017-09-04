@@ -37,7 +37,8 @@ Route::get('/', [
     'as' => 'home.dashboard'
 ]);
 
-Route::get('/class-section', [
+//Route entry for charting to expose data as json
+Route::get('class-section/{id}', [
     'uses' => 'ReportChartController@getClassSection'
 ]);
 
