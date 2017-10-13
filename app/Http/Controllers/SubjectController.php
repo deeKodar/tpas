@@ -19,6 +19,8 @@ class SubjectController extends Controller
 
         return view('subject.index')
             ->with(compact('subjects'));
+
+        //return view('subject.index');
     }
 
     //get the detail of single subject
@@ -30,14 +32,17 @@ class SubjectController extends Controller
     //show form for creating new subject
     public function getSubjectCreate() {
 
-        $subjectTypes = SubjectType::pluck('name', 'id')->all();
+        //$subjectTypes = SubjectType::pluck('name', 'id')->all();
 
         $schoolClasses = SchoolClass::pluck('name', 'id')->all();
 
         //dd($schoolClasses);
 
+//        return view('subject.create')
+//            ->with(compact('subjectTypes'))
+//            ->with(compact('schoolClasses'));
+
         return view('subject.create')
-            ->with(compact('subjectTypes'))
             ->with(compact('schoolClasses'));
     }
 
@@ -46,9 +51,13 @@ class SubjectController extends Controller
 
         //$userId = Auth::id();
 
+//        $subject = new Subject([
+//            'name' => $request->input('subject_name'),
+//            'subject_type_id' => $request->input('subject_type_id'),
+//        ]);
+
         $subject = new Subject([
             'name' => $request->input('subject_name'),
-            'subject_type_id' => $request->input('subject_type_id'),
         ]);
 
        // $schoolClasses
@@ -77,19 +86,24 @@ class SubjectController extends Controller
 
         $subject = Subject::find($id);
 
-        $subjectTypes = SubjectType::pluck('name', 'id')->all();
+        //$subjectTypes = SubjectType::pluck('name', 'id')->all();
         $schoolClasses = SchoolClass::pluck('name', 'id')->all();
         //dd($schoolClasses);
 
         //pass only the 'id' value to view so that laravel Form::select() third arg can understand it as a id for default selected dropdown value
-        $selectedSubjectType = SubjectType::where('id', $subject->subject_type_id)->pluck('id')->first();
+        //$selectedSubjectType = SubjectType::where('id', $subject->subject_type_id)->pluck('id')->first();
         $selectedSchoolClasses = $subject->schoolClasses()->where('subject_id', $subject->id)->pluck('id');
 
         //dd($selectedSchoolClasses);
 
+//        return view('subject.edit', ['subject' => $subject, 'subjectId' => $id])
+//            ->with(compact('subjectTypes'))
+//            ->with(compact('selectedSubjectType'))
+//            ->with(compact('schoolClasses'))
+//            ->with(compact('selectedSchoolClasses'));
+
         return view('subject.edit', ['subject' => $subject, 'subjectId' => $id])
             ->with(compact('subjectTypes'))
-            ->with(compact('selectedSubjectType'))
             ->with(compact('schoolClasses'))
             ->with(compact('selectedSchoolClasses'));
     }
@@ -103,7 +117,7 @@ class SubjectController extends Controller
 
         //$subject->id = $request->input('id');
         $subject->name = $request->input('subject_name');
-        $subject->subject_type_id = $request->input('subject_type_id');
+       // $subject->subject_type_id = $request->input('subject_type_id');
 
         $schoolClasses = $request->input('schoolClassIds');
         //dd($schoolClasses);

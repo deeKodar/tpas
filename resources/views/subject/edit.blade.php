@@ -40,12 +40,12 @@
                                     </div>
                                 </div>
 
-                                <div class="form-group">
-                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="">Subject Type<span class="required">*</label>
-                                    <div class="col-md-9 col-sm-9 col-xs-12">
-                                        {!! Form::select('subject_type_id', $subjectTypes, $selectedSubjectType, ['class' => 'form-control']) !!}
-                                    </div>
-                                </div>
+                                {{--<div class="form-group">--}}
+                                    {{--<label class="control-label col-md-3 col-sm-3 col-xs-12" for="">Subject Type<span class="required">*</label>--}}
+                                    {{--<div class="col-md-9 col-sm-9 col-xs-12">--}}
+                                        {{--{!! Form::select('subject_type_id', $subjectTypes, $selectedSubjectType, ['class' => 'form-control']) !!}--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
 
                                 <div class="form-group">
                                     <label class="control-label col-md-3 col-sm-3 col-xs-12" for="">Subject Taught in Classes <span class="required">*</label>

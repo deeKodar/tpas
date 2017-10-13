@@ -31,7 +31,7 @@
                                 {{--<th>ID</th>--}}
                                 <th>Sl.No</th>
                                 <th>Subject Name</th>
-                                <th>Subject Type</th>
+                                {{--<th>Subject Type</th>--}}
                                 <th>Created</th>
                                 <th>Updated</th>
                                 <th class="column-title no-link last"><span class="nobr">Action</span>
@@ -45,7 +45,7 @@
                                     {{--<td>{{$school->id}}</td>--}}
                                     <td>{{ $index + 1 }}</td>
                                     <td>{{$subject->name}}</td>
-                                    <td>{{$subject->subjectType->name}}</td>
+                                    {{--<td>{{$subject->subjectType->name}}</td>--}}
                                     <td>{{$subject->created_at}}</td>
                                     <td>{{$subject->updated_at}}</td>
                                     <td class=" last">
