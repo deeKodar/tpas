@@ -25,6 +25,7 @@ use App\Models\Role;
 use App\Models\Permission;
 use App\Models\PermissionRole;
 use App\Models\Hometown;
+use App\Models\Teacher;
 use Illuminate\Database\Eloquent\Model;
 
 
@@ -82,6 +83,7 @@ class ImportMaster extends Command
         $this->importSchoolLevels();
         $this->importRolesPermissions('roles',new Role);
         $this->importRolesPermissions('permissions',new Permission);
+        $this->importTeachers();
         $this->importPermissionsRolesPivot();
         
     }
@@ -248,6 +250,59 @@ public function importRolesPermissions($filename, Model $model) {
             $this->line($i." entries added successfully in the permission_roles table");
         }
 
+    }
+
+
+    public function importTeachers() {
+            if (($handle = fopen ( public_path () . '/master/teachers.csv', 'r' )) !== FALSE) {
+                $this->line("Importing teachers...");
+                $i=0;
+                while ( ($data = fgetcsv ( $handle, 1000, ',' )) !== FALSE ) {
+                    $data = [
+                        
+                        'name' => $data[1],
+                        'employee_id' => $data[2],
+                        'position_title' => $data[3],
+                        'position_level' => $data[4],
+                        'gender' => $data[5],
+                        'date_of_birth' => $data[6],
+                        'employment_type_id' => $data[7],
+                        'initial_appointment_date' => $data[8],
+                        'current_appointment_date' => $data[9],
+                        'school_id' => $data[10],
+                        'dzongkhag_id' => $data[11],
+                        'initial_qualification_id' =>1,
+                        'current_qualification_id' =>1,
+                        'field_of_study_id' => 1,
+                        'subject_one_id' => 1,
+                        'subject_two_id' => 1,
+                        'subject_three_id' => 1,
+                        'core_subject_id' => $data[18],
+                        'contract_from' => $data[19],
+                        'contract_to' => $data[20],
+                        'remarks' => 'test',
+                        'hometown' => 1,
+                        'teacher_status_type_id' => 1,
+                        'marital_status' => 'Single',
+                        'user_id' => 1,
+                        'version' =>1
+
+                    ];
+                    try {
+                         if(Teacher::firstOrCreate($data)){
+                            $i++;
+
+                        }
+                    } catch(\Exception $e) {
+                       $this->error('Something went wrong!');
+                        return;
+
+                    }
+                }
+
+            fclose ( $handle );
+            $this->line($i." entries added successfully in the Teachers table");
+        }
     }
   
 

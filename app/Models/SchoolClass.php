@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Subject;
 
 class SchoolClass extends Model
 {
@@ -35,7 +36,8 @@ class SchoolClass extends Model
     }
      public function subjects()
      {
-         return $this->belongsToMany('App\Models\Subject', 'subject_school_class')->withTimestamps();
+         //return $this->belongsToMany('App\Models\Subject', 'subject_school_class')->withTimestamps();
+        return $this->belongsToMany(Subject::class);
      }
 
 //    public function schoolLevels()
