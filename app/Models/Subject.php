@@ -40,7 +40,7 @@ class Subject extends Model
                 return true;
             }
 
-       
+
        }
 
 
@@ -57,13 +57,14 @@ class Subject extends Model
         //         return true;
         //     }
         // }
-        
+
 
     }
 
     public function schoolClasses()
     {
-         return $this->belongsToMany('App\Models\SchoolClass', 'subject_school_class')->withTimestamps();
+         //return $this->belongsToMany('App\Models\SchoolClass', 'subject_school_class')->withTimestamps();
+         return $this->belongsToMany('App\Models\SchoolClass', 'school_class_subject')->withTimestamps();
 //return $this->belongsToMany(SchoolClass::class);
     }
 

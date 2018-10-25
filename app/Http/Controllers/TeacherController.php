@@ -26,23 +26,24 @@ class TeacherController extends Controller
 	 public function __construct()
     {
         $this->middleware('auth');
-        
+
     }
 
     public function index() {
 
 
-	      $teachers = Teacher::with('school','dzongkhag')->get();
+	      //$teachers = Teacher::with('school','dzongkhag')->get();
+				  $teachers = Teacher::all();
 
-          
+
 
     	 return view('teachers.index', compact('teachers'));
     }
 
-   
+
 
     public function edit($id) {
-        
+
         $subjects = Subject::all();
         $classes=SchoolClass::all();
         $schools=School::all();
@@ -102,7 +103,7 @@ class TeacherController extends Controller
         ->with(compact('dzongkhags'))
 		->with(compact('classes'))
         ->with(compact('hometowns'));
-    	
+
     }
     public function store() {
 
@@ -110,7 +111,7 @@ class TeacherController extends Controller
 
     	$teacher = new Teacher;
 
-    	
+
     	$userid = Auth::id();
 
     	$teacher->employee_id = request('employee_id');
@@ -230,7 +231,7 @@ class TeacherController extends Controller
         ->where('school_id',0)
         ->where('dzongkhag_id',$this->user->dzongkhag_id);
         $dzongkhag = Dzongkhag::find($this->user->dzongkhag_id);
-          
+
 
          return view('teachers.transfers.allocate.index', compact('teachers', 'dzongkhag'));
 
@@ -239,17 +240,17 @@ class TeacherController extends Controller
 
     protected function transferAllocate($id) {
 
-        
+
 
         $teacher=Teacher::find($id);
 
-        
+
 
         $schools=School::all();
-        
+
         $teacherstatus=TeacherStatusType::all();
         $positionlevels=PositionLevel::all();
-        
+
         $dzongkhags=Dzongkhag::all();
         $nationalities=Nationality::all();
         return View::make('teachers.transfers.allocate.allocate')
@@ -276,9 +277,9 @@ class TeacherController extends Controller
 
         $userid = Auth::id();
 
-       
+
         $teacher->school_id = request('school_id');
-        
+
         $teacher->user_id = $userid;
         $teacher->version = request('version')+1;
 
@@ -297,7 +298,7 @@ class TeacherController extends Controller
         $teachers = Teacher::with('school')->get()
         ->where('dzongkhag_id',$this->user->dzongkhag_id);
         $dzongkhag = Dzongkhag::find($this->user->dzongkhag_id);
-          
+
 
          return view('teachers.transfers.intra.index', compact('teachers', 'dzongkhag'));
 
@@ -306,17 +307,17 @@ class TeacherController extends Controller
 
      protected function transferIntra($id) {
 
-        
+
 
         $teacher=Teacher::find($id);
 
-        
+
 
         $schools=School::all();
-        
+
         $teacherstatus=TeacherStatusType::all();
         $positionlevels=PositionLevel::all();
-        
+
         $dzongkhags=Dzongkhag::all();
         $nationalities=Nationality::all();
         return View::make('teachers.transfers.intra.transfer')
@@ -343,9 +344,9 @@ class TeacherController extends Controller
 
         $userid = Auth::id();
 
-       
+
         $teacher->school_id = request('school_id');
-        
+
         $teacher->user_id = $userid;
         $teacher->version = request('version')+1;
 
@@ -372,17 +373,17 @@ class TeacherController extends Controller
 
      protected function transferInter($id) {
 
-        
 
-        $teacher=Teacher::find($id);                                
+
+        $teacher=Teacher::find($id);
         $schools=School::all();
-        
+
         $teacherstatus=TeacherStatusType::all();
         $positionlevels=PositionLevel::all();
-        
+
         $dzongkhags=Dzongkhag::all();
         $nationalities=Nationality::all();
-        
+
         return View::make('teachers.transfers.inter.transfer')
         ->with('teacher', Teacher::find($id))
             ->with(compact('dzongkhags'))
@@ -398,10 +399,10 @@ class TeacherController extends Controller
 
         $userid = Auth::id();
 
-       
+
         $teacher->dzongkhag_id = request('dzongkhag_id');
         $teacher->school_id=0;
-        
+
         $teacher->user_id = $userid;
         $teacher->version = request('version')+1;
 

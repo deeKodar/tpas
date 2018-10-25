@@ -11,7 +11,7 @@ class SchoolClass extends Model
     protected $primaryKey = 'id';
     public $timestamps = true;
 
-    protected $fillable = ['name', 'created_at', 'updated_at'];
+    protected $fillable = ['id','name'];
 
     /*
     |--------------------------------------------------------------------------
@@ -36,8 +36,8 @@ class SchoolClass extends Model
     }
      public function subjects()
      {
-         //return $this->belongsToMany('App\Models\Subject', 'subject_school_class')->withTimestamps();
-        return $this->belongsToMany(Subject::class);
+         return $this->belongsToMany('App\Models\Subject', 'school_class_subject')->withTimestamps();
+        //return $this->belongsToMany(Subject::class);
      }
 
 //    public function schoolLevels()

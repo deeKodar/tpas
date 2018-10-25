@@ -28,9 +28,9 @@ class CreateTeachersTables extends Migration
             $table->integer('dzongkhag_id');
             $table->integer('initial_qualification_id');
             $table->integer('current_qualification_id');
-            $table->integer('field_of_study_id');
+            $table->integer('field_of_study_id')->nullable();
             $table->integer('subject_one_id');
-            $table->integer('subject_two_id');
+            $table->integer('subject_two_id')->nullable();
             $table->integer('subject_three_id')->nullable();
             $table->integer('core_subject_id');
             $table->date('contract_from')->nullable();
@@ -39,6 +39,8 @@ class CreateTeachersTables extends Migration
             $table->string('hometown');
             $table->integer('teacher_status_type_id');
             $table->enum('marital_status',['Married','Single','Divorced','Widow']);
+            $table->string('email')->nullable();
+            $table->string('contact')->nullable();
             $table->integer('user_id');
             $table->timestamps();
             $table->integer('version')->default('1');

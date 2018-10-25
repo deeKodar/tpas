@@ -22,7 +22,7 @@
                         <div class="nav navbar-left add-button">
                             <a href="{{url('/teachers/create')}}" class="btn btn-success"><i class="fa fa-plus" aria-hidden="true"></i> Add Teacher</a>
                         </div>
-                       
+
                         <div class="clearfix"></div>
                     </div>
                     <div class="x_content">
@@ -60,10 +60,10 @@
                                             {{ method_field('DELETE') }}
                                         <a href="{{url('/')}}/teachers/edit/{{$teacher->id}}" class="btn btn-xs btn-warning waves-effect waves-light" data-toggle="tooltip" data-placement="left" title="Edit Teacher"><i class="fa fa-pencil-square fa-lg" aria-hidden="true"></i> Edit</a>
 
-                                       
+
                                             <input type="hidden" name="teacher_id" value="{{$teacher->id}}"/>
                                             <button type="submit" class="btn btn-xs btn-danger waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="Delete Teacher"><i class="fa fa-trash fa-lg" aria-hidden="true"></i>Delete</button>
-                                       
+
                                         <a href="{{url('/')}}/teachers/view/{{$teacher->id}}" class="btn btn-xs btn-success waves-effect waves-light" data-toggle="tooltip" data-placement="right" title="View Teacher Details"><i class="fa fa-eye fa-lg" aria-hidden="true"></i> View Detail</a>
                                         </form>
                                     </td>
@@ -85,4 +85,3 @@
 
 
 @endpush
-

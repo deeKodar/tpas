@@ -126,8 +126,9 @@ class ClassProjectionController extends Controller
 
         $projection=$classProjection->save();
         //event(new ProjectionAdded($projection));
-        return redirect()->route('class_projection.index')->with('info', 'Class Projection created successfully');
+        //return redirect()->route('class_projection.index')->with('info', 'Class Projection created successfully');
 
+        return $this->getClassProjectionIndex();
     }
 
     //show form for editing school

@@ -30,7 +30,7 @@ class AuthServiceProvider extends ServiceProvider
         //Comment this the line below to run migration #php artisan migrate and uncomment after completing migration
         $this->registerTpasPolicies();
 
-        
+
     }
 
     protected function registerTpasPolicies() {
@@ -48,7 +48,7 @@ class AuthServiceProvider extends ServiceProvider
     protected function getPermissions() {
 
         return Permission::with('roles')->get();
-        
+
     }
 
 }

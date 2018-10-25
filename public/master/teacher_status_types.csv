@@ -1,4 +1,13 @@
 1,Active
-2,Transferred
-3,Resigned
-4,Leave
+2,Transferred to other agency
+3,Superannuation
+4,Voluntary Resignation
+5,Untimely Demise
+6,Compulsory Retirement
+7,Study Leave
+8,EOL
+9,Maternity Leave
+10,Deputation/Secondment
+11,Selected as VP/Program Officer/EMO
+12,Contract Expired
+13,Termination

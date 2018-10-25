@@ -26,11 +26,11 @@ class ReportController extends Controller
     	$class_projections = ClassProjection::get()->where('school_id',$school_id)
     	->where('projection_type_id',$projection_type)
     	->where('curriculum_year',$year);
-    	
+
 
     	$subjects = Subject::all();
     	$school = School::find($school_id);
-    	
+
 		echo "<h1> School Name : ".$school->name."</h1>";
 		foreach($subjects as $subject) {
 			if($subject->hasClass($class_projections)) {
@@ -44,18 +44,18 @@ class ReportController extends Controller
 			$minutes=0;
 			$teachers= $school->teacherCount($subject->id);
 			foreach($class_projections as $class_projection) {
-				
+
 				$class = SchoolClass::find($class_projection->school_class_id);
 	    		if($class->hasSubject($subject->id)) {
-	    		
+
 	    		$total_sections+=$class_projection->section_count;
 	    		$standards=StandardSubjectHour::get()->where('school_class_id',$class_projection->school_class_id)
 	    		->where('subject_id',$subject->id);
 	    		$standard=$standards->first();
-	    		// $total_minutes+=(($standard->standard_hour)*60);
-	    		// $total_minutes+=$standard->standard_minute;
-       //          $total_minutes=$total_minutes*$class_projection->section_count;
-	    		$class_total_minutes=(($standard->standard_hour*60)+$standard->standard_minute)*$class_projection->section_count;
+	    		$total_minutes+=(($standard['standard_hour'])*60);
+	    		$total_minutes+=$standard['standard_minute'];
+                $total_minutes=$total_minutes*$class_projection->section_count;
+	    		$class_total_minutes=(($standard['standard_hour']*60)+$standard['standard_minute'])*$class_projection->section_count;
                 $total_minutes+=$class_total_minutes;
 	    		echo "<tr>";
 	    		echo "<td>";
@@ -66,17 +66,20 @@ class ReportController extends Controller
 	    		echo "</td>";
 	    		echo "<td>";
 	    		echo "No. of section(s): ".$class_projection->section_count;
-	    		
+
 	    		echo "</td>";
-	    		
+
 	    		echo "</tr>";
-	    		
+
+
+
 	    		}
-	    		
-	    		
+
+
+
     		}
 
-    		
+
     		$hours=floor($total_minutes/60);
     		$minutes=($total_minutes%60);
     		$required_teachers=round($total_minutes/(18*60));
@@ -88,16 +91,16 @@ class ReportController extends Controller
     		if($teacher_gap<0) {
     			echo "<tr><td>Teacher Gap:</td><td colspan=2 class='btn-danger'>".$teacher_gap." ( deficit by ".abs($teacher_gap)." teacher(s))</td></tr>";
     		} elseif($teacher_gap>0){
-    			echo "<tr><td>Teacher Gap:</td><td colspan=2 class='btn-danger'>".$teacher_gap." ( surplus by ".$teacher_gap." teacher(s))</td></tr>";
+    			echo "<tr><td>Teacher Gap:</td><td colspan=2 class='btn-info'>".$teacher_gap." ( surplus by ".$teacher_gap." teacher(s))</td></tr>";
     		} else {
     			echo "<tr><td>Teacher Gap:</td><td colspan=2 class='btn-success'>".$teacher_gap."</td></tr>";
     		}
-    		
+
     		echo "<tr><td>Year:</td><td colspan=2>".$year."</td></tr>";
-    		
+
     		echo "</table>";
 		}
-    	
+
     }
     	// echo "<h1>".$school_id."</h1>";
 
@@ -110,8 +113,8 @@ class ReportController extends Controller
     	$dzongkhags=Dzongkhag::all();
     	$year = ClassProjection::distinct()->pluck('curriculum_year');
     	$projection_type=DB::table('projection_types')->get();
-    	
-    	
+
+
     	$user=User::find(Auth::id());
     	return view('report.projections.view', compact('dzongkhags','year','projection_type','user'));
 

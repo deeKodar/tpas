@@ -13,13 +13,15 @@ class CreateSubjectSchoolClassTable extends Migration
      */
     public function up()
     {
-         Schema::create('subject_school_class', function (Blueprint $table) {
+         //Schema::create('subject_school_class', function (Blueprint $table) {
+         Schema::create('school_class_subject', function (Blueprint $table) {
             //$table->increments('id');
-            $table->integer('subject_id')->unsigned();
+
             $table->integer('school_class_id')->unsigned();
+            $table->integer('subject_id')->unsigned();
 
-            $table->primary(['subject_id', 'school_class_id']);
-
+            //$table->primary(['subject_id', 'school_class_id']);
+            $table->primary(['school_class_id', 'subject_id']);
             $table->timestamps();
 
 //            $table->foreign('subject_id')->references('id')
@@ -37,6 +39,6 @@ class CreateSubjectSchoolClassTable extends Migration
      */
     public function down()
     {
-        Schema::drop('subject_school_class');
+        Schema::drop('school_class_subject');
     }
 }
