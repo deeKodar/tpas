@@ -69,8 +69,14 @@
                                     </td>
                                 </tr>
                             @endforeach
+
                             </tbody>
                         </table>
+                        <div class="row">
+                            <div class="col-sm-5 pagination">Showing {{(($teachers->currentPage()-1)*10)+1}} - @if(($teachers->currentPage()*10)<$teachers->total()) {{$teachers->currentPage()*10}} @else {{$teachers->total()}} @endif to out of {{$teachers->total()}}</div>
+                            <div class="col-sm-7 text-right">{{ $teachers->links()}}</div>
+                        </div>
+
                     </div>
                 </div>
             </div>

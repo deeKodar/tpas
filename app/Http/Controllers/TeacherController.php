@@ -33,8 +33,8 @@ class TeacherController extends Controller
 
 
 	      //$teachers = Teacher::with('school','dzongkhag')->get();
-				  $teachers = Teacher::all();
-
+				 // $teachers = Teacher::all();
+					$teachers = Teacher::paginate(10);
 
 
     	 return view('teachers.index', compact('teachers'));

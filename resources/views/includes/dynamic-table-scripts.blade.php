@@ -5,7 +5,7 @@
 <!-- iCheck -->
 <script src="{{ asset("vendors/iCheck/icheck.min.js") }}"></script>
 <!-- Datatables -->
-<script src="{{ asset("vendors/datatables.net/js/jquery.dataTables.min.js") }}"></script>
+<!-- <script src="{{ asset("vendors/datatables.net/js/jquery.dataTables.min.js") }}"></script>
 <script src="{{ asset("vendors/datatables.net-bs/js/dataTables.bootstrap.min.js") }}"></script>
 <script src="{{ asset("vendors/datatables.net-buttons/js/dataTables.buttons.min.js") }}"></script>
 <script src="{{ asset("vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js") }}"></script>
@@ -19,8 +19,8 @@
 <script src="{{ asset("vendors/datatables.net-scroller/js/dataTables.scroller.min.js") }}"></script>
 <script src="{{ asset("vendors/jszip/dist/jszip.min.js") }}"></script>
 <script src="{{ asset("vendors/pdfmake/build/pdfmake.min.js") }}"></script>
-<script src="{{ asset("vendors/pdfmake/build/vfs_fonts.js") }}"></script>
+<script src="{{ asset("vendors/pdfmake/build/vfs_fonts.js") }}"></script> -->
 
 
- 
+
 @stack('scripts')
